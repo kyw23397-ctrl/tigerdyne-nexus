@@ -1,0 +1,565 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TIGERDYNE NEXUS — 국방·안보·방산 전문 컨설팅</title>
+    <meta name="description" content="전 육군참모총장 김용우 대표가 이끄는 국방·안보·방산 전문 컨설팅 | tigerdynenexus.com">
+    <meta property="og:title" content="TIGERDYNE NEXUS — Defense & Security Consulting">
+    <meta property="og:description" content="전 육군참모총장이 설립한 대한민국 대표 국방·안보·방산 전문 컨설팅 기업">
+    <meta property="og:url" content="https://www.tigerdynenexus.com">
+    <link rel="canonical" href="https://www.tigerdynenexus.com">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- ===== NAVIGATION ===== -->
+<nav class="nav" id="nav">
+    <div class="nav-inner">
+        <a class="logo" href="#hero">
+            <div class="logo-photo-wrap">
+                <img src="kim.jpg" alt="김용우" class="logo-photo" onerror="this.parentElement.querySelector('.logo-mark').style.display='flex'; this.style.display='none';">
+                <span class="logo-mark" style="display:none">T</span>
+            </div>
+            <div class="logo-texts">
+                <span class="logo-name">TIGERDYNE NEXUS</span>
+                <span class="logo-tagline" data-ko="국방·안보·방산 컨설팅" data-en="Defence & Security Consulting">국방·안보·방산 컨설팅</span>
+            </div>
+        </a>
+        <div class="nav-right">
+            <ul class="nav-links" id="navLinks">
+                <li class="has-drop">
+                    <a href="#about" data-ko="소개" data-en="About">소개 <span class="caret">›</span></a>
+                    <ul class="dropdown">
+                        <li><a href="#about" data-ko="회사 소개" data-en="Our Story">회사 소개</a></li>
+                        <li><a href="#leadership" data-ko="리더십" data-en="Leadership">리더십</a></li>
+                    </ul>
+                </li>
+                <li class="has-drop">
+                    <a href="#govt" data-ko="정부·군" data-en="Governments / Military">정부·군 <span class="caret">›</span></a>
+                    <ul class="dropdown">
+                        <li><a href="#govt" data-ko="국방 전략" data-en="Defence Strategy">국방 전략</a></li>
+                        <li><a href="#govt" data-ko="안보 정책 자문" data-en="Security Policy">안보 정책 자문</a></li>
+                        <li><a href="#govt" data-ko="교육·훈련" data-en="Education & Training">교육·훈련</a></li>
+                    </ul>
+                </li>
+                <li class="has-drop">
+                    <a href="#commercial" data-ko="민간·기업" data-en="Private / Commercial">민간·기업 <span class="caret">›</span></a>
+                    <ul class="dropdown">
+                        <li><a href="#commercial" data-ko="방산 사업 개발" data-en="Defence Industry Dev.">방산 사업 개발</a></li>
+                        <li><a href="#commercial" data-ko="글로벌 진출" data-en="Global Expansion">글로벌 진출</a></li>
+                        <li><a href="#commercial" data-ko="리스크 관리" data-en="Risk Management">리스크 관리</a></li>
+                    </ul>
+                </li>
+                <li class="has-drop">
+                    <a href="#domains" data-ko="전문분야" data-en="Capabilities">전문분야 <span class="caret">›</span></a>
+                    <ul class="dropdown">
+                        <li><a href="#domains" data-ko="지상" data-en="Land">지상 (Land)</a></li>
+                        <li><a href="#domains" data-ko="해상" data-en="Maritime">해상 (Maritime)</a></li>
+                        <li><a href="#domains" data-ko="항공" data-en="Air">항공 (Air)</a></li>
+                        <li><a href="#domains" data-ko="사이버·디지털" data-en="Cyber & Digital">사이버·디지털</a></li>
+                        <li><a href="#domains" data-ko="우주" data-en="Space">우주 (Space)</a></li>
+                    </ul>
+                </li>
+                <li><a href="#insights" data-ko="인사이트" data-en="Insights">인사이트</a></li>
+                <li><a href="#contact" data-ko="문의" data-en="Contact">문의</a></li>
+            </ul>
+            <button class="lang-btn" id="langBtn" onclick="toggleLang()">EN</button>
+            <button class="hamburger" id="hamburger" onclick="toggleMenu()" aria-label="메뉴">
+                <span></span><span></span><span></span>
+            </button>
+        </div>
+    </div>
+</nav>
+
+<!-- ===== HERO ===== -->
+<section class="hero" id="hero">
+    <div class="hero-bg">
+        <div class="hero-grid"></div>
+        <div class="hero-glow top-right"></div>
+        <div class="hero-glow bottom-left"></div>
+    </div>
+    <div class="container hero-content">
+        <div class="hero-eyebrow">
+            <div class="hero-badge" data-ko="대한민국 국방·안보·방산 전문 컨설팅" data-en="Republic of Korea — Defence · Security · Industry Consulting">대한민국 국방·안보·방산 전문 컨설팅</div>
+        </div>
+        <h1 class="hero-title">
+            <span data-ko="국가 안보의 최전선에서" data-en="At the Forefront of">국가 안보의 최전선에서</span>
+            <span class="gold" data-ko="전략적 통찰을 제공합니다." data-en="National Security.">전략적 통찰을 제공합니다.</span>
+        </h1>
+        <p class="hero-sub" data-ko="전 육군참모총장이 이끄는 TIGERDYNE NEXUS는 정부·군·방산기업에 실전 경험 기반의 정밀한 전략과 실행 가능한 솔루션을 제공합니다." data-en="Led by a former Chief of Staff of the ROK Army, TIGERDYNE NEXUS delivers precise, field-tested strategies and actionable solutions for governments, military organizations, and defence industries.">
+            전 육군참모총장이 이끄는 TIGERDYNE NEXUS는<br>정부·군·방산기업에 실전 경험 기반의 정밀한 전략과<br>실행 가능한 솔루션을 제공합니다.
+        </p>
+        <div class="hero-paths">
+            <a href="#govt" class="path-btn">
+                <div class="path-icon">
+                    <svg viewBox="0 0 32 32" fill="none"><path d="M16 3L3 10V22L16 29L29 22V10L16 3Z" stroke="currentColor" stroke-width="1.5"/><path d="M16 3V29M3 10L29 10M3 22L29 22" stroke="currentColor" stroke-width="1" stroke-dasharray="2 2" opacity=".5"/></svg>
+                </div>
+                <div>
+                    <strong data-ko="정부·군 기관" data-en="Governments / Military">정부·군 기관</strong>
+                    <span data-ko="국방 전략 · 안보 정책 · 교육훈련" data-en="Strategy · Policy · Training">국방 전략 · 안보 정책 · 교육훈련</span>
+                </div>
+                <span class="path-arrow">→</span>
+            </a>
+            <a href="#commercial" class="path-btn">
+                <div class="path-icon">
+                    <svg viewBox="0 0 32 32" fill="none"><rect x="4" y="10" width="24" height="18" rx="1.5" stroke="currentColor" stroke-width="1.5"/><path d="M10 10V7C10 5.3 11.3 4 13 4H19C20.7 4 22 5.3 22 7V10" stroke="currentColor" stroke-width="1.5"/><path d="M10 19H22M10 15H16" stroke="currentColor" stroke-width="1.2"/></svg>
+                </div>
+                <div>
+                    <strong data-ko="민간·방산 기업" data-en="Private / Commercial">민간·방산 기업</strong>
+                    <span data-ko="방산 개발 · 글로벌 진출 · 리스크 관리" data-en="Development · Global · Risk">방산 개발 · 글로벌 진출 · 리스크 관리</span>
+                </div>
+                <span class="path-arrow">→</span>
+            </a>
+        </div>
+    </div>
+    <div class="hero-scroll"><span></span></div>
+</section>
+
+<!-- ===== STATS ===== -->
+<div class="stats-bar">
+    <div class="container stats-grid">
+        <div class="stat"><span class="stat-num">30<em>+</em></span><span class="stat-label" data-ko="년 국방 경력" data-en="Years in Defence">년 국방 경력</span></div>
+        <div class="stat"><span class="stat-num">5<em></em></span><span class="stat-label" data-ko="개 핵심 도메인" data-en="Core Domains">개 핵심 도메인</span></div>
+        <div class="stat"><span class="stat-num">12<em>+</em></span><span class="stat-label" data-ko="개국 파트너십" data-en="Country Partnerships">개국 파트너십</span></div>
+        <div class="stat"><span class="stat-num">100<em>%</em></span><span class="stat-label" data-ko="기밀 유지 보장" data-en="Confidentiality">기밀 유지 보장</span></div>
+    </div>
+</div>
+
+<!-- ===== ABOUT ===== -->
+<section class="section" id="about">
+    <div class="container">
+        <div class="about-layout">
+            <div class="about-text fade-in">
+                <div class="label" data-ko="회사 소개" data-en="About TIGERDYNE NEXUS">회사 소개</div>
+                <h2 data-ko="대한민국 국방 분야의 선도적 전략 파트너" data-en="The Leading Strategic Partner in Korean Defence">대한민국 국방 분야의<br>선도적 전략 파트너</h2>
+                <p data-ko="TIGERDYNE NEXUS는 전 육군참모총장 김용우 대장이 설립한 국방·안보·방산 분야 전문 컨설팅 기업입니다. 대한민국 군 최고위직에서 쌓은 수십 년의 실전 경험을 바탕으로, 정부기관·군 조직·방산기업이 직면한 복잡한 전략적 도전을 해결합니다." data-en="TIGERDYNE NEXUS is a defence, security and industry consulting firm founded by General Kim Yong-woo (Ret.), former Chief of Staff of the Republic of Korea Army. Drawing on decades of operational experience at the highest levels of the ROK military, we address the complex strategic challenges facing government agencies, military organisations, and defence corporations.">
+                    TIGERDYNE NEXUS는 전 육군참모총장 김용우 대장이 설립한 국방·안보·방산 분야 전문 컨설팅 기업입니다. 대한민국 군 최고위직에서 쌓은 수십 년의 실전 경험을 바탕으로, 정부기관·군 조직·방산기업이 직면한 복잡한 전략적 도전을 해결합니다.
+                </p>
+                <p data-ko="우리는 단순히 조언하는 컨설턴트가 아닙니다. 현장 실행까지 함께하는 전략적 파트너입니다. 한미 동맹 네트워크와 글로벌 방산 파트너십을 기반으로, 클라이언트의 안보 목표 달성을 위해 실질적이고 측정 가능한 성과를 만들어냅니다." data-en="We are not merely advisors — we are strategic partners committed to execution alongside our clients. Leveraging our ROK-US alliance network and global defence partnerships, we generate tangible, measurable outcomes in pursuit of our clients' security objectives.">
+                    우리는 단순히 조언하는 컨설턴트가 아닙니다. 현장 실행까지 함께하는 전략적 파트너입니다. 한미 동맹 네트워크와 글로벌 방산 파트너십을 기반으로, 클라이언트의 안보 목표 달성을 위해 실질적이고 측정 가능한 성과를 만들어냅니다.
+                </p>
+                <div class="about-tags">
+                    <span data-ko="국방 전략" data-en="Defence Strategy">국방 전략</span>
+                    <span data-ko="안보 리스크" data-en="Security Risk">안보 리스크</span>
+                    <span data-ko="방산 사업" data-en="Defence Industry">방산 사업</span>
+                    <span data-ko="글로벌 진출" data-en="Global Expansion">글로벌 진출</span>
+                    <span data-ko="정책 자문" data-en="Policy Advisory">정책 자문</span>
+                    <span data-ko="교육·훈련" data-en="Education & Training">교육·훈련</span>
+                </div>
+            </div>
+            <div class="about-visual fade-in">
+                <div class="about-emblem">
+                    <div class="ring r1"></div><div class="ring r2"></div><div class="ring r3"></div>
+                    <div class="emblem-core">
+                        <div class="emblem-t">T</div>
+                        <div class="emblem-sub">NEXUS</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ===== LEADERSHIP ===== -->
+<section class="section section-offwhite" id="leadership">
+    <div class="container">
+        <div class="label center" data-ko="설립자 & 대표이사" data-en="Founder & CEO">설립자 & 대표이사</div>
+        <h2 class="center" data-ko="최고의 경험에서 나오는 최고의 전략" data-en="The Highest Strategy from the Highest Experience">최고의 경험에서 나오는 최고의 전략</h2>
+
+        <div class="leader-layout fade-in">
+            <div class="leader-photo-col">
+                <div class="leader-photo-frame">
+                    <img src="kim.jpg" alt="김용우 대표이사" class="leader-photo" onerror="this.style.display='none'; document.getElementById('photoFallback').style.display='flex';">
+                    <div class="leader-photo-fallback" id="photoFallback">
+                        <span class="fallback-initial">金</span>
+                        <div class="fallback-stars">★ ★ ★ ★</div>
+                    </div>
+                </div>
+                <div class="leader-photo-caption">
+                    <div class="stars-row">★ ★ ★ ★</div>
+                    <div data-ko="대장 (General, 4성)" data-en="General (4-Star)">대장 (General, 4성)</div>
+                </div>
+            </div>
+
+            <div class="leader-text-col">
+                <div class="leader-name-wrap">
+                    <h3 class="leader-name" data-ko="김용우" data-en="Kim Yong-woo">김용우</h3>
+                    <span class="leader-name-en">KIM Yong-woo  /  金勇宇</span>
+                </div>
+
+                <div class="leader-positions">
+                    <div class="position current">
+                        <span class="pos-badge now" data-ko="현직" data-en="Current">현직</span>
+                        <span data-ko="TIGERDYNE NEXUS 대표이사 · 창립자" data-en="CEO & Founder, TIGERDYNE NEXUS">TIGERDYNE NEXUS 대표이사 · 창립자</span>
+                    </div>
+                    <div class="position">
+                        <span class="pos-badge past" data-ko="전직" data-en="Former">전직</span>
+                        <span data-ko="대한민국 육군참모총장 (제46대)" data-en="Chief of Staff, Republic of Korea Army">대한민국 육군참모총장</span>
+                    </div>
+                </div>
+
+                <div class="gold-rule"></div>
+
+                <p class="leader-bio" data-ko="김용우 대장은 대한민국 육군의 최고 지휘관인 육군참모총장을 역임한 4성 장군입니다. 30년 이상의 군 복무 기간 동안 한반도 안보 전략 수립, 한미 연합사 작전 지휘, 방위력 개선 사업 총괄, 국방 정책 입안 등 국방의 전 영역에 걸쳐 최고위 리더십을 발휘하였습니다." data-en="General Kim Yong-woo (Ret.) served as Chief of Staff of the Republic of Korea Army — the nation's highest military position — one of the most senior military offices in the Indo-Pacific region. Over more than 30 years of military service, he exercised top-level leadership across the full spectrum of national defence, including Korean Peninsula security strategy, ROK-US Combined Forces Command operations, defence capability improvement programs, and defence policy formulation.">
+                    김용우 대장은 대한민국 육군의 최고 지휘관인 육군참모총장을 역임한 4성 장군입니다. 30년 이상의 군 복무 기간 동안 한반도 안보 전략 수립, 한미 연합사 작전 지휘, 방위력 개선 사업 총괄, 국방 정책 입안 등 국방의 전 영역에 걸쳐 최고위 리더십을 발휘하였습니다.
+                </p>
+                <p class="leader-bio" data-ko="이 풍부한 경험과 광범위한 글로벌 네트워크를 바탕으로 TIGERDYNE NEXUS를 설립, 대한민국과 동맹국의 안보 역량 강화 및 방산 산업 경쟁력 제고에 기여하고 있습니다." data-en="Building on this wealth of experience and an extensive global network, he founded TIGERDYNE NEXUS to contribute to enhancing the security capabilities of the Republic of Korea and allied nations, and to elevating the competitiveness of the defence industry.">
+                    이 풍부한 경험과 광범위한 글로벌 네트워크를 바탕으로 TIGERDYNE NEXUS를 설립, 대한민국과 동맹국의 안보 역량 강화 및 방산 산업 경쟁력 제고에 기여하고 있습니다.
+                </p>
+
+                <div class="credentials">
+                    <div class="cred" data-ko="대한민국 육군참모총장 역임" data-en="Former Chief of Staff, ROK Army">◈ 대한민국 육군참모총장 역임</div>
+                    <div class="cred" data-ko="한미 연합사 작전 지휘 경험" data-en="ROK-US Combined Forces Command">◈ 한미 연합사 작전 지휘 경험</div>
+                    <div class="cred" data-ko="방위력 개선 사업 총괄" data-en="Defence Capability Improvement Programs">◈ 방위력 개선 사업 총괄</div>
+                    <div class="cred" data-ko="글로벌 동맹 안보 네트워크 보유" data-en="Global Alliance Security Network">◈ 글로벌 동맹 안보 네트워크 보유</div>
+                    <div class="cred" data-ko="국방 정책·전략 입안 전문가" data-en="Defence Policy & Strategy Expert">◈ 국방 정책·전략 입안 전문가</div>
+                    <div class="cred" data-ko="국제 방산 협력 및 외교 경험" data-en="International Defence Cooperation">◈ 국제 방산 협력 및 외교 경험</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ===== SECTOR: GOVT/MILITARY ===== -->
+<section class="section section-dark" id="govt">
+    <div class="container">
+        <div class="sector-header fade-in">
+            <div class="label" data-ko="정부·군 클라이언트" data-en="Governments / Military">정부·군 클라이언트</div>
+            <h2 data-ko="정부·군을 위한 전략적 솔루션" data-en="Strategic Solutions for Governments & Military">정부·군을 위한 전략적 솔루션</h2>
+            <p data-ko="국방부, 합참, 각 군, 정보기관 등 정부·군 기관을 위해 최고 수준의 전략 자문을 제공합니다." data-en="We provide the highest-level strategic advisory services for government and military institutions including the Ministry of National Defence, the Joint Chiefs of Staff, the armed services, and intelligence agencies.">
+                국방부, 합참, 각 군, 정보기관 등 정부·군 기관을 위해 최고 수준의 전략 자문을 제공합니다.
+            </p>
+        </div>
+        <div class="services-grid-3 fade-in">
+            <div class="svc-card">
+                <div class="svc-num">01</div>
+                <h3 data-ko="국방 전략 수립" data-en="Defence Strategy Formulation">국방 전략 수립</h3>
+                <p data-ko="국방 목표 설정, 전략 개념 개발, 중장기 국방 계획 수립을 지원합니다. 현실에 기반한 실행 가능한 전략을 설계합니다." data-en="We support the setting of defence objectives, the development of strategic concepts, and the formulation of mid-to-long-term defence plans — designing strategies that are grounded in reality and actionable.">국방 목표 설정, 전략 개념 개발, 중장기 국방 계획 수립을 지원합니다. 현실에 기반한 실행 가능한 전략을 설계합니다.</p>
+            </div>
+            <div class="svc-card">
+                <div class="svc-num">02</div>
+                <h3 data-ko="안보 정책 자문" data-en="Security Policy Advisory">안보 정책 자문</h3>
+                <p data-ko="한반도 및 역내 안보 환경 분석을 바탕으로 정책 입안자에게 실질적인 국방·안보 정책 방향을 제언합니다." data-en="Based on analysis of the Korean Peninsula and regional security environment, we advise policymakers on practical national defence and security policy directions.">한반도 및 역내 안보 환경 분석을 바탕으로 정책 입안자에게 실질적인 국방·안보 정책 방향을 제언합니다.</p>
+            </div>
+            <div class="svc-card">
+                <div class="svc-num">03</div>
+                <h3 data-ko="전력 현대화" data-en="Force Modernisation">전력 현대화</h3>
+                <p data-ko="미래 전장 환경에 최적화된 군사력 건설 방향을 제시하고, 방위력 개선 사업의 우선순위 설정을 지원합니다." data-en="We identify force development directions optimised for future battlefield environments and support the prioritisation of capability improvement programmes.">미래 전장 환경에 최적화된 군사력 건설 방향을 제시하고, 방위력 개선 사업의 우선순위 설정을 지원합니다.</p>
+            </div>
+            <div class="svc-card">
+                <div class="svc-num">04</div>
+                <h3 data-ko="한미 동맹 & 다자 협력" data-en="Alliance & Multilateral Cooperation">한미 동맹 & 다자 협력</h3>
+                <p data-ko="한미 연합 방위 태세 강화, 다자 안보 협력 체계 구축 및 동맹·우방국과의 협력 심화를 지원합니다." data-en="We support strengthening the ROK-US combined defence posture, building multilateral security cooperation frameworks, and deepening cooperation with allies and partner nations.">한미 연합 방위 태세 강화, 다자 안보 협력 체계 구축 및 동맹·우방국과의 협력 심화를 지원합니다.</p>
+            </div>
+            <div class="svc-card">
+                <div class="svc-num">05</div>
+                <h3 data-ko="교육·훈련 개발" data-en="Education & Training Development">교육·훈련 개발</h3>
+                <p data-ko="군 지휘관 및 참모를 위한 고급 교육 프로그램, 워게임, 도상 훈련 등 전문 교육·훈련 체계를 설계·운영합니다." data-en="We design and run advanced educational programmes, wargames, and staff exercises for military commanders and staff officers.">군 지휘관 및 참모를 위한 고급 교육 프로그램, 워게임, 도상 훈련 등 전문 교육·훈련 체계를 설계·운영합니다.</p>
+            </div>
+            <div class="svc-card">
+                <div class="svc-num">06</div>
+                <h3 data-ko="위협 평가 & 정보 분석" data-en="Threat Assessment & Analysis">위협 평가 & 정보 분석</h3>
+                <p data-ko="북한 및 주변국의 군사 위협을 정밀 분석하고, 선제적 대응 전략 수립을 위한 정보 기반 평가를 제공합니다." data-en="We provide rigorous analysis of military threats from North Korea and neighbouring states, and deliver intelligence-based assessments to support proactive response strategies.">북한 및 주변국의 군사 위협을 정밀 분석하고, 선제적 대응 전략 수립을 위한 정보 기반 평가를 제공합니다.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ===== SECTOR: COMMERCIAL ===== -->
+<section class="section" id="commercial">
+    <div class="container">
+        <div class="sector-header fade-in">
+            <div class="label" data-ko="민간·방산 기업" data-en="Private / Commercial">민간·방산 기업</div>
+            <h2 data-ko="방산기업·민간 부문을 위한 컨설팅" data-en="Consulting for Defence Industry & Private Sector">방산기업·민간 부문을 위한 컨설팅</h2>
+            <p data-ko="방산기업, 민간 안보 기업, 대기업의 국방 관련 사업 진출을 위한 종합 컨설팅을 제공합니다." data-en="We provide comprehensive consulting for defence companies, private security firms, and large corporations seeking to enter defence-related markets.">
+                방산기업, 민간 안보 기업, 대기업의 국방 관련 사업 진출을 위한 종합 컨설팅을 제공합니다.
+            </p>
+        </div>
+        <div class="services-grid-3 fade-in">
+            <div class="svc-card dark-border">
+                <div class="svc-num gold">01</div>
+                <h3 data-ko="방산 사업 개발" data-en="Defence Business Development">방산 사업 개발</h3>
+                <p data-ko="사업 타당성 검토, 입찰 전략 수립, 조달 프로세스 최적화를 통해 방산 수주 경쟁력을 강화합니다." data-en="We strengthen defence procurement competitiveness through feasibility reviews, bidding strategy formulation, and procurement process optimisation.">사업 타당성 검토, 입찰 전략 수립, 조달 프로세스 최적화를 통해 방산 수주 경쟁력을 강화합니다.</p>
+            </div>
+            <div class="svc-card dark-border">
+                <div class="svc-num gold">02</div>
+                <h3 data-ko="글로벌 방산 시장 진출" data-en="Global Defence Market Entry">글로벌 방산 시장 진출</h3>
+                <p data-ko="해외 방산 시장 현지화 전략, 파트너십 구축, 규제 대응을 종합 지원합니다. K-방산의 해외 진출을 선도합니다." data-en="We provide comprehensive support for overseas defence market localisation strategies, partnership building, and regulatory navigation — leading K-Defence's global expansion.">해외 방산 시장 현지화 전략, 파트너십 구축, 규제 대응을 종합 지원합니다. K-방산의 해외 진출을 선도합니다.</p>
+            </div>
+            <div class="svc-card dark-border">
+                <div class="svc-num gold">03</div>
+                <h3 data-ko="지정학적 리스크 관리" data-en="Geopolitical Risk Management">지정학적 리스크 관리</h3>
+                <p data-ko="한반도 및 인도·태평양 지역의 지정학적 리스크를 분석하고 기업의 안보 환경 대응 전략을 수립합니다." data-en="We analyse geopolitical risks across the Korean Peninsula and the Indo-Pacific region and develop strategies for corporations to navigate the security environment.">한반도 및 인도·태평양 지역의 지정학적 리스크를 분석하고 기업의 안보 환경 대응 전략을 수립합니다.</p>
+            </div>
+            <div class="svc-card dark-border">
+                <div class="svc-num gold">04</div>
+                <h3 data-ko="방산 공급망 최적화" data-en="Defence Supply Chain Optimisation">방산 공급망 최적화</h3>
+                <p data-ko="방산 공급망 취약성 진단, 리질리언스 강화 방안 수립 및 국내외 공급망 파트너십 구축을 지원합니다." data-en="We support diagnosis of defence supply chain vulnerabilities, formulation of resilience enhancement measures, and establishment of domestic and international supply chain partnerships.">방산 공급망 취약성 진단, 리질리언스 강화 방안 수립 및 국내외 공급망 파트너십 구축을 지원합니다.</p>
+            </div>
+            <div class="svc-card dark-border">
+                <div class="svc-num gold">05</div>
+                <h3 data-ko="임원 리더십 개발" data-en="Executive Leadership Development">임원 리더십 개발</h3>
+                <p data-ko="방산·안보 분야 기업 임원을 위한 맞춤형 리더십 코칭, 전략적 의사결정 훈련 및 고위직 개발 프로그램을 운영합니다." data-en="We deliver bespoke leadership coaching, strategic decision-making training, and senior executive development programmes for defence and security sector leaders.">방산·안보 분야 기업 임원을 위한 맞춤형 리더십 코칭, 전략적 의사결정 훈련 및 고위직 개발 프로그램을 운영합니다.</p>
+            </div>
+            <div class="svc-card dark-border">
+                <div class="svc-num gold">06</div>
+                <h3 data-ko="국방 조달 자문 (MND)" data-en="MND Procurement Advisory">국방 조달 자문</h3>
+                <p data-ko="방위사업청 등 국방 조달 체계를 이해하고 효과적으로 대응할 수 있도록 절차 가이드 및 전략적 포지셔닝을 지원합니다." data-en="We help clients understand and engage effectively with Korea's defence procurement system, including DAPA, providing procedural guidance and strategic positioning support.">방위사업청 등 국방 조달 체계를 이해하고 효과적으로 대응할 수 있도록 절차 가이드 및 전략적 포지셔닝을 지원합니다.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ===== DOMAINS ===== -->
+<section class="section section-dark" id="domains">
+    <div class="container">
+        <div class="section-header-c fade-in">
+            <div class="label" data-ko="5대 핵심 도메인" data-en="Five Core Domains">5대 핵심 도메인</div>
+            <h2 data-ko="전 영역에 걸친 전문 역량" data-en="Expertise Across All Domains">전 영역에 걸친 전문 역량</h2>
+            <p data-ko="지상·해상·항공·사이버·우주의 5개 도메인 전 영역에서 통합된 전문성을 제공합니다." data-en="We deliver integrated expertise across all five domains — Land, Maritime, Air, Cyber & Digital, and Space.">지상·해상·항공·사이버·우주의 5개 도메인 전 영역에서 통합된 전문성을 제공합니다.</p>
+        </div>
+        <div class="domains-grid fade-in">
+            <div class="domain-card">
+                <div class="domain-icon">
+                    <svg viewBox="0 0 48 48" fill="none"><path d="M4 38L12 22L20 30L28 14L36 26L44 10" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M4 42H44" stroke="currentColor" stroke-width="1.5" opacity=".4"/></svg>
+                </div>
+                <h3 data-ko="지상 (Land)" data-en="Land">지상</h3>
+                <p data-ko="지상전 전략·전술, 기계화 부대 운용, 지상군 현대화, 복합 지형 작전" data-en="Land warfare strategy & tactics, mechanised unit operations, land force modernisation, complex terrain operations">지상전 전략·전술, 기계화 부대 운용, 지상군 현대화, 복합 지형 작전</p>
+            </div>
+            <div class="domain-card">
+                <div class="domain-icon">
+                    <svg viewBox="0 0 48 48" fill="none"><path d="M4 30C4 30 10 22 24 22C38 22 44 30 44 30" stroke="currentColor" stroke-width="2"/><path d="M12 38L8 22L24 18L40 22L36 38" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/><path d="M24 18V10M20 14H28" stroke="currentColor" stroke-width="1.5"/></svg>
+                </div>
+                <h3 data-ko="해상 (Maritime)" data-en="Maritime">해상</h3>
+                <p data-ko="해상 안보, 해군 작전 전략, 해양 영역 인식(MDA), 수중전 및 해양 교통로 보호" data-en="Maritime security, naval operations strategy, Maritime Domain Awareness (MDA), undersea warfare and sea lane protection">해상 안보, 해군 작전 전략, 해양 영역 인식(MDA), 수중전 및 해양 교통로 보호</p>
+            </div>
+            <div class="domain-card">
+                <div class="domain-icon">
+                    <svg viewBox="0 0 48 48" fill="none"><path d="M24 8L40 28H8L24 8Z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/><path d="M16 28L12 40M32 28L36 40M20 40H28" stroke="currentColor" stroke-width="1.5"/><circle cx="24" cy="20" r="3" stroke="currentColor" stroke-width="1.5"/></svg>
+                </div>
+                <h3 data-ko="항공 (Air)" data-en="Air">항공</h3>
+                <p data-ko="항공 작전, 방공 체계, 공중우세 전략, 무인기(UAV/드론) 전력 통합" data-en="Air operations, air defence systems, air superiority strategy, unmanned aerial systems (UAV/drone) force integration">항공 작전, 방공 체계, 공중우세 전략, 무인기(UAV/드론) 전력 통합</p>
+            </div>
+            <div class="domain-card">
+                <div class="domain-icon">
+                    <svg viewBox="0 0 48 48" fill="none"><rect x="10" y="10" width="28" height="28" rx="4" stroke="currentColor" stroke-width="2"/><path d="M10 20H38M10 28H38M20 10V38M28 10V38" stroke="currentColor" stroke-width="1.5" opacity=".5"/><circle cx="24" cy="24" r="5" stroke="currentColor" stroke-width="2"/></svg>
+                </div>
+                <h3 data-ko="사이버·디지털" data-en="Cyber & Digital">사이버·디지털</h3>
+                <p data-ko="사이버 안보 전략, 군 디지털 전환(DX), 전자전, AI 기반 의사결정, C4I 체계" data-en="Cyber security strategy, military digital transformation (DX), electronic warfare, AI-based decision-making, C4I systems">사이버 안보 전략, 군 디지털 전환(DX), 전자전, AI 기반 의사결정, C4I 체계</p>
+            </div>
+            <div class="domain-card">
+                <div class="domain-icon">
+                    <svg viewBox="0 0 48 48" fill="none"><circle cx="24" cy="24" r="6" stroke="currentColor" stroke-width="2"/><circle cx="24" cy="24" r="16" stroke="currentColor" stroke-width="1.5" stroke-dasharray="3 3"/><circle cx="24" cy="8" r="2" fill="currentColor"/><circle cx="38" cy="30" r="2" fill="currentColor"/><circle cx="10" cy="30" r="2" fill="currentColor"/><path d="M24 18V12M30 27L36 31M18 27L12 31" stroke="currentColor" stroke-width="1.5"/></svg>
+                </div>
+                <h3 data-ko="우주 (Space)" data-en="Space">우주</h3>
+                <p data-ko="군 우주 전략, 위성 정보·감시·정찰(ISR), 우주 자산 보호, 우주 기반 C2 체계" data-en="Military space strategy, satellite Intelligence Surveillance & Reconnaissance (ISR), space asset protection, space-based C2 systems">군 우주 전략, 위성 정보·감시·정찰(ISR), 우주 자산 보호, 우주 기반 C2 체계</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ===== INSIGHTS ===== -->
+<section class="section section-offwhite" id="insights">
+    <div class="container">
+        <div class="insights-header fade-in">
+            <div>
+                <div class="label" data-ko="인사이트" data-en="Insights">인사이트</div>
+                <h2 data-ko="전략 분석 & 최신 동향" data-en="Strategic Analysis & Latest Trends">전략 분석 & 최신 동향</h2>
+            </div>
+            <a href="#contact" class="btn btn-outline" data-ko="전체 보기" data-en="View All">전체 보기</a>
+        </div>
+        <div class="insights-grid fade-in">
+            <article class="insight-card featured">
+                <div class="insight-meta">
+                    <span class="insight-tag" data-ko="안보 분석" data-en="Security Analysis">안보 분석</span>
+                    <span class="insight-date">2025. 06</span>
+                </div>
+                <h3 data-ko="북핵 고도화와 한국의 전략적 억제 선택지" data-en="North Korea's Nuclear Advancement and South Korea's Strategic Deterrence Options">북핵 고도화와 한국의 전략적 억제 선택지</h3>
+                <p data-ko="북한의 전술핵 무기 다양화와 운반 체계 고도화가 가속화되는 가운데, 대한민국의 전략적 억제력 확보를 위한 현실적 선택지를 분석합니다." data-en="As North Korea accelerates diversification of tactical nuclear weapons and improvement of delivery systems, we analyse realistic options for the Republic of Korea to secure strategic deterrence.">북한의 전술핵 무기 다양화와 운반 체계 고도화가 가속화되는 가운데, 대한민국의 전략적 억제력 확보를 위한 현실적 선택지를 분석합니다.</p>
+                <a href="#contact" class="read-more" data-ko="자세히 보기 →" data-en="Read More →">자세히 보기 →</a>
+            </article>
+            <article class="insight-card">
+                <div class="insight-meta">
+                    <span class="insight-tag" data-ko="방산 동향" data-en="Defence Industry">방산 동향</span>
+                    <span class="insight-date">2025. 05</span>
+                </div>
+                <h3 data-ko="K-방산 수출 확대 전략: 동남아·중동 시장 분석" data-en="K-Defence Export Strategy: Southeast Asia & Middle East Market Analysis">K-방산 수출 확대 전략: 동남아·중동 시장 분석</h3>
+                <p data-ko="K9 자주포, K2 전차 등 K-방산의 글로벌 성공을 이어갈 차세대 수출 전략과 신흥 시장 진출 방안을 제시합니다." data-en="We present next-generation export strategies and approaches to entering emerging markets to build on the global success of K-Defence products such as the K9 howitzer and K2 tank.">K9 자주포, K2 전차 등 K-방산의 글로벌 성공을 이어갈 차세대 수출 전략과 신흥 시장 진출 방안을 제시합니다.</p>
+                <a href="#contact" class="read-more" data-ko="자세히 보기 →" data-en="Read More →">자세히 보기 →</a>
+            </article>
+            <article class="insight-card">
+                <div class="insight-meta">
+                    <span class="insight-tag" data-ko="전략 연구" data-en="Strategic Research">전략 연구</span>
+                    <span class="insight-date">2025. 04</span>
+                </div>
+                <h3 data-ko="인도·태평양 다자 안보 협력의 새로운 패러다임" data-en="A New Paradigm for Indo-Pacific Multilateral Security Cooperation">인도·태평양 다자 안보 협력의 새로운 패러다임</h3>
+                <p data-ko="QUAD, AUKUS 등 다자 안보 협력 체제의 진화와 대한민국의 전략적 포지셔닝 방향을 논의합니다." data-en="We discuss the evolution of multilateral security cooperation frameworks such as QUAD and AUKUS, and the direction of the Republic of Korea's strategic positioning.">QUAD, AUKUS 등 다자 안보 협력 체제의 진화와 대한민국의 전략적 포지셔닝 방향을 논의합니다.</p>
+                <a href="#contact" class="read-more" data-ko="자세히 보기 →" data-en="Read More →">자세히 보기 →</a>
+            </article>
+        </div>
+    </div>
+</section>
+
+<!-- ===== VISION ===== -->
+<section class="section section-dark" id="vision">
+    <div class="container">
+        <div class="section-header-c fade-in">
+            <div class="label" data-ko="비전 & 가치" data-en="Vision & Values">비전 & 가치</div>
+            <h2 data-ko="우리가 나아가는 방향" data-en="The Direction We Move">우리가 나아가는 방향</h2>
+        </div>
+        <div class="vision-grid fade-in">
+            <div class="vision-card">
+                <div class="vision-num">01</div>
+                <h3 data-ko="비전" data-en="Vision">비전</h3>
+                <p data-ko="대한민국과 동맹국의 안보 역량을 강화하고, 방산 산업의 글로벌 경쟁력을 높이는 인도·태평양 최고의 국방·안보 전략 파트너." data-en="The premier defence and security strategic partner in the Indo-Pacific, strengthening the security capabilities of the Republic of Korea and allied nations and enhancing the global competitiveness of the defence industry.">대한민국과 동맹국의 안보 역량을 강화하고, 방산 산업의 글로벌 경쟁력을 높이는 인도·태평양 최고의 국방·안보 전략 파트너.</p>
+            </div>
+            <div class="vision-card">
+                <div class="vision-num">02</div>
+                <h3 data-ko="미션" data-en="Mission">미션</h3>
+                <p data-ko="최고위급 실전 경험에서 비롯된 정밀한 분석과 실행 가능한 전략으로, 클라이언트가 복잡한 안보 환경에서 결정적 우위를 점하도록 지원한다." data-en="To support clients in gaining decisive advantage in complex security environments through precise analysis and actionable strategies derived from the highest levels of operational experience.">최고위급 실전 경험에서 비롯된 정밀한 분석과 실행 가능한 전략으로, 클라이언트가 복잡한 안보 환경에서 결정적 우위를 점하도록 지원한다.</p>
+            </div>
+            <div class="vision-card">
+                <div class="vision-num">03</div>
+                <h3 data-ko="핵심 가치" data-en="Core Values">핵심 가치</h3>
+                <ul class="value-list">
+                    <li data-ko="신뢰 (Trust) — 모든 정보는 최고 수준의 기밀로 보호합니다." data-en="Trust — All information is protected with the highest level of confidentiality.">신뢰 (Trust) — 모든 정보는 최고 수준의 기밀로 보호합니다.</li>
+                    <li data-ko="정밀 (Precision) — 데이터와 실전 경험에 근거한 분석만 제공합니다." data-en="Precision — We provide only analysis grounded in data and operational experience.">정밀 (Precision) — 데이터와 실전 경험에 근거한 분석만 제공합니다.</li>
+                    <li data-ko="실행 (Execution) — 전략은 실행될 때 비로소 가치를 갖습니다." data-en="Execution — Strategy only has value when it is implemented.">실행 (Execution) — 전략은 실행될 때 비로소 가치를 갖습니다.</li>
+                    <li data-ko="탁월성 (Excellence) — 최고의 기준을 추구하며 타협하지 않습니다." data-en="Excellence — We pursue the highest standards without compromise.">탁월성 (Excellence) — 최고의 기준을 추구하며 타협하지 않습니다.</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ===== CONTACT ===== -->
+<section class="section" id="contact">
+    <div class="container contact-layout">
+        <div class="contact-info fade-in">
+            <div class="label" data-ko="문의하기" data-en="Contact Us">문의하기</div>
+            <h2 data-ko="전략적 파트너십을 시작하세요" data-en="Begin a Strategic Partnership">전략적 파트너십을 시작하세요</h2>
+            <p data-ko="귀 기관의 안보 과제와 전략적 목표를 알려주세요. TIGERDYNE NEXUS가 맞춤형 전략으로 응답합니다." data-en="Share your security challenges and strategic objectives with us. TIGERDYNE NEXUS will respond with a tailored strategy.">귀 기관의 안보 과제와 전략적 목표를 알려주세요.<br>TIGERDYNE NEXUS가 맞춤형 전략으로 응답합니다.</p>
+
+            <div class="contact-leader">
+                <div class="cl-photo">
+                    <img src="kim.jpg" alt="김용우" onerror="this.parentElement.querySelector('.cl-init').style.display='flex'; this.style.display='none';">
+                    <div class="cl-init" style="display:none">金</div>
+                </div>
+                <div class="cl-info">
+                    <strong data-ko="김용우 대표이사" data-en="CEO Kim Yong-woo">김용우 대표이사</strong>
+                    <span data-ko="전 육군참모총장" data-en="Former Chief of Staff, ROK Army">전 육군참모총장</span>
+                </div>
+            </div>
+
+            <div class="contact-details">
+                <div class="cd-row">
+                    <span class="cd-icon">✉</span>
+                    <a href="mailto:ywkim@tigerdynenexus.com" class="cd-link">ywkim@tigerdynenexus.com</a>
+                </div>
+                <div class="cd-row">
+                    <span class="cd-icon">🌐</span>
+                    <a href="https://www.tigerdynenexus.com" class="cd-link">www.tigerdynenexus.com</a>
+                </div>
+                <div class="cd-row">
+                    <span class="cd-icon">⌖</span>
+                    <address data-ko="서울특별시 서초구 반포대로 15길 13 JC빌딩 5층" data-en="JC Building 5F, 13 Banpo-daero 15-gil, Seocho-gu, Seoul, Republic of Korea">서울특별시 서초구 반포대로 15길 13<br>JC빌딩 5층</address>
+                </div>
+            </div>
+            <p class="conf-note" data-ko="🔒 모든 상담 내용은 최고 수준의 기밀로 처리됩니다." data-en="🔒 All consultations are handled with the highest level of confidentiality.">🔒 모든 상담 내용은 최고 수준의 기밀로 처리됩니다.</p>
+        </div>
+
+        <form class="contact-form fade-in" onsubmit="handleSubmit(event)">
+            <div class="form-row">
+                <div class="form-group">
+                    <label data-ko="성명" data-en="Name">성명</label>
+                    <input type="text" required>
+                </div>
+                <div class="form-group">
+                    <label data-ko="소속 기관·기업" data-en="Organisation">소속 기관·기업</label>
+                    <input type="text">
+                </div>
+            </div>
+            <div class="form-group">
+                <label data-ko="이메일" data-en="Email">이메일</label>
+                <input type="email" required>
+            </div>
+            <div class="form-group">
+                <label data-ko="클라이언트 유형" data-en="Client Type">클라이언트 유형</label>
+                <select>
+                    <option data-ko="정부·군 기관" data-en="Government / Military">정부·군 기관</option>
+                    <option data-ko="방산기업" data-en="Defence Company">방산기업</option>
+                    <option data-ko="민간·일반기업" data-en="Private / Commercial">민간·일반기업</option>
+                    <option data-ko="기타" data-en="Other">기타</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label data-ko="문의 내용" data-en="Message">문의 내용</label>
+                <textarea rows="5" required></textarea>
+            </div>
+            <button type="submit" class="btn btn-gold full" data-ko="보안 문의 전송" data-en="Send Secure Enquiry">보안 문의 전송</button>
+            <p class="form-note" data-ko="🔒 모든 문의는 암호화되어 기밀로 처리됩니다." data-en="🔒 All enquiries are encrypted and treated as strictly confidential.">🔒 모든 문의는 암호화되어 기밀로 처리됩니다.</p>
+        </form>
+    </div>
+</section>
+
+<!-- ===== FOOTER ===== -->
+<footer class="footer">
+    <div class="container footer-top">
+        <div class="footer-brand">
+            <a class="logo" href="#hero">
+                <div class="logo-photo-wrap small">
+                    <img src="kim.jpg" alt="김용우" class="logo-photo" onerror="this.parentElement.querySelector('.logo-mark').style.display='flex'; this.style.display='none';">
+                    <span class="logo-mark" style="display:none">T</span>
+                </div>
+                <div class="logo-texts">
+                    <span class="logo-name">TIGERDYNE NEXUS</span>
+                    <span class="logo-tagline" data-ko="국방·안보·방산 컨설팅" data-en="Defence & Security Consulting">국방·안보·방산 컨설팅</span>
+                </div>
+            </a>
+            <p class="footer-desc" data-ko="전 육군참모총장 김용우 대장이 설립한 대한민국 국방·안보·방산 전문 컨설팅 기업." data-en="South Korea's premier defence, security and industry consulting firm, founded by General Kim Yong-woo (Ret.), former Chief of Staff of the Republic of Korea Army.">전 육군참모총장 김용우 대장이 설립한<br>대한민국 국방·안보·방산 전문 컨설팅 기업.</p>
+        </div>
+        <div class="footer-links">
+            <div class="footer-col">
+                <h4 data-ko="서비스" data-en="Services">서비스</h4>
+                <ul>
+                    <li><a href="#govt" data-ko="정부·군 컨설팅" data-en="Government / Military">정부·군 컨설팅</a></li>
+                    <li><a href="#commercial" data-ko="민간·방산 컨설팅" data-en="Private / Commercial">민간·방산 컨설팅</a></li>
+                    <li><a href="#domains" data-ko="5대 도메인" data-en="Five Domains">5대 도메인</a></li>
+                    <li><a href="#insights" data-ko="인사이트" data-en="Insights">인사이트</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4 data-ko="회사" data-en="Company">회사</h4>
+                <ul>
+                    <li><a href="#about" data-ko="회사 소개" data-en="About Us">회사 소개</a></li>
+                    <li><a href="#leadership" data-ko="리더십" data-en="Leadership">리더십</a></li>
+                    <li><a href="#vision" data-ko="비전 & 가치" data-en="Vision & Values">비전 & 가치</a></li>
+                    <li><a href="#contact" data-ko="문의" data-en="Contact">문의</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4 data-ko="연락처" data-en="Contact">연락처</h4>
+                <ul>
+                    <li><a href="mailto:ywkim@tigerdynenexus.com">ywkim@tigerdynenexus.com</a></li>
+                    <li><a href="https://www.tigerdynenexus.com">www.tigerdynenexus.com</a></li>
+                    <li><span data-ko="서울특별시 서초구" data-en="Seocho-gu, Seoul">서울특별시 서초구</span></li>
+                    <li><span data-ko="반포대로 15길 13 JC빌딩 5층" data-en="Banpo-daero 15-gil 13, JC Bldg 5F">반포대로 15길 13 JC빌딩 5층</span></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="footer-bottom">
+        <div class="container footer-bottom-inner">
+            <p data-ko="© 2025 TIGERDYNE NEXUS. All Rights Reserved." data-en="© 2025 TIGERDYNE NEXUS. All Rights Reserved.">© 2025 TIGERDYNE NEXUS. All Rights Reserved.</p>
+            <p data-ko="국방·안보·방산 전문 컨설팅 | tigerdynenexus.com" data-en="Defence · Security · Industry Consulting | tigerdynenexus.com">국방·안보·방산 전문 컨설팅 | tigerdynenexus.com</p>
+        </div>
+    </div>
+</footer>
+
+<div class="toast" id="toast"></div>
+<script src="app.js"></script>
+</body>
+</html>
