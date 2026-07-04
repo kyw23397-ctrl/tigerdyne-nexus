@@ -1,0 +1,5 @@
+deploy-to-github.ps1
+node_modules/
+.DS_Store
+Thumbs.db
+*.log
