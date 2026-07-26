@@ -17,7 +17,15 @@ function applyLang() {
 
     document.querySelectorAll('[data-ko][data-en]').forEach(el => {
         const val = el.getAttribute('data-' + lang);
-        if (val) el.textContent = val;
+        if (!val) return;
+        const caret = el.querySelector('.caret');
+        if (caret) {
+            el.childNodes[0].textContent = val + ' ';
+        } else if (val.includes('<br>')) {
+            el.innerHTML = val;
+        } else {
+            el.textContent = val;
+        }
     });
 
     // select options
