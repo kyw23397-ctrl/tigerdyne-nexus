@@ -12,7 +12,10 @@ function toggleLang() {
 }
 
 function applyLang() {
-    document.getElementById('langBtn').textContent = lang === 'ko' ? 'EN' : '한';
+    const langBtn = document.getElementById('langBtn');
+    langBtn.textContent = lang === 'ko' ? 'EN' : '한';
+    langBtn.setAttribute('aria-pressed', String(lang === 'en'));
+    langBtn.setAttribute('aria-label', lang === 'ko' ? 'Switch language to English' : '한국어로 전환');
     document.documentElement.lang = lang === 'ko' ? 'ko' : 'en';
 
     document.querySelectorAll('[data-ko][data-en]').forEach(el => {
@@ -61,15 +64,64 @@ function initNav() {
 function toggleMenu() {
     const links = document.getElementById('navLinks');
     const ham   = document.getElementById('hamburger');
-    links.classList.toggle('open');
-    ham.classList.toggle('open');
+    const isOpen = links.classList.toggle('open');
+    ham.classList.toggle('open', isOpen);
+    ham.setAttribute('aria-expanded', String(isOpen));
 }
 
 document.querySelectorAll('.nav-links a').forEach(a => {
     a.addEventListener('click', () => {
         document.getElementById('navLinks').classList.remove('open');
-        document.getElementById('hamburger').classList.remove('open');
+        const hamburger = document.getElementById('hamburger');
+        hamburger.classList.remove('open');
+        hamburger.setAttribute('aria-expanded', 'false');
     });
+});
+
+function closeDropdowns(except = null) {
+    document.querySelectorAll('.nav-drop-toggle[aria-expanded="true"]').forEach(button => {
+        if (button === except) return;
+        button.setAttribute('aria-expanded', 'false');
+        button.closest('.has-drop').classList.remove('is-open');
+    });
+}
+
+document.querySelectorAll('.nav-drop-toggle').forEach(button => {
+    button.addEventListener('click', () => {
+        const willOpen = button.getAttribute('aria-expanded') !== 'true';
+        closeDropdowns(button);
+        button.setAttribute('aria-expanded', String(willOpen));
+        button.closest('.has-drop').classList.toggle('is-open', willOpen);
+    });
+    button.addEventListener('keydown', event => {
+        if (event.key === 'ArrowDown') {
+            event.preventDefault();
+            button.setAttribute('aria-expanded', 'true');
+            button.closest('.has-drop').classList.add('is-open');
+            button.closest('.has-drop').querySelector('.dropdown a')?.focus();
+        }
+        if (event.key === 'Escape') {
+            closeDropdowns();
+            button.focus();
+        }
+    });
+});
+
+document.addEventListener('click', event => {
+    if (!event.target.closest('.has-drop')) closeDropdowns();
+});
+
+document.addEventListener('keydown', event => {
+    if (event.key !== 'Escape') return;
+    closeDropdowns();
+    const links = document.getElementById('navLinks');
+    const hamburger = document.getElementById('hamburger');
+    if (links.classList.contains('open')) {
+        links.classList.remove('open');
+        hamburger.classList.remove('open');
+        hamburger.setAttribute('aria-expanded', 'false');
+        hamburger.focus();
+    }
 });
 
 /* ===== FADE-IN OBSERVER ===== */
@@ -93,51 +145,6 @@ function initFadeIn() {
     document.querySelectorAll('.fade-in').forEach(el => obs.observe(el));
 }
 
-/* ===== COUNT-UP ANIMATION ===== */
-function initCountUp() {
-    const nums = document.querySelectorAll('.stat-num');
-    const obs = new IntersectionObserver(entries => {
-        entries.forEach(e => {
-            if (!e.isIntersecting) return;
-            const el = e.target;
-            const em = el.querySelector('em');
-            const suffix = em ? em.textContent : '';
-            const raw = el.textContent.replace(/\D/g, '');
-            const target = parseInt(raw) || 0;
-            if (!target) return;
-            let n = 0;
-            const step = target / 45;
-            const t = setInterval(() => {
-                n = Math.min(n + step, target);
-                el.innerHTML = Math.floor(n) + `<em>${suffix}</em>`;
-                if (n >= target) { el.innerHTML = target + `<em>${suffix}</em>`; clearInterval(t); }
-            }, 28);
-            obs.unobserve(el);
-        });
-    }, { threshold: 0.6 });
-    nums.forEach(n => obs.observe(n));
-}
-
-/* ===== FORM ===== */
-function handleSubmit(e) {
-    e.preventDefault();
-    const btn = e.target.querySelector('[type=submit]');
-    const orig = btn.textContent;
-    btn.textContent = lang === 'ko' ? '전송 중...' : 'Sending...';
-    btn.disabled = true;
-
-    setTimeout(() => {
-        btn.textContent = lang === 'ko' ? '✓ 접수 완료 — 곧 연락드리겠습니다' : '✓ Submitted — We will be in touch shortly';
-        btn.style.background = '#2a6e4a';
-        e.target.reset();
-        setTimeout(() => {
-            btn.textContent = orig;
-            btn.style.background = '';
-            btn.disabled = false;
-        }, 5000);
-    }, 1400);
-}
-
 /* ===== SMOOTH SCROLL OFFSET (for fixed nav) ===== */
 document.querySelectorAll('a[href^="#"]').forEach(a => {
     a.addEventListener('click', function(e) {
@@ -154,7 +161,6 @@ document.addEventListener('DOMContentLoaded', () => {
     applyLang();
     initNav();
     initFadeIn();
-    initCountUp();
 
     // Trigger hero fade-ins immediately
     setTimeout(() => {
