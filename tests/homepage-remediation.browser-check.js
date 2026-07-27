@@ -33,6 +33,14 @@ const url = pathToFileURL(path.resolve(__dirname, '..', 'index.html')).href;
   const mailto = await page.locator('.contact-action a[href^="mailto:"]').count();
   const forms = await page.locator('form').count();
   if (mailto !== 1 || forms !== 0) throw new Error('Contact action does not expose exactly one truthful mailto path.');
+  await page.locator('#contact').scrollIntoViewIfNeeded();
+  if ((await page.locator('#copyEmailButton').textContent()).trim() !== 'Copy email address') {
+    throw new Error('English language toggle did not update the email-copy label.');
+  }
+  await page.locator('#copyEmailButton').click();
+  await page.waitForFunction(() => document.querySelector('#copyEmailStatus').textContent.trim().length > 0);
+  const copyFeedback = (await page.locator('#copyEmailStatus').textContent()).trim();
+  if (!copyFeedback) throw new Error('Email copy fallback did not provide visual feedback.');
   await page.locator('#leadership').scrollIntoViewIfNeeded();
   await page.waitForTimeout(500);
   await page.screenshot({ path: path.resolve(__dirname, '..', 'tests', 'homepage-remediation-leadership.png') });

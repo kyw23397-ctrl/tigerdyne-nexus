@@ -10,9 +10,12 @@ const script = fs.readFileSync(path.join(root, 'app.js'), 'utf8');
 
 test('contact path is a truthful mailto action, not a simulated secure submission', () => {
   assert.match(html, /href="mailto:ywkim@tigerdynenexus\.com\?subject=[^"]+&amp;body=/);
+  assert.match(html, /id="copyEmailButton"[^>]*data-copied-ko="복사됨"/);
   assert.doesNotMatch(html, /ykw@tigerdynenexus\.com/);
   assert.doesNotMatch(html, /<form\b|onsubmit=|Send Secure Enquiry|encrypted/i);
   assert.doesNotMatch(script, /function handleSubmit|Submitted|Sending\.\.\./);
+  assert.match(script, /navigator\.clipboard\?\.writeText/);
+  assert.match(script, /function initContactEmailCopy/);
 });
 
 test('hero title preserves Korean word units and carousel has accessible controls', () => {

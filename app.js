@@ -202,6 +202,53 @@ function initHeroCarousel() {
     startAutoplay();
 }
 
+/* ===== CONTACT EMAIL COPY FALLBACK ===== */
+function initContactEmailCopy() {
+    const button = document.getElementById('copyEmailButton');
+    const status = document.getElementById('copyEmailStatus');
+    const email = 'ywkim@tigerdynenexus.com';
+    if (!button || !status) return;
+
+    button.addEventListener('click', async () => {
+        let copied = false;
+
+        try {
+            if (navigator.clipboard?.writeText) {
+                await navigator.clipboard.writeText(email);
+                copied = true;
+            }
+        } catch (_) {
+            // File previews and privacy-restricted browsers may deny Clipboard API access.
+        }
+
+        if (!copied) {
+            const fallback = document.createElement('textarea');
+            fallback.value = email;
+            fallback.setAttribute('readonly', '');
+            fallback.style.cssText = 'position:fixed;opacity:0;pointer-events:none';
+            document.body.appendChild(fallback);
+            fallback.select();
+            try {
+                copied = document.execCommand('copy');
+            } finally {
+                fallback.remove();
+            }
+        }
+
+        const labelKey = copied ? 'data-copied-' : 'data-failed-';
+        const feedback = button.getAttribute(labelKey + lang) || (copied ? 'Copied' : email);
+        status.textContent = feedback;
+        button.textContent = feedback;
+        button.classList.toggle('is-loading', copied);
+
+        window.setTimeout(() => {
+            button.textContent = button.getAttribute('data-' + lang) || 'Copy email address';
+            button.classList.remove('is-loading');
+            status.textContent = '';
+        }, 1800);
+    });
+}
+
 /* ===== SMOOTH SCROLL OFFSET (for fixed nav) ===== */
 document.querySelectorAll('a[href^="#"]').forEach(a => {
     a.addEventListener('click', function(e) {
@@ -219,6 +266,7 @@ document.addEventListener('DOMContentLoaded', () => {
     initNav();
     initFadeIn();
     initHeroCarousel();
+    initContactEmailCopy();
 
     // Trigger hero fade-ins immediately
     setTimeout(() => {
