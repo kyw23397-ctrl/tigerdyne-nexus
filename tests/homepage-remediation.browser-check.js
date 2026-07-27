@@ -33,6 +33,14 @@ const url = pathToFileURL(path.resolve(__dirname, '..', 'index.html')).href;
   const mailto = await page.locator('.contact-action a[href^="mailto:"]').count();
   const forms = await page.locator('form').count();
   if (mailto !== 1 || forms !== 0) throw new Error('Contact action does not expose exactly one truthful mailto path.');
+  await page.locator('#insights').scrollIntoViewIfNeeded();
+  await page.waitForTimeout(900);
+  const localImages = page.locator('img[src^="assets/images/"]');
+  if (await localImages.count() !== 6) throw new Error('Expected six locally hosted visual assets.');
+  const unloadedImageCount = await localImages.evaluateAll(images => images.filter(image => !image.complete || image.naturalWidth === 0).length);
+  if (unloadedImageCount) throw new Error('A locally hosted visual asset did not render.');
+  await page.screenshot({ path: path.resolve(__dirname, '..', 'tests', 'homepage-remediation-insights.png') });
+  await page.locator('#hero').scrollIntoViewIfNeeded();
   await page.locator('[data-carousel-action="next"]').click();
   if (await page.locator('.hero-carousel-slide.is-active').textContent() !== await page.locator('.hero-carousel-slide').nth(1).textContent()) {
     throw new Error('Carousel next control did not activate the second slide.');

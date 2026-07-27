@@ -25,6 +25,22 @@ test('hero title preserves Korean word units and carousel has accessible control
   assert.match(script, /function initHeroCarousel/);
 });
 
+test('local visual assets are optimized, referenced, and have license provenance', () => {
+  const assets = [
+    'hero-maritime.webp', 'hero-cyber.webp', 'hero-space.webp',
+    'insight-deterrence.webp', 'insight-industry.webp', 'insight-indo-pacific.webp',
+  ];
+  for (const asset of assets) {
+    const assetPath = path.join(root, 'assets', 'images', asset);
+    assert.ok(fs.existsSync(assetPath), `${asset} is missing`);
+    assert.ok(fs.statSync(assetPath).size < 100_000, `${asset} exceeds the performance budget`);
+    assert.match(html, new RegExp(`assets/images/${asset}`));
+  }
+  const credits = fs.readFileSync(path.join(root, 'assets', 'images', 'SOURCES.md'), 'utf8');
+  assert.match(credits, /Pexels License/);
+  assert.equal((html.match(/class="domain-icon"/g) || []).length, 5);
+});
+
 test('founder representation has no missing local image dependency', () => {
   assert.doesNotMatch(html, /kim\.jpg|onerror=/);
   assert.match(html, /leader-photo-fallback/);

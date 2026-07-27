@@ -282,6 +282,11 @@ h3 { font-size: 1.25rem; font-weight: 600; }
     opacity: 0; transform: translateX(12px); pointer-events: none;
     transition: opacity 480ms var(--ease), transform 480ms var(--ease);
 }
+.hero-carousel-image {
+    position: absolute; inset: 0; z-index: 0; width: 100%; height: 100%;
+    object-fit: cover; opacity: 0.24; filter: saturate(0.45) contrast(1.08) brightness(0.58);
+}
+.hero-carousel-slide > :not(.hero-carousel-image) { position: relative; z-index: 1; }
 .hero-carousel-slide:nth-child(2) { background: radial-gradient(circle at 85% 18%, rgba(196,154,60,0.17), transparent 37%); }
 .hero-carousel-slide:nth-child(3) { background: radial-gradient(circle at 15% 82%, rgba(44,82,114,0.55), transparent 44%); }
 .hero-carousel-slide.is-active { opacity: 1; transform: none; pointer-events: auto; }
@@ -683,6 +688,10 @@ h3 { font-size: 1.25rem; font-weight: 600; }
     .hero-carousel-viewport { min-height: 180px; }
     .hero-carousel-slide { padding: 26px 24px; }
 }
+.insight-thumb { height: 126px; margin: -36px -32px 6px; overflow: hidden; background: var(--navy-4); }
+.insight-thumb img { display: block; width: 100%; height: 100%; object-fit: cover; filter: saturate(0.55) contrast(1.04) brightness(0.75); transition: transform 420ms var(--ease), filter 420ms var(--ease); }
+.insight-card:hover .insight-thumb img { transform: scale(1.035); filter: saturate(0.68) contrast(1.04) brightness(0.82); }
+.insight-card.featured .insight-thumb { margin-bottom: 10px; }
 @media (max-width: 960px) {
     .container { padding: 0 24px; }
     .nav-inner { padding: 0 24px; }
@@ -695,6 +704,7 @@ h3 { font-size: 1.25rem; font-weight: 600; }
     .domains-grid { grid-template-columns: repeat(2,1fr); }
     .insights-grid { grid-template-columns: 1fr 1fr; }
     .insight-card.featured { grid-column: 1/-1; }
+    .insight-card.featured .insight-thumb { height: 180px; }
     .vision-grid { grid-template-columns: 1fr; gap: 20px; }
     .contact-layout { grid-template-columns: 1fr; gap: 52px; }
     .footer-top { grid-template-columns: 1fr; gap: 48px; }
@@ -711,6 +721,7 @@ h3 { font-size: 1.25rem; font-weight: 600; }
     .services-grid-3 { grid-template-columns: 1fr; }
     .domains-grid { grid-template-columns: repeat(2,1fr); }
     .insights-grid { grid-template-columns: 1fr; }
+    .insight-thumb { height: 148px; }
     .hero-paths { flex-direction: column; }
     .hero-content { max-width: none; padding-top: 100px; padding-bottom: 72px; }
     .hero-title { font-size: clamp(2.25rem, 11vw, 3.2rem); }
