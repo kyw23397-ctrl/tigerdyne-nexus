@@ -192,7 +192,11 @@
         <div class="leader-layout fade-in">
             <div class="leader-photo-col">
                 <div class="leader-photo-frame">
-                    <div class="leader-photo-fallback" id="photoFallback" aria-hidden="true">
+                    <picture>
+                        <source srcset="assets/images/kim-yongwoo.webp" type="image/webp">
+                        <img src="assets/images/kim-yongwoo.jpg" alt="김용우 대표" class="leader-photo" width="472" height="591" loading="lazy" decoding="async" onerror="this.closest('picture').remove(); const fallback=document.getElementById('photoFallback'); fallback.hidden=false; fallback.removeAttribute('aria-hidden');">
+                    </picture>
+                    <div class="leader-photo-fallback" id="photoFallback" hidden aria-hidden="true" role="img" aria-label="김용우 대표 이니셜">
                         <span class="fallback-initial">金</span>
                     </div>
                 </div>

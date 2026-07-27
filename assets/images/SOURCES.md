@@ -5,6 +5,10 @@ listed Pexels images. Pexels states that its photos may be used and modified for
 commercial purposes without attribution; credit is retained here for provenance.
 License reviewed: 2026-07-27.
 
+`kim-yongwoo.jpg` was supplied directly by the site owner on 2026-07-27. Its WebP
+derivative (`kim-yongwoo.webp`) is used as the preferred browser source; the JPG remains
+as an in-repository fallback for browsers without WebP support.
+
 | Local file | Source / creator | Pexels source URL | License |
 | --- | --- | --- | --- |
 | `hero-maritime.webp` | Navy ship at night / Emma Guliani | https://www.pexels.com/photo/navy-ship-sailing-on-the-sea-under-night-sky-12416536/ | Pexels License |

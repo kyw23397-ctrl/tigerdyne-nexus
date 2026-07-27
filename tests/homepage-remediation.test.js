@@ -29,6 +29,7 @@ test('local visual assets are optimized, referenced, and have license provenance
   const assets = [
     'hero-maritime.webp', 'hero-cyber.webp', 'hero-space.webp',
     'insight-deterrence.webp', 'insight-industry.webp', 'insight-indo-pacific.webp',
+    'kim-yongwoo.webp',
   ];
   for (const asset of assets) {
     const assetPath = path.join(root, 'assets', 'images', asset);
@@ -41,9 +42,13 @@ test('local visual assets are optimized, referenced, and have license provenance
   assert.equal((html.match(/class="domain-icon"/g) || []).length, 5);
 });
 
-test('founder representation has no missing local image dependency', () => {
-  assert.doesNotMatch(html, /kim\.jpg|onerror=/);
-  assert.match(html, /leader-photo-fallback/);
+test('founder representation uses an optimized portrait with a truthful fallback', () => {
+  assert.match(html, /srcset="assets\/images\/kim-yongwoo\.webp"/);
+  assert.match(html, /src="assets\/images\/kim-yongwoo\.jpg"/);
+  assert.match(html, /class="leader-photo"[^>]*loading="lazy"/);
+  assert.match(html, /onerror="this\.closest\('picture'\)\.remove\(\)/);
+  assert.match(html, /leader-photo-fallback" id="photoFallback" hidden/);
+  assert.ok(fs.statSync(path.join(root, 'assets', 'images', 'kim-yongwoo.webp')).size < 100_000);
   assert.match(html, /cl-init/);
 });
 
