@@ -491,15 +491,34 @@
         </div>
 
         <div class="contact-action fade-in">
-            <h3 data-ko="이메일로 문의하기" data-en="Contact by email">이메일로 문의하기</h3>
-            <p data-ko="문의 버튼을 누르면 기본 이메일 프로그램이 열립니다. 민감하거나 기밀인 정보는 이메일로 보내지 마십시오." data-en="The enquiry button opens your default email application. Please do not send sensitive or classified information by email.">문의 버튼을 누르면 기본 이메일 프로그램이 열립니다. 민감하거나 기밀인 정보는 이메일로 보내지 마십시오.</p>
-            <div class="contact-action-buttons">
-                <a href="mailto:ywkim@tigerdynenexus.com?subject=Strategic%20Advisory%20Enquiry%20-%20TIGERDYNE%20NEXUS&amp;body=Please%20describe%20your%20organisation%2C%20objective%2C%20and%20preferred%20contact%20details.%0D%0A%0D%0APlease%20do%20not%20include%20sensitive%20or%20classified%20information." class="btn btn-gold full" data-ko="이메일 문의 시작" data-en="Start email enquiry">이메일 문의 시작</a>
-                <button type="button" class="btn btn-copy-email" id="copyEmailButton" data-ko="이메일 주소 복사" data-en="Copy email address" data-copied-ko="복사됨" data-copied-en="Copied" data-failed-ko="주소를 선택해 복사하세요" data-failed-en="Select and copy the address" aria-describedby="copyEmailStatus">이메일 주소 복사</button>
-            </div>
-            <p class="copy-email-address">ywkim@tigerdynenexus.com</p>
-            <p class="copy-email-status" id="copyEmailStatus" role="status" aria-live="polite"></p>
-            <p class="form-note" data-ko="이 웹사이트에는 문의 내용을 저장하거나 전송하는 서버가 없습니다." data-en="This website does not store or transmit enquiries through a server.">이 웹사이트에는 문의 내용을 저장하거나 전송하는 서버가 없습니다.</p>
+            <h3 data-ko="문의 양식" data-en="Enquiry Form">문의 양식</h3>
+            <form class="contact-form" id="contactForm" action="https://formspree.io/f/mbdnqbgb" method="POST">
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="cf-name" data-ko="이름" data-en="Name">이름</label>
+                        <input type="text" id="cf-name" name="name" required autocomplete="name">
+                    </div>
+                    <div class="form-group">
+                        <label for="cf-org" data-ko="기관/회사" data-en="Organisation">기관/회사</label>
+                        <input type="text" id="cf-org" name="organisation" autocomplete="organization">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="cf-email" data-ko="이메일" data-en="Email">이메일</label>
+                    <input type="email" id="cf-email" name="email" required autocomplete="email">
+                </div>
+                <div class="form-group">
+                    <label for="cf-message" data-ko="문의 내용" data-en="Message">문의 내용</label>
+                    <textarea id="cf-message" name="message" rows="5" required></textarea>
+                </div>
+                <input type="hidden" name="_subject" value="TIGERDYNE NEXUS Website Enquiry">
+                <p class="hp-field" aria-hidden="true">
+                    <label>Leave this field empty: <input type="text" name="_gotcha" tabindex="-1" autocomplete="off"></label>
+                </p>
+                <button type="submit" class="btn btn-gold full" id="contactFormSubmit" data-ko="문의 보내기" data-en="Send Enquiry">문의 보내기</button>
+                <p class="form-status" id="contactFormStatus" role="status" aria-live="polite"></p>
+            </form>
+            <p class="form-note" data-ko="민감하거나 기밀인 정보는 포함하지 마십시오." data-en="Please do not include sensitive or classified information.">민감하거나 기밀인 정보는 포함하지 마십시오.</p>
         </div>
     </div>
 </section>

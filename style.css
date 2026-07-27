@@ -613,12 +613,6 @@ h3 { font-size: 1.25rem; font-weight: 600; }
 .contact-action { display: flex; flex-direction: column; gap: 18px; align-self: center; max-width: 460px; }
 .contact-action h3 { font-size: 1.25rem; color: var(--navy); }
 .contact-action > p:not(.form-note) { color: var(--text-mid); line-height: 1.8; }
-.contact-action-buttons { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
-.contact-action-buttons .btn { width: 100%; text-align: center; }
-.btn-copy-email { background: #f4ede0; border: 1px solid #d6c29c; color: var(--navy); }
-.btn-copy-email:hover { background: #eadbbf; border-color: var(--gold); }
-.copy-email-address { margin: -8px 0 0; color: var(--text-mid); font-size: 0.8rem; text-align: center; }
-.copy-email-status { min-height: 1.2em; margin: -12px 0 0; color: #8a6219; font-size: 0.75rem; font-weight: 700; text-align: center; }
 .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; }
 .form-group { display: flex; flex-direction: column; gap: 7px; }
 .form-group label {
@@ -638,6 +632,11 @@ h3 { font-size: 1.25rem; font-weight: 600; }
 }
 .form-group textarea { resize: vertical; min-height: 130px; }
 .form-note { font-size: 0.72rem; color: var(--text-lt); text-align: center; }
+.contact-form { display: flex; flex-direction: column; gap: 18px; }
+.hp-field { position: absolute; left: -9999px; width: 1px; height: 1px; overflow: hidden; }
+.form-status { min-height: 1.2em; margin: -6px 0 0; font-size: 0.8rem; font-weight: 600; text-align: center; }
+.form-status-success { color: #2f6d3e; }
+.form-status-error { color: #a33b2e; }
 
 /* ===== BUTTONS ===== */
 .btn {

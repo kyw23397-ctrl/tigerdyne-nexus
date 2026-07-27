@@ -202,50 +202,41 @@ function initHeroCarousel() {
     startAutoplay();
 }
 
-/* ===== CONTACT EMAIL COPY FALLBACK ===== */
-function initContactEmailCopy() {
-    const button = document.getElementById('copyEmailButton');
-    const status = document.getElementById('copyEmailStatus');
-    const email = 'ywkim@tigerdynenexus.com';
-    if (!button || !status) return;
+/* ===== CONTACT FORM (Formspree) ===== */
+function initContactForm() {
+    const form = document.getElementById('contactForm');
+    if (!form) return;
+    const status = document.getElementById('contactFormStatus');
+    const submitBtn = document.getElementById('contactFormSubmit');
 
-    button.addEventListener('click', async () => {
-        let copied = false;
+    form.addEventListener('submit', async event => {
+        event.preventDefault();
+        submitBtn.disabled = true;
+        submitBtn.classList.add('is-loading');
+        status.className = 'form-status';
+        status.textContent = lang === 'ko' ? '전송 중...' : 'Sending...';
 
         try {
-            if (navigator.clipboard?.writeText) {
-                await navigator.clipboard.writeText(email);
-                copied = true;
-            }
+            const response = await fetch(form.action, {
+                method: 'POST',
+                body: new FormData(form),
+                headers: { 'Accept': 'application/json' }
+            });
+            if (!response.ok) throw new Error('submit failed: ' + response.status);
+            form.reset();
+            status.className = 'form-status form-status-success';
+            status.textContent = lang === 'ko'
+                ? '문의가 정상적으로 접수되었습니다. 빠른 시일 내 연락드리겠습니다.'
+                : 'Your enquiry has been received. We will respond as soon as possible.';
         } catch (_) {
-            // File previews and privacy-restricted browsers may deny Clipboard API access.
+            status.className = 'form-status form-status-error';
+            status.textContent = lang === 'ko'
+                ? '전송에 실패했습니다. ywkim@tigerdynenexus.com으로 직접 메일 부탁드립니다.'
+                : 'Submission failed. Please email ywkim@tigerdynenexus.com directly.';
+        } finally {
+            submitBtn.disabled = false;
+            submitBtn.classList.remove('is-loading');
         }
-
-        if (!copied) {
-            const fallback = document.createElement('textarea');
-            fallback.value = email;
-            fallback.setAttribute('readonly', '');
-            fallback.style.cssText = 'position:fixed;opacity:0;pointer-events:none';
-            document.body.appendChild(fallback);
-            fallback.select();
-            try {
-                copied = document.execCommand('copy');
-            } finally {
-                fallback.remove();
-            }
-        }
-
-        const labelKey = copied ? 'data-copied-' : 'data-failed-';
-        const feedback = button.getAttribute(labelKey + lang) || (copied ? 'Copied' : email);
-        status.textContent = feedback;
-        button.textContent = feedback;
-        button.classList.toggle('is-loading', copied);
-
-        window.setTimeout(() => {
-            button.textContent = button.getAttribute('data-' + lang) || 'Copy email address';
-            button.classList.remove('is-loading');
-            status.textContent = '';
-        }, 1800);
     });
 }
 
@@ -266,7 +257,7 @@ document.addEventListener('DOMContentLoaded', () => {
     initNav();
     initFadeIn();
     initHeroCarousel();
-    initContactEmailCopy();
+    initContactForm();
 
     // Trigger hero fade-ins immediately
     setTimeout(() => {
