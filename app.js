@@ -145,6 +145,63 @@ function initFadeIn() {
     document.querySelectorAll('.fade-in').forEach(el => obs.observe(el));
 }
 
+/* ===== HERO CAROUSEL ===== */
+function initHeroCarousel() {
+    const carousel = document.querySelector('.hero-carousel');
+    if (!carousel) return;
+
+    const slides = Array.from(carousel.querySelectorAll('.hero-carousel-slide'));
+    const dots = Array.from(carousel.querySelectorAll('.hero-carousel-dot'));
+    const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
+    let current = 0;
+    let timer;
+
+    function showSlide(index) {
+        current = (index + slides.length) % slides.length;
+        slides.forEach((slide, slideIndex) => {
+            const active = slideIndex === current;
+            slide.classList.toggle('is-active', active);
+            slide.setAttribute('aria-hidden', String(!active));
+        });
+        dots.forEach((dot, dotIndex) => {
+            const active = dotIndex === current;
+            dot.classList.toggle('is-active', active);
+            dot.setAttribute('aria-selected', String(active));
+        });
+    }
+
+    function stopAutoplay() {
+        window.clearInterval(timer);
+        timer = undefined;
+    }
+
+    function startAutoplay() {
+        stopAutoplay();
+        if (!reducedMotion.matches) timer = window.setInterval(() => showSlide(current + 1), 5500);
+    }
+
+    carousel.querySelector('[data-carousel-action="previous"]').addEventListener('click', () => {
+        showSlide(current - 1);
+        startAutoplay();
+    });
+    carousel.querySelector('[data-carousel-action="next"]').addEventListener('click', () => {
+        showSlide(current + 1);
+        startAutoplay();
+    });
+    dots.forEach((dot, index) => dot.addEventListener('click', () => {
+        showSlide(index);
+        startAutoplay();
+    }));
+    carousel.addEventListener('pointerenter', stopAutoplay);
+    carousel.addEventListener('pointerleave', startAutoplay);
+    carousel.addEventListener('focusin', stopAutoplay);
+    carousel.addEventListener('focusout', event => {
+        if (!carousel.contains(event.relatedTarget)) startAutoplay();
+    });
+    reducedMotion.addEventListener('change', startAutoplay);
+    startAutoplay();
+}
+
 /* ===== SMOOTH SCROLL OFFSET (for fixed nav) ===== */
 document.querySelectorAll('a[href^="#"]').forEach(a => {
     a.addEventListener('click', function(e) {
@@ -161,6 +218,7 @@ document.addEventListener('DOMContentLoaded', () => {
     applyLang();
     initNav();
     initFadeIn();
+    initHeroCarousel();
 
     // Trigger hero fade-ins immediately
     setTimeout(() => {
