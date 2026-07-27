@@ -33,14 +33,27 @@ const url = pathToFileURL(path.resolve(__dirname, '..', 'index.html')).href;
   const mailto = await page.locator('.contact-action a[href^="mailto:"]').count();
   const forms = await page.locator('form').count();
   if (mailto !== 1 || forms !== 0) throw new Error('Contact action does not expose exactly one truthful mailto path.');
+  await page.locator('[data-carousel-action="next"]').click();
+  if (await page.locator('.hero-carousel-slide.is-active').textContent() !== await page.locator('.hero-carousel-slide').nth(1).textContent()) {
+    throw new Error('Carousel next control did not activate the second slide.');
+  }
   await page.screenshot({ path: path.resolve(__dirname, '..', 'tests', 'homepage-remediation-desktop.png') });
 
   await page.setViewportSize({ width: 390, height: 844 });
+  await page.locator('#langBtn').click();
+  const koreanWordLineCount = await page.locator('.hero-title > span').first().evaluate(node => {
+    const text = node.firstChild;
+    const range = document.createRange();
+    range.setStart(text, text.textContent.length - 2);
+    range.setEnd(text, text.textContent.length);
+    return range.getClientRects().length;
+  });
+  if (koreanWordLineCount !== 1) throw new Error('The Korean word 위한 was split across lines.');
+  await page.screenshot({ path: path.resolve(__dirname, '..', 'tests', 'homepage-remediation-mobile.png') });
   await page.locator('#hamburger').click();
   if (await page.locator('#hamburger').getAttribute('aria-expanded') !== 'true') throw new Error('Mobile menu ARIA state did not open.');
   const mobileOverflow = await page.evaluate(() => document.documentElement.scrollWidth > window.innerWidth);
   if (mobileOverflow) throw new Error('Mobile layout has horizontal overflow.');
-  await page.screenshot({ path: path.resolve(__dirname, '..', 'tests', 'homepage-remediation-mobile.png'), fullPage: true });
   if (errors.length) throw new Error(`Browser errors: ${errors.join(' | ')}`);
   console.log('Browser interaction, language, keyboard, and overflow checks passed.');
   } finally {
