@@ -234,7 +234,7 @@ h3 { font-size: 1.25rem; font-weight: 600; }
 .hero-glow.bottom-left { bottom: -200px; left: -200px; width: 500px; height: 500px; background: radial-gradient(circle, rgba(27,46,69,0.6) 0%, transparent 65%); }
 
 .hero-content {
-    position: relative; z-index: 1;
+    position: relative; z-index: 2;
     padding-top: 76px;
     max-width: 960px;
 }
@@ -262,38 +262,35 @@ h3 { font-size: 1.25rem; font-weight: 600; }
 
 /* Image-independent carousel: each slide is a contained navy/gold composition. */
 .hero-carousel {
-    position: relative; z-index: 2;
-    width: min(100%, 360px); min-width: 260px;
-    margin: -22px 0 30px;
+    position: absolute; z-index: 0; inset: 0;
+    width: auto; min-width: 0; margin: 0; overflow: hidden;
 }
 .hero-carousel-viewport {
-    position: relative; min-height: 210px; overflow: hidden;
-    border: 1px solid rgba(196,154,60,0.34);
-    background: linear-gradient(145deg, rgba(20,39,60,0.94), rgba(6,15,25,0.92));
-    box-shadow: 0 24px 54px rgba(0,0,0,0.25);
+    position: absolute; inset: 0; min-height: 100%; overflow: hidden;
+    background: var(--navy);
 }
 .hero-carousel-viewport::before {
-    content: ''; position: absolute; inset: 12px; pointer-events: none;
-    border: 1px solid rgba(196,154,60,0.14);
+    content: ''; position: absolute; inset: 0; z-index: 1; pointer-events: none;
+    background: linear-gradient(90deg, rgba(6,15,25,0.9) 0%, rgba(6,15,25,0.67) 45%, rgba(6,15,25,0.4) 100%);
 }
 .hero-carousel-slide {
-    position: absolute; inset: 0; padding: 34px 32px;
-    display: flex; flex-direction: column; justify-content: flex-end; gap: 10px;
-    opacity: 0; transform: translateX(12px); pointer-events: none;
-    transition: opacity 480ms var(--ease), transform 480ms var(--ease);
+    position: absolute; inset: 0; padding: 0 clamp(24px, 7vw, 120px) 88px;
+    display: flex; flex-direction: column; align-items: flex-end; justify-content: flex-end; gap: 10px;
+    opacity: 0; transform: scale(1.025); pointer-events: none;
+    transition: opacity 700ms var(--ease), transform 900ms var(--ease);
 }
 .hero-carousel-image {
     position: absolute; inset: 0; z-index: 0; width: 100%; height: 100%;
-    object-fit: cover; opacity: 0.24; filter: saturate(0.45) contrast(1.08) brightness(0.58);
+    object-fit: cover; opacity: 1; filter: saturate(0.42) contrast(1.08) brightness(0.52);
 }
 .hero-carousel-slide > :not(.hero-carousel-image) { position: relative; z-index: 1; }
 .hero-carousel-slide:nth-child(2) { background: radial-gradient(circle at 85% 18%, rgba(196,154,60,0.17), transparent 37%); }
 .hero-carousel-slide:nth-child(3) { background: radial-gradient(circle at 15% 82%, rgba(44,82,114,0.55), transparent 44%); }
 .hero-carousel-slide.is-active { opacity: 1; transform: none; pointer-events: auto; }
-.hero-carousel-index { position: absolute; top: 25px; right: 28px; color: rgba(196,154,60,0.46); font: 600 0.72rem 'Inter', sans-serif; letter-spacing: 0.16em; }
+.hero-carousel-index { position: absolute; top: 108px; right: clamp(24px, 7vw, 120px); color: rgba(196,154,60,0.7); font: 600 0.72rem 'Inter', sans-serif; letter-spacing: 0.16em; }
 .hero-carousel-slide p { color: var(--gold); font-size: 0.67rem; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase; }
-.hero-carousel-slide strong { max-width: 230px; color: var(--white); font: 600 clamp(1.35rem, 2vw, 1.8rem)/1.08 'Cormorant Garamond', serif; word-break: keep-all; }
-.hero-carousel-controls { display: flex; align-items: center; justify-content: space-between; padding-top: 13px; }
+.hero-carousel-slide strong { max-width: 300px; color: var(--white); font: 600 clamp(1.35rem, 2vw, 1.8rem)/1.08 'Cormorant Garamond', serif; text-align: right; word-break: keep-all; }
+.hero-carousel-controls { position: absolute; z-index: 3; right: clamp(24px, 7vw, 120px); bottom: 30px; width: 180px; display: flex; align-items: center; justify-content: space-between; }
 .hero-carousel-control, .hero-carousel-dot {
     border: 0; background: transparent; color: var(--gold); cursor: pointer;
 }
@@ -685,9 +682,6 @@ h3 { font-size: 1.25rem; font-weight: 600; }
 @media (max-width: 1100px) {
     .domains-grid { grid-template-columns: repeat(3,1fr); }
     .hero-content { max-width: 720px; }
-    .hero-carousel { width: min(100%, 320px); }
-    .hero-carousel-viewport { min-height: 180px; }
-    .hero-carousel-slide { padding: 26px 24px; }
 }
 .insight-thumb { height: 126px; margin: -36px -32px 6px; overflow: hidden; background: var(--navy-4); }
 .insight-thumb img { display: block; width: 100%; height: 100%; object-fit: cover; filter: saturate(0.55) contrast(1.04) brightness(0.75); transition: transform 420ms var(--ease), filter 420ms var(--ease); }
@@ -724,10 +718,12 @@ h3 { font-size: 1.25rem; font-weight: 600; }
     .insights-grid { grid-template-columns: 1fr; }
     .insight-thumb { height: 148px; }
     .hero-paths { flex-direction: column; }
-    .hero-content { max-width: none; padding-top: 100px; padding-bottom: 72px; }
+    .hero-content { max-width: none; padding-top: 100px; padding-bottom: 148px; }
     .hero-title { font-size: clamp(2.25rem, 11vw, 3.2rem); }
-    .hero-carousel { width: 100%; min-width: 0; margin: 30px 0; }
-    .hero-carousel-viewport { min-height: 174px; }
+    .hero-carousel-slide { padding: 0 24px 78px; align-items: flex-start; }
+    .hero-carousel-slide strong { max-width: 220px; text-align: left; }
+    .hero-carousel-index { top: 96px; right: 24px; }
+    .hero-carousel-controls { left: 24px; right: auto; bottom: 28px; }
     .path-btn { min-width: auto; }
     .section { padding: 72px 0; }
     .form-row { grid-template-columns: 1fr; }

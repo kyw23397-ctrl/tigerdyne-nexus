@@ -9,8 +9,8 @@ const css = fs.readFileSync(path.join(root, 'style.css'), 'utf8');
 const script = fs.readFileSync(path.join(root, 'app.js'), 'utf8');
 
 test('contact path is a truthful mailto action, not a simulated secure submission', () => {
-  assert.match(html, /href="mailto:ykw@tigerdynenexus\.com"/);
-  assert.doesNotMatch(html, /ywkim@tigerdynenexus\.com/);
+  assert.match(html, /href="mailto:ywkim@tigerdynenexus\.com\?subject=[^"]+&amp;body=/);
+  assert.doesNotMatch(html, /ykw@tigerdynenexus\.com/);
   assert.doesNotMatch(html, /<form\b|onsubmit=|Send Secure Enquiry|encrypted/i);
   assert.doesNotMatch(script, /function handleSubmit|Submitted|Sending\.\.\./);
 });
@@ -23,6 +23,8 @@ test('hero title preserves Korean word units and carousel has accessible control
   assert.match(html, /data-carousel-action="next"/);
   assert.match(script, /prefers-reduced-motion/);
   assert.match(script, /function initHeroCarousel/);
+  assert.match(css, /\.hero-carousel\s*\{[^}]*position:\s*absolute[^}]*inset:\s*0/s);
+  assert.match(css, /\.hero-carousel-image\s*\{[^}]*object-fit:\s*cover/s);
 });
 
 test('local visual assets are optimized, referenced, and have license provenance', () => {
