@@ -598,7 +598,7 @@ h3 { font-size: 1.25rem; font-weight: 600; }
 .contact-action h3 { font-size: 1.25rem; color: var(--navy); }
 .contact-action > p:not(.form-note) { color: var(--text-mid); line-height: 1.8; }
 .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; }
-.form-group { display: flex; flex-direction: column; gap: 7px; }
+.form-group { display: flex; flex-direction: column; gap: 7px; min-width: 0; }
 .form-group label {
     font-size: 0.68rem; font-weight: 700; letter-spacing: 0.12em;
     text-transform: uppercase; color: var(--text-lt);
