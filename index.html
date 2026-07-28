@@ -482,7 +482,11 @@
 
         <div class="contact-action fade-in">
             <h3 data-ko="문의 양식" data-en="Enquiry Form">문의 양식</h3>
-            <form class="contact-form" id="contactForm" action="https://formspree.io/f/mbdnqbgb" method="POST">
+            <form class="contact-form" id="contactForm" name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field">
+                <input type="hidden" name="form-name" value="contact">
+                <p class="hp-field" aria-hidden="true">
+                    <label>Leave this field empty: <input type="text" name="bot-field" tabindex="-1" autocomplete="off"></label>
+                </p>
                 <div class="form-row">
                     <div class="form-group">
                         <label for="cf-name" data-ko="이름" data-en="Name">이름</label>
@@ -501,10 +505,6 @@
                     <label for="cf-message" data-ko="문의 내용" data-en="Message">문의 내용</label>
                     <textarea id="cf-message" name="message" rows="5" required></textarea>
                 </div>
-                <input type="hidden" name="_subject" value="TIGERDYNE NEXUS Website Enquiry">
-                <p class="hp-field" aria-hidden="true">
-                    <label>Leave this field empty: <input type="text" name="_gotcha" tabindex="-1" autocomplete="off"></label>
-                </p>
                 <button type="submit" class="btn btn-gold full" id="contactFormSubmit" data-ko="문의 보내기" data-en="Send Enquiry">문의 보내기</button>
                 <p class="form-status" id="contactFormStatus" role="status" aria-live="polite"></p>
             </form>
