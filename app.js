@@ -202,7 +202,7 @@ function initHeroCarousel() {
     startAutoplay();
 }
 
-/* ===== CONTACT FORM (Formspree) ===== */
+/* ===== CONTACT FORM (Netlify Forms) ===== */
 function initContactForm() {
     const form = document.getElementById('contactForm');
     if (!form) return;
@@ -216,11 +216,17 @@ function initContactForm() {
         status.className = 'form-status';
         status.textContent = lang === 'ko' ? '전송 중...' : 'Sending...';
 
+        const formData = new FormData(form);
+        const encoded = [];
+        formData.forEach((value, key) => {
+            encoded.push(encodeURIComponent(key) + '=' + encodeURIComponent(value));
+        });
+
         try {
-            const response = await fetch(form.action, {
+            const response = await fetch('/', {
                 method: 'POST',
-                body: new FormData(form),
-                headers: { 'Accept': 'application/json' }
+                headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+                body: encoded.join('&')
             });
             if (!response.ok) throw new Error('submit failed: ' + response.status);
             form.reset();
