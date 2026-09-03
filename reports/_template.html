@@ -44,6 +44,13 @@
   </div>
 </header>
 
+<!--
+  이중언어(KO/EN) 안내: 아래 .i18n-ko 블록에 한국어 기사를 완성한 뒤, 반드시 .i18n-en
+  블록에도 동일 구조의 완전한 영문 번역을 채워 넣으세요. 실제 예시는
+  reports/2026-09-03.html 참고. <a href> 링크는 두 언어 버전 모두 동일한 URL을
+  그대로 재사용합니다(번역하지 않음).
+-->
+<div class="i18n-ko">
 <article class="article-detail">
   <span class="tag">정기 보고서</span>
   <h1>[YYYY-MM-DD] [제목]</h1>
@@ -77,6 +84,43 @@
     </ul>
   </div>
 </article>
+</div>
+
+<div class="i18n-en" hidden>
+<article class="article-detail">
+  <span class="tag">Daily Report</span>
+  <h1>[YYYY-MM-DD] [Title]</h1>
+  <div class="meta">TIGERDYNE NEXUS Automated Research · [YYYY-MM-DD]</div>
+
+  <div class="doc-actions">
+    <button type="button" class="btn-gdocs" onclick="window.print()">Download (Save as PDF)</button>
+    <span class="doc-actions-note">※ Clicking this opens your browser's print dialog — choose "Save as PDF" as the destination to save a file.</span>
+  </div>
+
+  <div class="key-judgments">
+    <h2>Key Judgments</h2>
+    <ul>
+      <li><span class="confidence-tag confidence-high">Confidence: High</span> [Judgment 1]</li>
+    </ul>
+  </div>
+
+  <div class="body">
+    <h2>War</h2>
+    <div class="item-block">
+      <p class="item-fact">[Fact] [narrative with source links — reuse the exact same URLs as the Korean version]</p>
+      <p class="item-assessment"><span class="confidence-tag confidence-high">Confidence: High</span> [Assessment]</p>
+      <p class="item-altview"><strong>[Alternative View]</strong> [Alternative interpretation]</p>
+    </div>
+  </div>
+
+  <div class="sources">
+    <h3>Sources (all manifest-cross-verified original links)</h3>
+    <ul>
+      <li><a href="[URL]" target="_blank" rel="noopener">[Source — Article title]</a> <span class="source-tier">Primary</span></li>
+    </ul>
+  </div>
+</article>
+</div>
 
 <footer class="sub-footer">
   <div class="container">
