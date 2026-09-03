@@ -13,10 +13,18 @@ function toggleLang() {
 
 function applyLang() {
     const langBtn = document.getElementById('langBtn');
-    langBtn.textContent = lang === 'ko' ? 'EN' : '한';
-    langBtn.setAttribute('aria-pressed', String(lang === 'en'));
-    langBtn.setAttribute('aria-label', lang === 'ko' ? 'Switch language to English' : '한국어로 전환');
+    if (langBtn) {
+        langBtn.textContent = lang === 'ko' ? 'EN' : '한';
+        langBtn.setAttribute('aria-pressed', String(lang === 'en'));
+        langBtn.setAttribute('aria-label', lang === 'ko' ? 'Switch language to English' : '한국어로 전환');
+    }
     document.documentElement.lang = lang === 'ko' ? 'ko' : 'en';
+
+    // Bilingual article content (reports/insights/deepdive): whole-block KO/EN toggle,
+    // separate from the short-string data-ko/data-en swap above (article prose has
+    // embedded links/markup that a textContent swap would destroy).
+    document.querySelectorAll('.i18n-ko').forEach((el) => { el.hidden = lang === 'en' })
+    document.querySelectorAll('.i18n-en').forEach((el) => { el.hidden = lang === 'ko' })
 
     document.querySelectorAll('[data-ko][data-en]').forEach(el => {
         const val = el.getAttribute('data-' + lang);
