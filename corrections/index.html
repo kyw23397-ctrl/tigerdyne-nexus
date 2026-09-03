@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>정정 보고 — TIGERDYNE NEXUS</title>
+<meta name="description" content="TIGERDYNE NEXUS 보고서·주간 종합의 오류 정정 이력.">
+<link rel="canonical" href="https://www.tigerdynenexus.com/corrections/index.html">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="TIGERDYNE NEXUS">
+<meta property="og:title" content="정정 보고 — TIGERDYNE NEXUS">
+<meta property="og:description" content="TIGERDYNE NEXUS 보고서·주간 종합의 오류 정정 이력.">
+<meta property="og:url" content="https://www.tigerdynenexus.com/corrections/index.html">
+<meta property="og:locale" content="ko_KR">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../style.css">
+<link rel="stylesheet" href="../subpage.css">
+</head>
+<body>
+
+<header class="sub-header">
+  <div class="nav-inner">
+    <a class="logo" href="../index.html">
+      <div class="logo-photo-wrap" aria-hidden="true"><span class="logo-mark">T</span></div>
+      <div class="logo-texts">
+        <span class="logo-name">TIGERDYNE NEXUS</span>
+        <span class="logo-tagline">국방·안보·방산 컨설팅</span>
+      </div>
+    </a>
+    <div class="nav-right">
+      <ul class="nav-links" id="navLinks">
+        <li><a href="../index.html">홈</a></li>
+        <li><a href="../reports/index.html">일일보고서</a></li>
+        <li><a href="../insights/index.html">주간 전략 종합</a></li>
+        <li><a href="../deepdive/index.html">깊이보기</a></li>
+        <li><a href="../articles/index.html">기고문</a></li>
+        <li><a href="../writers/index.html">필진</a></li>
+        <li><a href="../index.html#contact">문의</a></li>
+      </ul>
+      <button class="hamburger" id="hamburger" type="button" onclick="toggleMenu()" aria-label="메뉴" aria-expanded="false" aria-controls="navLinks">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+</header>
+
+<section class="sub-hero">
+  <div class="container">
+    <span class="label">Corrections</span>
+    <h1>정정 보고</h1>
+    <p class="lede">
+      TIGERDYNE NEXUS는 보고서에서 오류가 발견되면 조용히 고치지 않고, 이 페이지에 정정 사실을
+      투명하게 남깁니다. 오류가 없다는 것보다, 오류를 어떻게 다루는지가 신뢰의 근거라고
+      생각하기 때문입니다.
+    </p>
+  </div>
+</section>
+
+<section class="sub-section">
+  <div class="container">
+    <span class="label">Log</span>
+    <h2>정정 이력</h2>
+    <div class="empty-state" id="corrections-empty-state">
+      아직 정정된 사항이 없습니다. 오류가 발견되는 대로 이 자리에 기록됩니다.
+    </div>
+    <ul id="corrections-list" class="corrections-list" hidden>
+      <!-- 형식:
+      <li class="correction-entry">
+        <span class="meta">[정정일] · 원문: <a href="../reports/YYYY-MM-DD.html">YYYY-MM-DD 보고서</a></span>
+        <p><strong>[원래 서술]</strong> → <strong>[정정 내용]</strong>. [정정 사유/근거 및 출처]</p>
+      </li>
+      -->
+    </ul>
+  </div>
+</section>
+
+<footer class="sub-footer">
+  <div class="container">
+    <span>© 2026 TIGERDYNE NEXUS</span>
+    <nav class="sub-footer-nav" aria-label="정책 링크">
+      <a href="../methodology.html">방법론 및 편집 책임</a>
+      <a href="index.html">정정 보고</a>
+      <a href="../trackrecord/index.html">판단 트랙레코드</a>
+    </nav>
+  </div>
+</footer>
+
+<script src="../app.js"></script>
+</body>
+</html>

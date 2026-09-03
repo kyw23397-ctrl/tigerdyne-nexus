@@ -63,7 +63,17 @@
                         <li><a href="#domains" data-ko="우주" data-en="Space">우주 (Space)</a></li>
                     </ul>
                 </li>
-                <li><a href="#insights" data-ko="인사이트" data-en="Insights">인사이트</a></li>
+                <li class="has-drop">
+                    <button type="button" class="nav-drop-toggle" aria-expanded="false" aria-controls="nav-research-menu" data-ko="리서치" data-en="Research">리서치 <span class="caret" aria-hidden="true">›</span></button>
+                    <ul class="dropdown" id="nav-research-menu">
+                        <li><a href="reports/index.html" data-ko="일일보고서" data-en="Daily Reports">일일보고서</a></li>
+                        <li><a href="insights/index.html" data-ko="주간 전략 종합" data-en="Weekly Synthesis">주간 전략 종합</a></li>
+                        <li><a href="deepdive/index.html" data-ko="깊이보기" data-en="Deep Dive">깊이보기</a></li>
+                        <li><a href="articles/index.html" data-ko="기고문" data-en="Articles">기고문</a></li>
+                        <li><a href="writers/index.html" data-ko="필진" data-en="Writers">필진</a></li>
+                    </ul>
+                </li>
+                <li><a href="#insights" data-ko="자문 사례" data-en="Case Studies">자문 사례</a></li>
                 <li><a href="#contact" data-ko="문의" data-en="Contact">문의</a></li>
             </ul>
             <button class="lang-btn" id="langBtn" type="button" onclick="toggleLang()" aria-pressed="false" aria-label="Switch language to English">EN</button>
@@ -384,8 +394,9 @@
     <div class="container">
         <div class="insights-header fade-in">
             <div>
-                <div class="label" data-ko="인사이트" data-en="Insights">인사이트</div>
-                <h2 data-ko="전략 분석 &amp; 최신 동향" data-en="Strategic Analysis &amp; Latest Trends">전략 분석 &amp; 최신 동향</h2>
+                <div class="label" data-ko="자문 사례" data-en="Case Studies">자문 사례</div>
+                <h2 data-ko="대표 자문 사례" data-en="Representative Advisory Cases">대표 자문 사례</h2>
+                <p style="margin-top:8px;color:var(--text-mid);font-size:0.92rem;" data-ko="최신 일일보고서·주간 종합·깊이보기 리서치는 상단 메뉴의 '리서치'에서 확인하실 수 있습니다." data-en="For our latest daily reports, weekly synthesis, and deep-dive research, see 'Research' in the menu above.">최신 일일보고서·주간 종합·깊이보기 리서치는 상단 메뉴의 '리서치'에서 확인하실 수 있습니다.</p>
             </div>
             <a href="mailto:ywkim@tigerdynenexus.com?subject=Briefing%20Request%20-%20TIGERDYNE%20NEXUS&amp;body=Please%20describe%20the%20briefing%20topic%2C%20your%20organisation%2C%20and%20preferred%20contact%20details.%0D%0A%0D%0APlease%20do%20not%20include%20sensitive%20or%20classified%20information." class="btn btn-outline" data-ko="브리핑 문의" data-en="Request a briefing">브리핑 문의</a>
         </div>
@@ -535,7 +546,10 @@
                     <li><a href="#govt" data-ko="정부·군 컨설팅" data-en="Government / Military">정부·군 컨설팅</a></li>
                     <li><a href="#commercial" data-ko="민간·방산 컨설팅" data-en="Private / Commercial">민간·방산 컨설팅</a></li>
                     <li><a href="#domains" data-ko="5대 도메인" data-en="Five Domains">5대 도메인</a></li>
-                    <li><a href="#insights" data-ko="인사이트" data-en="Insights">인사이트</a></li>
+                    <li><a href="#insights" data-ko="자문 사례" data-en="Case Studies">자문 사례</a></li>
+                    <li><a href="reports/index.html" data-ko="일일보고서" data-en="Daily Reports">일일보고서</a></li>
+                    <li><a href="insights/index.html" data-ko="주간 전략 종합" data-en="Weekly Synthesis">주간 전략 종합</a></li>
+                    <li><a href="deepdive/index.html" data-ko="깊이보기" data-en="Deep Dive">깊이보기</a></li>
                 </ul>
             </div>
             <div class="footer-col">

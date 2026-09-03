@@ -1,0 +1,87 @@
+<!--
+  기고문 템플릿 — 시니어 펠로우의 원고를 받으면 이 파일을 복사해서 새 파일명(articles/<슬러그>.html)으로
+  저장 후 내용을 채우세요. 이 파일 자체는 사이트에 링크돼 있지 않습니다(참고용).
+
+  등록 절차:
+  1. 이 파일을 articles/<slug>.html로 복사, 내용 채우기.
+  2. articles/index.html의 #articles-grid에 카드 하나 추가:
+     <a class="article-card" href="<slug>.html">
+       <span class="tag">[분류]</span>
+       <h3>[제목]</h3>
+       <p class="excerpt">[요약 1~2문장]</p>
+       <span class="meta">[YYYY-MM-DD]</span>
+     </a>
+  3. #empty-state div는 기고문이 1개라도 생기면 삭제(또는 CSS로 숨김).
+  4. 필자가 처음이면 writers/index.html에도 writer-card 추가.
+-->
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>[기고문 제목] — TIGERDYNE NEXUS</title>
+<meta name="description" content="[1~2문장 요약]">
+<link rel="stylesheet" href="../style.css">
+<link rel="stylesheet" href="../subpage.css">
+</head>
+<body>
+
+<header class="sub-header">
+  <div class="nav-inner">
+    <a class="logo" href="../index.html">
+      <div class="logo-photo-wrap" aria-hidden="true"><span class="logo-mark">T</span></div>
+      <div class="logo-texts">
+        <span class="logo-name">TIGERDYNE NEXUS</span>
+        <span class="logo-tagline">국방·안보·방산 컨설팅</span>
+      </div>
+    </a>
+    <div class="nav-right">
+      <ul class="nav-links" id="navLinks">
+        <li><a href="../index.html">홈</a></li>
+        <li><a href="../reports/index.html">일일보고서</a></li>
+        <li><a href="../insights/index.html">주간 전략 종합</a></li>
+        <li><a href="../deepdive/index.html">깊이보기</a></li>
+        <li><a href="index.html" class="active">기고문</a></li>
+        <li><a href="../writers/index.html">필진</a></li>
+        <li><a href="../index.html#contact">문의</a></li>
+      </ul>
+      <button class="hamburger" id="hamburger" type="button" onclick="toggleMenu()" aria-label="메뉴" aria-expanded="false" aria-controls="navLinks">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+</header>
+
+<article class="article-detail">
+  <span class="tag">[분류: 예. 국방정책 / 방위산업 / 안보전략]</span>
+  <h1>[기고문 제목]</h1>
+  <div class="meta"><a href="../writers/index.html#[필자 영문 슬러그]" style="color:var(--gold);">[필자명]</a> · [YYYY-MM-DD]</div>
+
+  <div class="body">
+    <p>[본문 첫 문단]</p>
+    <h2>[소제목]</h2>
+    <p>[본문]</p>
+  </div>
+
+  <div class="sources">
+    <h3>참고 자료</h3>
+    <ul>
+      <li><a href="[원문 URL]" target="_blank" rel="noopener">[출처명 — 기사 제목]</a></li>
+    </ul>
+  </div>
+</article>
+
+<footer class="sub-footer">
+  <div class="container">
+    <span>© 2026 TIGERDYNE NEXUS</span>
+    <nav class="sub-footer-nav" aria-label="정책 링크">
+      <a href="../methodology.html">방법론 및 편집 책임</a>
+      <a href="../corrections/index.html">정정 보고</a>
+      <a href="../trackrecord/index.html">판단 트랙레코드</a>
+    </nav>
+  </div>
+</footer>
+
+<script src="../app.js"></script>
+</body>
+</html>

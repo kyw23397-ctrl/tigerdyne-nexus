@@ -1,0 +1,93 @@
+<!--
+  일일 보고서 템플릿 — 새 보고서를 만들 때 이 파일을 복사해 YYYY-MM-DD.html로 저장하고
+  내용을 채우세요. 이 파일 자체는 사이트에 링크돼 있지 않습니다(참고용).
+  7세션 구조: 전쟁/무기체계/방산/군사혁신/오늘의 전쟁사/유럽의 재무장/일본의 군비확장.
+-->
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>[YYYY-MM-DD] 정기 보고서 — TIGERDYNE NEXUS</title>
+<meta name="description" content="[YYYY-MM-DD] 전쟁·방산·무기체계·주요전략 정기 보고서.">
+<link rel="stylesheet" href="../style.css">
+<link rel="stylesheet" href="../subpage.css">
+</head>
+<body>
+
+<!-- REVIEW_STATUS: PASS -->
+
+<header class="sub-header">
+  <div class="nav-inner">
+    <a class="logo" href="../index.html">
+      <div class="logo-photo-wrap" aria-hidden="true"><span class="logo-mark">T</span></div>
+      <div class="logo-texts">
+        <span class="logo-name">TIGERDYNE NEXUS</span>
+        <span class="logo-tagline">국방·안보·방산 컨설팅</span>
+      </div>
+    </a>
+    <div class="nav-right">
+      <ul class="nav-links" id="navLinks">
+        <li><a href="../index.html">홈</a></li>
+        <li><a href="index.html" class="active">일일보고서</a></li>
+        <li><a href="../insights/index.html">주간 전략 종합</a></li>
+        <li><a href="../deepdive/index.html">깊이보기</a></li>
+        <li><a href="../articles/index.html">기고문</a></li>
+        <li><a href="../writers/index.html">필진</a></li>
+        <li><a href="../index.html#contact">문의</a></li>
+      </ul>
+      <button class="hamburger" id="hamburger" type="button" onclick="toggleMenu()" aria-label="메뉴" aria-expanded="false" aria-controls="navLinks">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+</header>
+
+<article class="article-detail">
+  <span class="tag">정기 보고서</span>
+  <h1>[YYYY-MM-DD] [제목]</h1>
+  <div class="meta">TIGERDYNE NEXUS 자동 리서치 · [YYYY-MM-DD]</div>
+
+  <div class="doc-actions">
+    <button type="button" class="btn-gdocs" onclick="window.print()">다운로드 (PDF로 저장)</button>
+    <span class="doc-actions-note">※ 버튼을 누르면 브라우저 인쇄 창이 열립니다 — 대상을 "PDF로 저장"으로 선택하면 파일로 저장됩니다.</span>
+  </div>
+
+  <div class="key-judgments">
+    <h2>핵심 판단 (Key Judgments)</h2>
+    <ul>
+      <li><span class="confidence-tag confidence-high">신뢰수준: 높음</span> [판단 1]</li>
+    </ul>
+  </div>
+
+  <div class="body">
+    <h2>전쟁</h2>
+    <div class="item-block">
+      <p class="item-fact">[사실] [출처 링크 포함 서술]</p>
+      <p class="item-assessment"><span class="confidence-tag confidence-high">신뢰수준: 높음</span> [평가]</p>
+      <p class="item-altview"><strong>[대안적 해석]</strong> [대안 해석]</p>
+    </div>
+  </div>
+
+  <div class="sources">
+    <h3>참고 자료 (매니페스트 교차검증된 원문 딥링크 전체)</h3>
+    <ul>
+      <li><a href="[URL]" target="_blank" rel="noopener">[출처명 — 기사 제목]</a> <span class="source-tier">1차</span></li>
+    </ul>
+  </div>
+</article>
+
+<footer class="sub-footer">
+  <div class="container">
+    <span>© 2026 TIGERDYNE NEXUS</span>
+    <nav class="sub-footer-nav" aria-label="정책 링크">
+      <a href="../methodology.html">방법론 및 편집 책임</a>
+      <a href="../corrections/index.html">정정 보고</a>
+      <a href="../trackrecord/index.html">판단 트랙레코드</a>
+    </nav>
+  </div>
+</footer>
+
+<script src="../app.js"></script>
+</body>
+</html>

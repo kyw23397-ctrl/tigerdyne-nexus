@@ -1,0 +1,134 @@
+<!--
+  깊이보기(Deep Dive) 템플릿 — 특정 주제 심층조사 + 전문가 패널 토의 분석 보고서.
+  이 형식을 복사해 deepdive/YYYY-MM-DD-슬러그.html로 저장합니다.
+  생성 방법: 기존 ~/.claude/skills/imt-deepdive-report/SKILL.md 스킬을 그대로 사용하되,
+  저장 위치만 tigerdyne-nexus/deepdive/로 지정합니다(스킬 자체는 이관 범위 밖 — 그대로 유지).
+
+  구성 원칙:
+  - 모든 사실 문장은 본문 내 하이퍼링크로 출처를 직접 연결(각주 금지).
+  - 항목당 최소 2개, 가급적 3개의 독립 출처로 교차검증된 것만 게재.
+  - "신뢰수준"(높음/중간/낮음)과 "가능성"(거의 확실/가능성 높음/가능성 낮음)을 분리 표기(ICD-203).
+  - 전문가 패널은 최소 3인, 서로 다른 관점으로 구성하고 합의점과 이견을 패널 종합에서 정리.
+  - 완성 후 deepdive/index.html의 #deepdive-grid에 카드를 추가.
+-->
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>[주제] — 깊이보기 — TIGERDYNE NEXUS</title>
+<meta name="description" content="[주제]에 대한 심층조사·전문가 패널 토의 기반 동향·전망 분석.">
+<link rel="stylesheet" href="../style.css">
+<link rel="stylesheet" href="../subpage.css">
+</head>
+<body>
+
+<!-- REVIEW_STATUS: PENDING -->
+
+<header class="sub-header">
+  <div class="nav-inner">
+    <a class="logo" href="../index.html">
+      <div class="logo-photo-wrap" aria-hidden="true"><span class="logo-mark">T</span></div>
+      <div class="logo-texts">
+        <span class="logo-name">TIGERDYNE NEXUS</span>
+        <span class="logo-tagline">국방·안보·방산 컨설팅</span>
+      </div>
+    </a>
+    <div class="nav-right">
+      <ul class="nav-links" id="navLinks">
+        <li><a href="../index.html">홈</a></li>
+        <li><a href="../reports/index.html">일일보고서</a></li>
+        <li><a href="../insights/index.html">주간 전략 종합</a></li>
+        <li><a href="index.html" class="active">깊이보기</a></li>
+        <li><a href="../articles/index.html">기고문</a></li>
+        <li><a href="../writers/index.html">필진</a></li>
+        <li><a href="../index.html#contact">문의</a></li>
+      </ul>
+      <button class="hamburger" id="hamburger" type="button" onclick="toggleMenu()" aria-label="메뉴" aria-expanded="false" aria-controls="navLinks">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+</header>
+
+<article class="article-detail">
+  <span class="tag">깊이보기</span>
+  <h1>[주제 — 방문자가 클릭 전 기대할 내용과 정확히 일치하는 헤드라인]</h1>
+  <div class="meta">TIGERDYNE NEXUS 전문가 패널 · [YYYY-MM-DD]</div>
+
+  <div class="doc-actions">
+    <button type="button" class="btn-gdocs" onclick="window.print()">다운로드 (PDF로 저장)</button>
+    <span class="doc-actions-note">※ 버튼을 누르면 브라우저 인쇄 창이 열립니다 — 대상을 "PDF로 저장"으로 선택하면 파일로 저장됩니다.</span>
+  </div>
+
+  <div class="key-judgments">
+    <h2>핵심 판단 (Key Judgments)</h2>
+    <ul>
+      <li><span class="confidence-tag confidence-high">신뢰수준: 높음</span> [핵심 판단 1]</li>
+    </ul>
+  </div>
+
+  <div class="body">
+    <h2>배경과 조사 범위</h2>
+    <p>[왜 지금 이 주제인지, 조사 범위와 기간]</p>
+
+    <h2>심층조사 — 최신 동향</h2>
+    <div class="item-block">
+      <p class="item-fact">[사실] <a href="[원문 URL]" target="_blank" rel="noopener">[출처명]</a></p>
+      <p class="item-assessment"><span class="confidence-tag confidence-high">신뢰수준: 높음</span> [평가]</p>
+    </div>
+
+    <h2>전문가 패널 토의</h2>
+    <div class="panel-grid">
+      <div class="panel-expert">
+        <span class="panel-role">전략·안보 분석가</span>
+        <p>[독립적 평가]</p>
+      </div>
+      <div class="panel-expert">
+        <span class="panel-role">방위산업·조달 전문가</span>
+        <p>[독립적 평가]</p>
+      </div>
+      <div class="panel-expert">
+        <span class="panel-role">무기체계·기술 전문가</span>
+        <p>[독립적 평가]</p>
+      </div>
+      <div class="panel-expert">
+        <span class="panel-role">국제정치·동맹 전문가</span>
+        <p>[독립적 평가]</p>
+      </div>
+    </div>
+    <div class="panel-synthesis">
+      <h3>패널 종합</h3>
+      <p class="agree">[합의점]</p>
+      <p class="disagree"><strong>[이견]</strong> [의견이 갈리는 지점 — 실제 이견 없으면 "이견 없음"]</p>
+    </div>
+
+    <h2>향후 전망과 방향</h2>
+    <div class="item-block">
+      <p class="item-assessment"><span class="confidence-tag confidence-high">신뢰수준: 높음</span> [향후 전망]</p>
+      <p class="item-altview"><strong>[대안적 해석]</strong> [다른 전개 가능성]</p>
+    </div>
+  </div>
+
+  <div class="sources">
+    <h3>참고 자료 (조사에 사용된 원문 딥링크 전체)</h3>
+    <ul>
+      <li><a href="[원문 URL]" target="_blank" rel="noopener">[출처명 — 자료 제목]</a> <span class="source-tier">[1차/2차]</span></li>
+    </ul>
+  </div>
+</article>
+
+<footer class="sub-footer">
+  <div class="container">
+    <span>© 2026 TIGERDYNE NEXUS</span>
+    <nav class="sub-footer-nav" aria-label="정책 링크">
+      <a href="../methodology.html">방법론 및 편집 책임</a>
+      <a href="../corrections/index.html">정정 보고</a>
+      <a href="../trackrecord/index.html">판단 트랙레코드</a>
+    </nav>
+  </div>
+</footer>
+
+<script src="../app.js"></script>
+</body>
+</html>
