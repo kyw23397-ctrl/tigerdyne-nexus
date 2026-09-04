@@ -140,7 +140,7 @@ h3 { font-size: 1.25rem; font-weight: 600; }
 
 /* Dropdown */
 .dropdown {
-    position: absolute; top: calc(100% + 6px); left: 0;
+    position: absolute; top: 100%; left: 0;
     background: var(--navy-2);
     border: 1px solid var(--border);
     border-top: 2px solid var(--gold);
