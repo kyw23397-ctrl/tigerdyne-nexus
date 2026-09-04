@@ -41,6 +41,7 @@
   </div>
 </header>
 
+<div class="i18n-ko">
 <article class="article-detail">
   <span class="tag">깊이보기</span>
   <h1>우크라이나 전쟁의 지상무인체계(UGV) — 병참을 넘어 근접전투까지</h1>
@@ -484,6 +485,453 @@
     </ul>
   </div>
 </article>
+</div>
+
+<div class="i18n-en" hidden>
+<article class="article-detail">
+  <span class="tag">Deep Dive</span>
+  <h1>Ground Uncrewed Vehicles (UGVs) in the Ukraine War — Beyond Logistics, Into Close Combat</h1>
+  <div class="meta">TIGERDYNE NEXUS Expert Panel · 2026-08-08 (revised 2026-08-08 — reinforced with pure-uncrewed-combat cases)</div>
+
+  <div class="doc-actions">
+    <button type="button" class="btn-gdocs" onclick="window.print()">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M19 8H5c-1.66 0-3 1.34-3 3v6h4v4h12v-4h4v-6c0-1.66-1.34-3-3-3zm-3 11H8v-5h8v5zm3-7c-.55 0-1-.45-1-1s.45-1 1-1 1 .45 1 1-.45 1-1 1zm-1-9H6v4h12V3z"/></svg>
+      Download (Save as PDF)
+    </button>
+    <span class="doc-actions-note">※ Clicking this opens your browser's print dialog — choose "Save as PDF" as the destination to save a file. ※ This report covers only ground uncrewed vehicles (UGVs) — drones are mentioned only in the context of joint operation with UGVs.</span>
+  </div>
+
+  <div class="key-judgments">
+    <h2>Key Judgments</h2>
+    <ul>
+      <li><span class="confidence-tag confidence-high">Confidence: High</span> As of H1 2026, UGVs have moved beyond demonstration and become a core means of logistics — it is near-certain that the supply system of at least one specific theater is itself being restructured around the premise of robotization.</li>
+      <li><span class="confidence-tag confidence-high">Confidence: High</span> The unconditional claim that "robots still can't replace close combat" does not fit the facts — at least eight or more independently confirmed cases (July 2025–July 2026), with named units, commander interviews, and specific locations, have been repeatedly reported in which fully uncrewed chains — reconnaissance → suppressive fire → air strike — recaptured, defended, or cleared positions.</li>
+      <li><span class="confidence-tag confidence-mid">Confidence: Mid</span> However, these cases are, without exception, limited to isolated, small-scale targets — a single bunker, a single building, a squad or smaller — and many rely on units' own Telegram footage, with limited independent third-party verification. There is no evidence that robots have replaced sustained, large-scale close combat at the battalion or regiment level or above.</li>
+      <li><span class="confidence-tag confidence-mid">Confidence: Mid</span> Russia has made no official claim of "recapturing a position with uncrewed systems alone" during the same period, and its 2024 robotic assault attempt at Avdiivka is assessed as a failure — the maturity gap between Ukraine and Russia in this domain is pronounced.</li>
+    </ul>
+  </div>
+
+  <div class="body">
+    <h2>Background — Why Ukraine's Ground War Is a Proving Ground for Robotization</h2>
+    <p class="item-fact">
+      Ukraine's eastern front sits within an expanded kill zone — reconnaissance and strike assets maintain constant surveillance and can strike anything that moves within minutes. In this zone, where a human moving on foot is itself tantamount to a casualty, delegating logistics and movement to robots has become not a choice but a precondition for survival.
+      <a href="https://www.kyivpost.com/post/81206" target="_blank" rel="noopener">Kyiv Post</a>,
+      <a href="https://www.twz.com/land/unmanned-ground-vehicles-controlled-via-fiber-optic-cables-being-tested-by-ukraine" target="_blank" rel="noopener">The War Zone</a>
+    </p>
+    <p class="item-assessment">
+      <span class="confidence-tag confidence-high">Confidence: High</span>
+      On the Pokrovsk front, as of November 2025 roughly 90% of resupply is already conducted by UGV — The War Zone assessed Ukraine as "the first army in history to attempt the full robotization of front-line logistics under live combat conditions." One field commander said, "Without the robots, no one would have made it out alive."
+    </p>
+    <p class="item-altview">
+      <strong>[Alternative View]</strong> This could also be read not as Ukraine "pursuing" a technological edge but as an outcome "forced" by manpower shortages (the political limits of mobilization) — that is, the primary driver of UGV proliferation may be the urgent need to minimize troop losses rather than innovation for its own sake.
+    </p>
+
+    <h2>Latest Developments — Scale of Operational Fielding</h2>
+    <div class="stat-cards">
+      <div class="stat-card"><span class="stat-value">66,000+</span><span class="stat-label">Cumulative UGV missions, H1 2026</span></div>
+      <div class="stat-card"><span class="stat-value">230</span><span class="stat-label">UGV-operating units (mid-2026, up from 117 at end-2025)</span></div>
+      <div class="stat-card"><span class="stat-value">22,000–25,000</span><span class="stat-label">Units contracted in 2026 (2x all of 2025)</span></div>
+      <div class="stat-card"><span class="stat-value">90%</span><span class="stat-label">Share of Pokrovsk-front resupply via UGV (Nov 2025)</span></div>
+    </div>
+    <div class="chart-row">
+      <div class="chart-block">
+        <h4>Monthly UGV Missions (Jan–Jun 2026)</h4>
+        <svg viewBox="0 0 580 220" role="img" aria-label="Monthly UGV mission counts: rising from 7,495 in January to 7,961 in February, 9,049 in March, 10,281 in April, 14,096 in May, and 16,676 in June">
+          <line x1="20" y1="190" x2="560" y2="190" stroke="#dcd8cd" stroke-width="1"/>
+          <g font-family="Pretendard, 'Noto Sans KR', sans-serif">
+            <rect x="30" y="118" width="60" height="72" fill="#8a1f2b"/>
+            <text x="60" y="110" text-anchor="middle" font-size="12" fill="#3a3f4b">7,495</text>
+            <text x="60" y="205" text-anchor="middle" font-size="12" fill="#8b8778">Jan</text>
+
+            <rect x="120" y="114" width="60" height="76" fill="#8a1f2b"/>
+            <text x="150" y="106" text-anchor="middle" font-size="12" fill="#3a3f4b">7,961</text>
+            <text x="150" y="205" text-anchor="middle" font-size="12" fill="#8b8778">Feb</text>
+
+            <rect x="210" y="103" width="60" height="87" fill="#8a1f2b"/>
+            <text x="240" y="95" text-anchor="middle" font-size="12" fill="#3a3f4b">9,049</text>
+            <text x="240" y="205" text-anchor="middle" font-size="12" fill="#8b8778">Mar</text>
+
+            <rect x="300" y="91" width="60" height="99" fill="#8a1f2b"/>
+            <text x="330" y="83" text-anchor="middle" font-size="12" fill="#3a3f4b">10,281</text>
+            <text x="330" y="205" text-anchor="middle" font-size="12" fill="#8b8778">Apr</text>
+
+            <rect x="390" y="55" width="60" height="135" fill="#8a1f2b"/>
+            <text x="420" y="47" text-anchor="middle" font-size="12" fill="#3a3f4b">14,096</text>
+            <text x="420" y="205" text-anchor="middle" font-size="12" fill="#8b8778">May</text>
+
+            <rect x="480" y="30" width="60" height="160" fill="#a4832f"/>
+            <text x="510" y="22" text-anchor="middle" font-size="12" fill="#3a3f4b">16,676</text>
+            <text x="510" y="205" text-anchor="middle" font-size="12" fill="#8b8778">Jun</text>
+          </g>
+        </svg>
+        <p class="chart-caption">Up roughly 122% over six months. Source: United24 Media (tally as of 2026-08-07)</p>
+      </div>
+      <div class="chart-block">
+        <h4>Number of UGV-Operating Units</h4>
+        <svg viewBox="0 0 260 220" role="img" aria-label="Number of UGV-operating units: rising from 117 at end-2025 to 230 by mid-2026">
+          <line x1="15" y1="190" x2="245" y2="190" stroke="#dcd8cd" stroke-width="1"/>
+          <g font-family="Pretendard, 'Noto Sans KR', sans-serif">
+            <rect x="35" y="119" width="70" height="71" fill="#dcd8cd"/>
+            <text x="70" y="111" text-anchor="middle" font-size="13" fill="#3a3f4b">117</text>
+            <text x="70" y="205" text-anchor="middle" font-size="11" fill="#8b8778">End-2025</text>
+
+            <rect x="155" y="50" width="70" height="140" fill="#8a1f2b"/>
+            <text x="190" y="42" text-anchor="middle" font-size="13" fill="#3a3f4b">230</text>
+            <text x="190" y="205" text-anchor="middle" font-size="11" fill="#8b8778">Mid-2026</text>
+          </g>
+        </svg>
+        <p class="chart-caption">Roughly a twofold increase. Source: United24 Media</p>
+      </div>
+    </div>
+    <div class="item-block">
+      <p class="item-fact">
+        [Fact] Ukraine's monthly UGV mission count rose from 7,495 in January 2026 to 16,676 in June — an increase of roughly 122% within half a year — with the H1 2026 cumulative total surpassing 66,000. Over the same period, the number of units operating UGVs nearly doubled, from 117 to 230. Ukraine signed contracts for 22,000–25,000 UGVs in H1 2026 alone — double the volume of all 2025 contracts — and President Zelensky has ordered annual production of 50,000 units. The Ministry of Defense exceeded its 2025 UGV supply target.
+        <a href="https://united24media.com/war-in-ukraine/ukraines-ground-robots-surpass-16000-battlefield-missions-in-a-single-month-20714" target="_blank" rel="noopener">United24 Media</a>,
+        <a href="https://www.forbes.com/sites/davidkirichenko/2026/06/30/ukraine-wants-robots-to-fight-its-ground-war/" target="_blank" rel="noopener">Forbes</a>,
+        <a href="https://www.defensenews.com/unmanned/2026/04/24/ukraine-to-field-25000-ground-robots-in-push-to-replace-soldiers-for-frontline-logistics/" target="_blank" rel="noopener">Defense News</a>,
+        <a href="https://www.atlanticcouncil.org/blogs/ukrainealert/ukraines-robot-army-will-be-crucial-in-2026-but-drones-cant-replace-infantry/" target="_blank" rel="noopener">Atlantic Council</a>
+      </p>
+      <p class="item-assessment">
+        <span class="confidence-tag confidence-high">Confidence: High</span>
+        It is near-certain that UGVs have already become irreplaceable infrastructure for logistics and close-support missions such as ammunition resupply, casualty evacuation, and mine clearance.
+      </p>
+    </div>
+
+    <h2>Latest Developments — AI, Autonomy, and Control Technology</h2>
+    <div class="item-block">
+      <p class="item-fact">
+        [Fact] According to The War Zone, most UGVs remain closer to "avatars" — operators still control them remotely and make the key decisions — and it is too early to call them fully independent robots, though autonomy is advancing rapidly. Ukraine has been experimenting since 2023 with visual/terrain-matching long-range navigation AI to replace GPS, and the tracked platform "Droid TW," fielded in December 2024, carries an AI algorithm that recognizes enemy personnel.
+        <a href="https://www.twz.com/land/unmanned-ground-vehicles-controlled-via-fiber-optic-cables-being-tested-by-ukraine" target="_blank" rel="noopener">The War Zone</a>
+      </p>
+      <p class="item-assessment">
+        <span class="confidence-tag confidence-mid">Confidence: Mid</span>
+        UGV autonomy is making real progress at the level of navigation and perception assistance, but full autonomy encompassing judgment and engagement has not yet been confirmed.
+      </p>
+    </div>
+    <div class="item-block">
+      <p class="item-fact">
+        [Fact] In February 2026 Ukraine's Unmanned Systems Forces introduced a general-purpose fiber-optic navigation module called "Shovkopryad" and are integrating it into ground uncrewed systems. Fiber-optic control is inherently immune to electronic-warfare (EW) jamming and requires no line of sight, giving it an advantage in rough terrain and urban combat — the defense-tech incubator Brave1 tested seven fiber-optic UGV models and reported promising results. However, physical limitations remain, such as cables snagging on rocks or vegetation, or cables interfering with each other during logistics missions.
+        <a href="https://www.twz.com/land/unmanned-ground-vehicles-controlled-via-fiber-optic-cables-being-tested-by-ukraine" target="_blank" rel="noopener">The War Zone</a>
+      </p>
+      <p class="item-assessment">
+        <span class="confidence-tag confidence-mid">Confidence: Mid</span>
+        Fiber-optic control appears to be one of the most significant technical turning points for improving UGV survivability against EW, but it remains at the testing/early-adoption stage, and whether it will become a fleet-wide standard is unconfirmed.
+      </p>
+    </div>
+    <div class="item-block">
+      <p class="item-fact">
+        [Fact] Effective UGV operation depends on a reinforced control link combining fiber optics, mesh networking, and airborne relay. At Eurosatory 2026 (Paris), AI-based semi-autonomous navigation and obstacle avoidance emerged as a leading direction for UGV development, and redundant communication links plus manual-control backup for countering electronic warfare are becoming standard.
+        <a href="https://www.defensemagazine.com/article/war-robots-at-eurosatory-2026-europe-accelerates-ugv-adoption-amid-battlefield-lessons-from-ukraine" target="_blank" rel="noopener">Defense Magazine</a>
+      </p>
+      <p class="item-assessment">
+        <span class="confidence-tag confidence-mid">Confidence: Mid</span>
+        The industry as a whole is likely converging on "AI-assisted semi-autonomous navigation plus redundant communications" as a standard design direction.
+      </p>
+    </div>
+
+    <h2>Latest Developments — Combat Record of Armed UGVs</h2>
+    <div class="item-block">
+      <p class="item-fact">
+        [Fact] Ukraine has already fielded several armed (combat) UGV models in live operations. The Bizon-L (UAV Technology), fitted with a 12.7mm machine-gun combat module (200–300 kg payload, 30 km operational radius), has been formally approved for combat and engineering missions; the Termit, armed with a Browning machine gun or an MK19 automatic grenade launcher, has been fielded and combat-proven across more than 20 brigades; and the Droid TW 12.7, carrying a remotely operated M2 Browning 12.7mm machine gun, is in use by multiple units in offensive operations.
+        <a href="https://united24media.com/latest-news/ukraines-new-bizon-l-ground-robot-approved-for-military-use-with-combat-and-engineering-modules-17673" target="_blank" rel="noopener">United24 Media</a>,
+        <a href="https://techukraine.org/2025/06/25/meet-termit-the-modular-all-terrain-ugv-greenlit-for-ukraines-armed-forces/" target="_blank" rel="noopener">TechUkraine</a>,
+        <a href="https://www.forbes.com/sites/vikrammittal/2026/07/17/ukrainian-ground-robots-and-aerial-drones-assault-a-russian-position/" target="_blank" rel="noopener">Forbes</a>
+      </p>
+      <p class="item-assessment">
+        <span class="confidence-tag confidence-high">Confidence: High</span>
+        Armed UGVs are no longer prototypes but a combat-proven standard equipment class fielded across multiple brigades.
+      </p>
+    </div>
+    <div class="item-block">
+      <p class="item-fact">
+        [Fact] In late November 2025, on a road north of Kostiantynivka in Donetsk region, a thermal-imaging-equipped, M2 .50-caliber-armed UGV of the 5th Assault Brigade had a chance nighttime encounter with a Russian MT-LB armored tracked vehicle and drove it off with remote fire. In May 2026, the 100th Mechanized Brigade sent three UGVs (one carrying 300 kg of explosives) into an abandoned apartment building in Kostiantynivka where eight Russian reconnaissance-sabotage troops were hiding; when the troops refused a surrender demand, the self-detonating UGV exploded inside the building, neutralizing all of them.
+        <a href="https://www.trenchart.us/p/a-ukrainian-gun-bot-just-fought-a" target="_blank" rel="noopener">TrenchArt</a>,
+        <a href="https://www.forbes.com/sites/davidkirichenko/2026/05/13/a-ukrainian-ground-robot-drove-into-a-russian-held-building-and-blew-it-up/" target="_blank" rel="noopener">Forbes</a>
+      </p>
+      <p class="item-assessment">
+        <span class="confidence-tag confidence-mid">Confidence: Mid</span>
+        Remote-fire engagements by armed UGVs are already recurring across a range of situations, from chance encounters to deliberate clearance operations.
+      </p>
+    </div>
+    <div class="item-block">
+      <p class="item-fact">
+        [Fact] In January 2026 near Lyman, fire and the mere presence of a Droid TW-7.62 (armed with a PKT machine gun and AI target tracking) prompted three Russian soldiers to surrender — reported by multiple outlets as the first video-documented case in the history of warfare of troops surrendering to an uncrewed ground robot. Robot-versus-robot engagements have also been confirmed in multiple instances, with social media documenting Russian kamikaze drones attacking armed Ukrainian UGVs, and conversely Ukrainian FPV drones ambushing and destroying Russian Courier UGVs; an estimated 75–80% of UGV losses are attributed to enemy drones.
+        <a href="https://www.forbes.com/sites/davidhambling/2026/01/27/rise-of-the-robots-russian-soldiers-surrender-to-ukrainian-machine/" target="_blank" rel="noopener">Forbes</a>,
+        <a href="https://www.forbes.com/sites/vikrammittal/2026/03/17/robots-are-dueling-with-robots-in-the-russian-ukrainian-kill-zones/" target="_blank" rel="noopener">Forbes</a>
+      </p>
+      <p class="item-assessment">
+        <span class="confidence-tag confidence-mid">Confidence: Mid</span>
+        The single greatest practical threat to UGVs is likely enemy drones rather than enemy infantry — suggesting future procurement priorities may shift from firepower enhancement toward counter-drone protection.
+      </p>
+      <p class="item-altview">
+        <strong>[Alternative View]</strong> Manufacturer Tencore projected 2026 UGV demand at roughly 40,000 units, of which only 10–15% (4,000–6,000) would be armed variants — actual combat-mission deployment remains "very small in number" but is "increasing month by month," the company said.
+        <a href="https://www.janes.com/defence-intelligence-insights/defence-news/air/ukraines-tencore-says-ugvs-used-in-small-numbers-in-combat-roles" target="_blank" rel="noopener">Janes</a>
+      </p>
+    </div>
+
+    <h2>Latest Developments — Close-Combat Cases Conducted by Uncrewed Systems Alone</h2>
+    <p style="color:var(--ink-soft); font-size:0.9rem; margin:-8px 0 20px;">
+      The previous version of this report asserted flatly that "robots still can't replace close combat." Following the owner's challenge, a broad re-investigation found that this assertion needs revision — the evidence follows below.
+    </p>
+    <div class="stat-cards">
+      <div class="stat-card"><span class="stat-value">8+</span><span class="stat-label">Independently confirmed pure-uncrewed-combat cases</span></div>
+      <div class="stat-card"><span class="stat-value">5+</span><span class="stat-label">Distinct named units involved</span></div>
+      <div class="stat-card"><span class="stat-value">12 months</span><span class="stat-label">Investigation period (Jul 2025–Jul 2026)</span></div>
+    </div>
+    <div class="item-block">
+      <p class="item-fact">
+        [Fact] On July 9, 2025, the 3rd Separate Assault Brigade's "DEUS EX MACHINA" company attacked a Russian bunker in Kharkiv region using FPV drones and an anti-tank-mine-carrying ground kamikaze robot; when two surviving soldiers surrendered, a drone escorted them to Ukrainian positions — the unit described it as "the first confirmed successful attack conducted using uncrewed platforms alone." The same brigade captured three Russian soldiers near Lyman in January 2026 using a Droid TW-7.62, and also attacked troops hiding in a bunker with a self-detonating UGV carrying twelve TM-62 anti-tank mines.
+        <a href="https://www.yahoo.com/news/ground-robots-ukraines-3rd-assault-125504392.html" target="_blank" rel="noopener">Yahoo News</a>,
+        <a href="https://united24media.com/latest-news/this-ukrainian-ai-robot-just-captured-three-russian-soldiers-on-the-front-line-video-15373" target="_blank" rel="noopener">United24 Media</a>,
+        <a href="https://militarnyi.com/en/news/ukrainian-ugv-droid-tw-7-62-captures-three-russian-soldiers/" target="_blank" rel="noopener">Militarnyi</a>,
+        <a href="https://euromaidanpress.com/2026/07/21/uav-ugv/" target="_blank" rel="noopener">Euromaidan Press</a>
+      </p>
+      <p class="item-assessment">
+        <span class="confidence-tag confidence-high">Confidence: High</span>
+        That the same brigade carried out similar solo-uncrewed operations six months apart supports the possibility that this is not a one-off event but has become a standard tactic for that unit.
+      </p>
+    </div>
+    <div class="item-block">
+      <p class="item-fact">
+        [Fact] On May 2, 2026, the National Guard's 2nd Corps "Khartiia" unmanned-systems regiment "Lava" (formed as a battalion in September 2025, expanded to a regiment in April 2026) combined grenade-launcher-equipped aerial drones, attack drones, Rys Pro UGVs, and TOR-800s near Kupiansk to eliminate roughly 10 Russian troops and destroy an ammunition depot without committing infantry. On July 15, 2026, the 33rd Separate Assault Regiment used drone reconnaissance to map a 3-km concealed approach near Dobropillia, then suppressed the position with two Droid TW 12.7 UGVs, followed by a strike from a medium bombing drone — a fully uncrewed chain that cleared a Russian infiltration position and neutralized five troops; a named interview with the commander, "Artem," accompanied the report.
+        <a href="https://united24media.com/war-in-ukraine/ukraine-clears-russian-position-near-kupiansk-using-only-robots-video-18417" target="_blank" rel="noopener">United24 Media</a>,
+        <a href="https://www.forbes.com/sites/vikrammittal/2026/07/17/ukrainian-ground-robots-and-aerial-drones-assault-a-russian-position/" target="_blank" rel="noopener">Forbes</a>
+      </p>
+      <p class="item-assessment">
+        <span class="confidence-tag confidence-mid">Confidence: Mid</span>
+        The repeated observation of a three-stage chain — reconnaissance → suppressive fire → air strike — across different units suggests it may have become a reproducible tactical module, but both cases rely on units' own Telegram disclosures, and independent third-party verification is lacking.
+      </p>
+    </div>
+    <div class="item-block">
+      <p class="item-fact">
+        [Fact] On July 13, 2026, the 123rd Territorial Defense Brigade carried out what it called "the world's first robot-versus-robot amphibious assault" in the Black Sea's Kinburn Spit, in which an unmanned surface vessel (USV) landed on shore and disembarked a .50-caliber-armed UGV that then engaged remotely, with a reconnaissance drone supplying targeting data. In the winter of late 2025 into early 2026, a single machine-gun-armed UGV defended a position alone for 45 consecutive days, and Ukraine's Ministry of Defense announced that "more than 100 Russian troops were disarmed over the winter alone."
+        <a href="https://www.forbes.com/sites/davidhambling/2026/07/14/ukraine--carries-out-first-ever-robotic-amphibious-assault/" target="_blank" rel="noopener">Forbes</a>,
+        <a href="https://united24media.com/latest-news/ukrainian-ground-drone-with-machine-gun-defends-frontline-position-solo-for-45-days-14488" target="_blank" rel="noopener">United24 Media</a>,
+        <a href="https://www.lowyinstitute.org/the-interpreter/ukraine-ground-robots-are-increasingly-going-offensive" target="_blank" rel="noopener">Lowy Institute</a>
+      </p>
+      <p class="item-assessment">
+        <span class="confidence-tag confidence-mid">Confidence: Mid</span>
+        These cases show that the scope of purely uncrewed operations is expanding beyond recapture into defense and amphibious assault as well, but they remain confined to localized, small-scale operations.
+      </p>
+    </div>
+    <div class="item-block">
+      <p class="item-fact">
+        [Fact] On April 13, 2026, President Zelensky announced via Telegram that "for the first time in the history of war, we captured a Russian position using purely uncrewed platforms (UGVs plus drones) alone, with no friendly casualties." However, the unit name, precise location, and scale of the operation were not disclosed, making third-party verification impossible. Ukrainian military analyst Ivan Stupak told The Moscow Times it was "more likely a small, secondary position capture than a breakthrough," flagging the possibility of publicity-driven exaggeration, and We Are The Mighty also raised questions about the sustainability of long-term occupation given issues such as communications loss and maintenance.
+        <a href="https://euromaidanpress.com/2026/04/13/no-infantry-for-first-time-ukraine-captured-russian-position-using-only-drones-and-robots/" target="_blank" rel="noopener">Euromaidan Press</a>,
+        <a href="https://www.themoscowtimes.com/2026/04/14/zelensky-says-kyiv-seized-a-russian-position-with-drones-and-robots-is-this-a-game-changer-a92497" target="_blank" rel="noopener">The Moscow Times</a>,
+        <a href="https://www.wearethemighty.com/tactical/drones-capture-position-first-time-ukraine/" target="_blank" rel="noopener">We Are The Mighty</a>,
+        <a href="https://www.armyrecognition.com/news/army-news/2026/ukraine-uses-ground-robots-and-drones-to-capture-russian-positions-without-troop-losses" target="_blank" rel="noopener">Army Recognition</a>
+      </p>
+      <p class="item-assessment">
+        <span class="confidence-tag confidence-low">Confidence: Low</span>
+        Taken alone, this announcement is difficult to verify — but the fact that the Ukrainian government's own announcement was cautiously disputed by a domestic analyst as "possibly exaggerated for publicity" shows that, unlike the other named-unit cases below, this specific case must be treated separately.
+      </p>
+      <p class="item-altview">
+        <strong>[Alternative View]</strong> The academic outlet The Conversation assessed these cases collectively as "not a one-off PR event but a systematic trend spreading from March 2025 through April 2026," while noting the caveat that the evidence relies primarily on government announcements and units' own Telegram footage and falls short of "full independent verification."
+        <a href="https://theconversation.com/ukraines-killer-robots-show-how-war-is-changing-280936" target="_blank" rel="noopener">The Conversation</a>
+      </p>
+    </div>
+    <div class="item-block">
+      <p class="item-fact">
+        [Fact] At the same time, cases confirming that troops remain decisive in close combat are also documented. Near Orikhiv, two Ukrainian infantrymen held a position alone in the kill zone for 165 consecutive days without relief, and were able to withdraw only under cover of dense fog after 30 relief attempts by command all failed. A company commander who served 343 consecutive days on the front line testified that "enemy infantry jumped into our trenches multiple times," showing that trench-level hand-to-hand combat remains real even in the drone era. Meta-Defense noted that UGVs, unlike aerial drones, cannot navigate trenches, debris, and vegetation three-dimensionally, constraining their mobility, and one soldier said, "Modern warfare cannot be won with robotic systems alone."
+        <a href="https://kyivindependent.com/how-2-soldiers-survived-165-days-trapped-on-ukraines-front-line/" target="_blank" rel="noopener">Kyiv Independent</a>,
+        <a href="https://www.pravda.com.ua/eng/articles/2026/04/23/8031354/" target="_blank" rel="noopener">Ukrainska Pravda</a>,
+        <a href="https://meta-defense.fr/en/2026/08/05/ukraine-ugv-ground-robots-operational-reality/" target="_blank" rel="noopener">Meta-Defense</a>,
+        <a href="https://www.techtimes.com/articles/316975/20260521/ukraines-ground-robots-held-front-line-45-days-infantry-still-not-replaceable.htm" target="_blank" rel="noopener">Tech Times</a>
+      </p>
+      <p class="item-assessment">
+        <span class="confidence-tag confidence-high">Confidence: High</span>
+        The successful pure-uncrewed cases above and this troop-dependent case are not mutually contradictory — which mode dominates appears to depend on battlefield conditions (isolated, static, small-scale targets versus a continuous, large-scale front).
+      </p>
+    </div>
+    <div class="item-block">
+      <p class="item-fact">
+        [Fact] Official statistics on the share of battlefield effects and casualties attributable to uncrewed systems are also contested. Ukraine's Ministry of Defense stated that drones accounted for more than 80% of all destroyed targets by the end of 2025, and Zelensky likewise announced that "more than 80% of battlefield strikes are by drone," but a fact-check of U.S. Rep. Tom Cole's claim that "70% of casualties are drone-caused" found it inconsistent with actual United Nations Human Rights Monitoring Mission (HRMMU) statistics (43% from long-range missiles/drones, 34% from short-range drones, by civilian-casualty count). Commander-in-Chief Syrskyi's announcement that drones "killed or wounded 33,000 Russian troops" (December 2025) also came with the caveat that it "includes only video-confirmed cases, with actual losses likely higher" — suggesting official statistics themselves are limited to verifiable cases.
+        <a href="https://www.defensenews.com/global/europe/2026/02/24/we-dont-have-infantry-ukraines-war-machine-evolves-into-machine-war/" target="_blank" rel="noopener">Defense News</a>,
+        <a href="https://oklahomawatch.org/2026/06/09/have-70-of-casualties-in-the-russia-ukraine-war-been-caused-by-drones-as-rep-tom-cole-claimed/" target="_blank" rel="noopener">Oklahoma Watch</a>,
+        <a href="https://euromaidanpress.com/2026/04/03/drones-caused-96-of-russias-losses-in-march/" target="_blank" rel="noopener">Euromaidan Press</a>
+      </p>
+      <p class="item-assessment">
+        <span class="confidence-tag confidence-low">Confidence: Low</span>
+        There is insufficient basis to fix a single precise figure for the share of battlefield effects attributable to uncrewed systems — government figures are directionally consistent (rising drone/robot contribution), but specific percentages vary widely depending on verification methodology.
+      </p>
+    </div>
+    <div class="item-block">
+      <p class="item-fact">
+        [Fact] In May 2026, Ukraine's 3rd Army Corps officially stated a goal of "replacing roughly 30% of infantry with robots by the end of 2026." Unmanned Systems Forces commander Robert "Magyar" Brovdi articulated a philosophy of "humans think, machines work," and his operators strike an average of 1.44 km deep from the line of contact, saying "we are, quite literally, operating underfoot" — suggesting drones have penetrated into the close-combat domain itself. By contrast, Jesse Nuz, a former U.S. Army paratrooper now serving voluntarily in the Ukrainian military amid the Defense Ministry's manpower crisis, declared flatly that "there's no way to fully replace infantry. Uncrewed systems can't hold ground on their own."
+        <a href="https://euromaidanpress.com/2026/05/29/from-drones-augmenting-infantry-to-drones-replacing-it-ukraines-third-army-corps-plans-30-robot-for-infantry-substitution-by-end-of-2026/" target="_blank" rel="noopener">Euromaidan Press</a>,
+        <a href="https://www.yahoo.com/news/articles/ukraines-drone-forces-commander-says-082716921.html" target="_blank" rel="noopener">Yahoo News</a>,
+        <a href="https://www.defensenews.com/global/europe/2026/02/24/we-dont-have-infantry-ukraines-war-machine-evolves-into-machine-war/" target="_blank" rel="noopener">Defense News</a>
+      </p>
+      <p class="item-assessment">
+        <span class="confidence-tag confidence-mid">Confidence: Mid</span>
+        Even within the Ukrainian military's own leadership, views coexist between "replacement is underway" and "replacement is impossible" — showing there is not yet a single, organization-wide consensus.
+      </p>
+    </div>
+
+    <h2>Latest Developments — Russia's Pursuit: Why It Still Hasn't Achieved a "Solo-Uncrewed Position Recapture"</h2>
+    <div class="item-block">
+      <p class="item-fact">
+        [Fact] Russia, too, operates 32 ground-robot models from at least 20 manufacturers, with more than 20 types confirmed in combat use. However, when Russian forces committed a grenade-launcher-armed robotic platoon (5–6 vehicles) to an offensive west of Avdiivka in March 2024, Ukraine's 47th Mechanized Brigade neutralized them with electronic warfare and then destroyed them with drones — the attempt effectively failed, though Russian propaganda outlets claimed "success," a claim that was refuted. Since then, Russia's Courier UGV has mainly remained in a supporting-fire role covering infantry advances, and the formation of "robotic assault companies" is still at the review stage.
+        <a href="https://www.forbes.com/sites/davidaxe/2024/03/31/the-russians-sent-a-platoon-of-grenade-hurling-robotic-mini-tanks-into-battle-the-ukrainians-blew-up-the-bots-in-the-usual-way-with-drones/" target="_blank" rel="noopener">Forbes</a>,
+        <a href="https://militarnyi.com/en/news/47th-brigade-demonstrates-destruction-of-russian-unmanned-combat-ground-vehicles/" target="_blank" rel="noopener">Militarnyi</a>,
+        <a href="https://www.forbes.com/sites/vikrammittal/2025/02/17/russia-showcases-new-tactics-using-courier-unmanned-ground-vehicles/" target="_blank" rel="noopener">Forbes</a>,
+        <a href="https://www.newgeopolitics.org/2025/02/27/robotic-assault-companies-in-russian-army/" target="_blank" rel="noopener">New Geopolitics Research Network</a>
+      </p>
+      <p class="item-assessment">
+        <span class="confidence-tag confidence-mid">Confidence: Mid</span>
+        Russia's armed ground-robot offensive attempts likely still have not achieved combat results comparable to Ukraine's.
+      </p>
+    </div>
+    <div class="item-block">
+      <p class="item-fact">
+        [Fact] This investigation found no confirmed case of an official Russian claim that "Russia recaptured a Ukrainian position using uncrewed systems alone." On the contrary, Dr. Konstantin Sivkov, deputy chairman of Russia's Academy of Rocket and Artillery Sciences, acknowledged (in a Russian-side self-assessment) that "we too use such complexes continuously, but always in a role that clears the way for infantry," conceding that at the current level of technology, capturing and holding a position with uncrewed systems alone is impossible. Russia's elite uncrewed-systems integration organization "Rubicon" (roughly 5,000 personnel, specializing in fiber-optic-guided FPV drones) likewise has no confirmed specific case of ground robots being integrated into position attacks or captures.
+        <a href="https://vpk.name/news/1116601_voennyi_ekspert_raskryl_sposobny_li_roboty_zahvatit_poziciyu_v_zone_svo.html" target="_blank" rel="noopener">VPK.name (Russian-side expert)</a>,
+        <a href="https://www.fpri.org/article/2026/06/inside-rubicon-the-structure-of-russias-elite-drone-center/" target="_blank" rel="noopener">FPRI</a>,
+        <a href="https://jamestown.org/rubicon-reveals-limits-of-russias-drone-centralization/" target="_blank" rel="noopener">Jamestown Foundation</a>
+      </p>
+      <p class="item-assessment">
+        <span class="confidence-tag confidence-mid">Confidence: Mid</span>
+        The simultaneous presence of a Russian expert's own admission and the absence of any official Russian claim supports the possibility that a real capability gap exists between Ukraine and Russia in solo-uncrewed close combat — though this is an inference from absence of evidence and is not conclusive.
+      </p>
+      <p class="item-altview">
+        <strong>[Alternative View]</strong> Russia's Ministry of Defense claimed in July 2026 that it "detected and destroyed" a Ukrainian robotic offensive in the Orikhiv sector of Zaporizhzhia region (a Russian-side claim, without Western cross-verification) — yet even this same report failed to present any Russian case of a successful solo-uncrewed offensive of its own.
+        <a href="https://ru.themoscowtimes.com/2026/07/11/rossiiskie-voennie-zayavili-chto-vsu-nachali-ispolzovat-nazemnih-robotov-dlya-nastupleniya-a200561" target="_blank" rel="noopener">The Moscow Times (Russian edition)</a>,
+        <a href="https://tass.com/defense/2160131" target="_blank" rel="noopener">TASS (Russian state media)</a>
+      </p>
+    </div>
+    <div class="item-block">
+      <p class="item-fact">
+        [Fact] RAND assessed Ukraine's April 2026 solo-uncrewed position capture as "an early glimpse of future warfare," while finding that Russian forces still deploy uncrewed systems primarily for troop-covering fire and logistics and have not institutionalized "solo uncrewed offensives" to the extent Ukraine has. Experts assess that while both sides' ground uncrewed systems are converging in overall maturity, Russia is focused on improving counter-robot combat capability, and "the war is evolving into a robot-versus-robot contest."
+        <a href="https://www.rand.org/pubs/commentary/2026/04/robots-just-captured-a-russian-position-in-ukraine.html" target="_blank" rel="noopener">RAND</a>,
+        <a href="https://www.forbes.com/sites/vikrammittal/2026/03/17/robots-are-dueling-with-robots-in-the-russian-ukrainian-kill-zones/" target="_blank" rel="noopener">Forbes</a>
+      </p>
+      <p class="item-assessment">
+        <span class="confidence-tag confidence-mid">Confidence: Mid</span>
+        The gap likely stems less from the physical performance of the robots themselves than from organizational and doctrinal maturity — the accumulation of operational experience.
+      </p>
+    </div>
+    <div class="item-block">
+      <p class="item-fact">
+        [Fact] More than 50 companies displayed various UGVs at Eurosatory 2026 (Paris) — an assessment holds that the technology has moved "from a niche demonstration to a headline exhibit theme." Ukrainian companies participated with platforms whose logistics, reconnaissance, and direct-engagement capabilities were proven through combat experience. European militaries are experimenting with mixed formations in which "manned vehicles handle firepower and surveillance, UGVs handle hazardous missions."
+        <a href="https://www.defensemagazine.com/article/war-robots-at-eurosatory-2026-europe-accelerates-ugv-adoption-amid-battlefield-lessons-from-ukraine" target="_blank" rel="noopener">Defense Magazine</a>
+      </p>
+      <p class="item-assessment">
+        <span class="confidence-tag confidence-mid">Confidence: Mid</span>
+        Ukraine's combat UGV operating experience may be starting to inform European procurement and doctrine, but there is not yet evidence that this has translated into actual large-scale fielding.
+      </p>
+    </div>
+
+    <h2>Expert Panel Discussion</h2>
+    <p style="color:var(--ink-soft); font-size:0.9rem; margin:-8px 0 20px;">The four perspectives below were each assessed independently, based solely on the deep-dive material above (limited to ground uncrewed systems, including the results of the close-combat re-investigation), and then synthesized (competing-hypotheses analysis).</p>
+    <div class="panel-grid">
+      <div class="panel-expert">
+        <span class="panel-role">Uncrewed Systems & AI Technology Expert</span>
+        <p>The prior flat claim that "robots can't replace close combat" is not wholly rejected, but it clearly needs to be revised downward — because a technical pattern repeatedly confirmed over the past year across multiple independent units (the 3rd Separate Assault Brigade, the 33rd Separate Assault Regiment, the Khartiia/Lava Regiment, and the 123rd Territorial Defense Brigade), namely the three-stage chain of "drone reconnaissance → suppressive fire from remote-machine-gun UGVs like the Droid TW → final neutralization by bombing drones or self-detonating UGVs," suggests this is no longer a one-off publicity case but has become a reproducible tactical module. Even so, these cases are, without exception, confined to isolated, small-scale targets (a bunker, an abandoned building, a reconnaissance team of eight or fewer, one or two positions), and even Zelensky's announcement of "capturing a position with uncrewed systems alone" is likely, as Stupak points out, a secondary objective — and the fundamental limitation remains that undisclosed units and coordinates make third-party verification impossible. Technically too, the figure that 75–80% of UGV losses are due to enemy FPV drones, and the noted inability to navigate three-dimensionally around trenches and debris, show robots remain better suited to "suppress-then-fire-from-range" than "capture-and-hold." On balance, the more defensible revision is not from "close combat entirely irreplaceable" to its opposite, but to: "under specific conditions (isolated, small-scale, static targets, simple terrain, available fire-support linkage), fully uncrewed suppression with zero friendly casualties has been repeatedly demonstrated in combat, but this does not yet amount to a full replacement of large-scale, maneuver-style close combat." That Russia's robotic-assault attempt (Avdiivka) ended in failure, and that Sivkov himself admitted "robots only clear the way for infantry," supports the view that Ukraine's results stem from the accumulated operational maturity of specific units, and whether that maturity will spread across the front as a whole cannot be determined from current evidence.</p>
+      </div>
+      <div class="panel-expert">
+        <span class="panel-role">War Doctrine & Military Innovation Expert</span>
+        <p>That a similar pattern of "solo-uncrewed close-mission completion" has been independently and repeatedly observed across multiple units under different chains of command and on different sectors of the front — the 3rd Separate Assault Brigade (Kharkiv, Lyman), the Khartiia Brigade's Lava Regiment (Kupiansk), the 33rd Separate Assault Regiment (Dobropillia), and the 123rd Territorial Defense Brigade (Kinburn Spit) — is a signal of bottom-up tactical diffusion difficult to reduce to a single unit's publicity exaggeration, and the evidence better supports classifying it as an emergent TTP (tactics, techniques, and procedures) that has spontaneously converged at the operational-unit level rather than a top-down official doctrine. That said, even The Conversation attached the caveat of falling short of "full independent verification," mainstream institutions such as RAND, CSIS, and the Australian Army Research Centre still maintain the position that "full replacement of close combat" has not yet arrived, and troop-centered close-combat cases coexist as well — such as the two soldiers who held Orikhiv for 165 days and the company commander's 343-day testimony of repeated enemy infantry incursions into trenches — so it is more defensible to interpret this emergent TTP as a localized phenomenon confined to specific elite/experimental units (the separate-assault-brigade lineage, etc.) rather than a front-wide standard. The institutionalization gap between Ukraine and Russia (Russia's Courier confined to covering fire, its "robotic assault company" concept stalled at the review stage, the failed 2024 Avdiivka robotic-platoon offensive, and Sivkov's admission that robots "only clear the way for infantry") likely reflects a gap in organizational learning and diffusion speed rather than in the physical performance of the uncrewed systems themselves, supporting the view that Ukraine currently holds a temporary asymmetric advantage in this domain. The interpretation that Eurosatory 2026's "manned = firepower/surveillance, UGV = hazardous missions" mixed-formation experimentation is substantively expanding to include "completion of small-scale solo-uncrewed missions" is supported within the range that the eight-plus recurring cases can bear, but whether this proves the further proposition that it has been "institutionalized as an official subtype of mixed formations" cannot be determined from current evidence.</p>
+      </div>
+      <div class="panel-expert">
+        <span class="panel-role">Defense Industry & Procurement Expert</span>
+        <p>That combat UGV deployment is "increasing month by month" suggests this demand has shifted from experimental procurement into genuine operational demand underpinning mass-production contracts (22,000–25,000 units in 2026, with an order for annual production of 50,000). Still, Tencore's own estimate that armed variants account for only 10–15% (4,000–6,000 units) of the total remains low relative to the industry's overall scale, and it is reasonable to judge that the majority of procurement volume is allocated to unarmed missions such as logistics, reconnaissance, and casualty recovery. If the armed share expands going forward, procurement structure could shift from mass production of general-purpose platforms toward orders segmented by combat-module type integrating specific weapon systems, as with the Bizon-L, Termit, and Droid TW — though this is only a trend-level observation at present, and the specific timing of any such shift cannot be determined. The clearest industrial implication is that 75–80% of UGV losses are attributable to enemy FPV drones, suggesting future procurement priorities are likely to shift toward counter-drone protection (EW jammers, counter-drone detection/interception modules, reinforced armor) rather than firepower or mobility enhancements. Given that skepticism from major institutions such as RAND and CSIS about full replacement of close combat persists, it is plausible that procurement authorities will continue to treat UGVs as attritable force-multiplication assets with higher loss rates rather than infantry substitutes, sustaining a procurement strategy premised on low cost, mass production, and short service life — though this too remains an inference rather than a firm conclusion on current evidence.</p>
+      </div>
+      <div class="panel-expert">
+        <span class="panel-role">International Politics & Alliance Expert</span>
+        <p>Comparing Ukraine and Russia, the gap in solo-uncrewed close-combat capability should be read as a signal that Ukraine's publicity and doctrine-diffusion speed is ahead of its combat verification. The fact that even Zelensky's "first in history" official announcement was disputed by his own country's analyst (Ivan Stupak) as "possibly exaggerated for publicity" suggests that when allied nations factor Ukraine-originated UGV results into military-capability assessments, they must not take government announcements at face value and must apply rigorous cross-verification — meaning information-warfare and propaganda risk is intruding on the allied learning process just as much as the UGV technology's own risks. By contrast, given that Russia's robotic-platoon offensive at Avdiivka in 2024 failed, and that Russia's own expert (Sivkov) admitted that robots merely "clear the way for infantry" and conceded that solo capture is not possible, the gap should be understood as lying in organizational and doctrinal maturity rather than the technology itself. Geopolitically, this asymmetry could plausibly accelerate Russia's pursuit — historically, the mere rumor of an adversary's battlefield success (even if exaggerated) has repeatedly generated imitation pressure. However, how quickly and in what form Russia will actually institutionalize this cannot be determined from current evidence, and the absence of any ground-robot integration case at the Rubicon center merely shows that this pursuit has not yet even reached its starting stage. In conclusion, this material is not grounds to fully overturn the existing skepticism about "full replacement of close combat," but it should be kept in mind that Ukraine is gaining a potential position to lead the export of UGV operational doctrine to Western allies — and that this position rests in part on unverified announcements — a dual implication worth bearing in mind together.</p>
+      </div>
+    </div>
+    <div class="panel-synthesis">
+      <h3>Panel Synthesis</h3>
+      <p class="agree">
+        <strong>Points of agreement —</strong> All four perspectives agree on the following: (1) At least eight or more independently confirmed cases (Jul 2025–Jul 2026), with named units, commanders, and locations, have been repeatedly documented, so the prior flat claim that "robots can't replace close combat" clearly needs to be revised downward. (2) These cases are, without exception, confined to isolated, small-scale targets (a bunker, a building, a squad or smaller), and many rely on units' own Telegram disclosures, with limited independent third-party verification — even Zelensky's "first in history" announcement was disputed by Ukraine's own analyst as possibly "exaggerated for publicity." (3) Russia has made no official claim of a "solo-uncrewed position recapture" over the same period (its 2024 Avdiivka robotic-platoon offensive failed), and a Russian-side expert (Sivkov) himself admitted that "robots only clear the way for infantry" — the maturity gap between Ukraine and Russia is pronounced. (4) Cases in which troops remain decisive also exist simultaneously — such as the 165-day infantry defense at Orikhiv and testimony of trench hand-to-hand combat — and the two phenomena are not mutually exclusive.
+      </p>
+      <p class="disagree">
+        <strong>[Disagreement]</strong> There is a difference in emphasis over "how to characterize this phenomenon." The uncrewed-systems-technology view treats it as "a reproducible tactical module under specific conditions (isolated, static targets, available fire-support linkage)" — that is, a technically mature, recurring pattern. The war-doctrine view characterizes it as "not top-down official doctrine but a bottom-up, spontaneously arising TTP confined to specific elite units (the separate-assault-brigade lineage)," and draws the line that evidence is still insufficient to show it has become a front-wide standard. The international-politics view places more weight on "publicity and information-warfare risk" than on technology or doctrine — holding that the gap itself between Ukraine's actual capability and its announcements is a risk factor for allied military-capability assessment. The defense-procurement view stands somewhat apart from this debate, offering the practical observation that, given that the leading cause of armed-UGV loss is enemy drones (75–80%), future procurement priorities will likely be driven more by "counter-drone protection" than by the "close-combat replacement debate."
+      </p>
+    </div>
+
+    <h2>Outlook — Scenarios for the Spread of Close Combat and the Question of Full Autonomy</h2>
+    <div class="item-block">
+      <p class="item-assessment"><span class="confidence-tag confidence-high">Confidence: High</span> It is near-certain that cases of purely uncrewed suppression of isolated, small-scale targets will continue to increase — it has already become a reproducible tactical module across multiple units, and there is no sign that the incentive to reduce troop losses will disappear.</p>
+    </div>
+    <div class="item-block">
+      <p class="item-assessment"><span class="confidence-tag confidence-mid">Confidence: Mid</span> It is unlikely that this pattern will expand to the point of replacing sustained, large-scale close combat at the battalion level or above — the technical limitations remain valid: the inability to navigate three-dimensional terrain such as trenches and debris, the fact that 75–80% of UGV losses are due to enemy drones, and continued skepticism from mainstream institutions such as RAND, CSIS, and the Australian Army Research Centre.</p>
+      <p class="item-altview"><strong>[Alternative View]</strong> However, if Ukraine's 3rd Army Corps' stated goal of "30% infantry-to-robot substitution by the end of 2026" is realized, this timeline could be pulled forward — whether it will be realized cannot be determined from current evidence.</p>
+    </div>
+    <div class="item-block">
+      <p class="item-assessment"><span class="confidence-tag confidence-mid">Confidence: Mid</span> Russia's attempts to close the gap in this domain (the "robotic assault company" concept, etc.) will likely continue, but the gap is unlikely to narrow significantly within the next 6–12 months — grounds for this include Sivkov's own admission and the absence of ground-robot integration at Rubicon. Still, as the international-politics panelist notes, Ukraine's results (even if partly exaggerated) could themselves generate imitation pressure and accelerate the pace of Russia's pursuit.</p>
+    </div>
+    <div class="item-block">
+      <p class="item-assessment"><span class="confidence-tag confidence-low">Confidence: Low</span> It is unlikely that the practice of allied nations incorporating unverified Ukrainian government announcements (cases with undisclosed units and coordinates) directly into military-capability assessments will improve in the near term — this investigation found no discussion of establishing an independent verification framework.</p>
+    </div>
+    <div class="item-block">
+      <p class="item-assessment"><span class="confidence-tag confidence-mid">Confidence: Mid</span> The spread of UGVs into Europe is likely to continue accelerating — more than 50 companies already participated at Eurosatory 2026, with Ukrainian companies directly showcasing combat-proven platforms, and a trend is observed in which Ukraine's battlefield experience is being absorbed into European procurement and doctrine.</p>
+      <p class="item-altview"><strong>[Alternative View]</strong> However, Europe remains at an observation/learning stage, and there is likely to be a considerable lag before actual large-scale fielding.</p>
+    </div>
+  </div>
+
+  <div class="sources">
+    <h3>Sources (all original links used in this investigation)</h3>
+    <ul>
+      <li><a href="https://united24media.com/war-in-ukraine/ukraines-ground-robots-surpass-16000-battlefield-missions-in-a-single-month-20714" target="_blank" rel="noopener">United24 Media — Ukraine's Ground Robots Complete Record 16,676 Battlefield Missions in June</a> <span class="source-tier">Secondary</span></li>
+      <li><a href="https://www.forbes.com/sites/davidkirichenko/2026/06/30/ukraine-wants-robots-to-fight-its-ground-war/" target="_blank" rel="noopener">Forbes — Ukraine Wants Robots To Fight Its Ground War</a> <span class="source-tier">Secondary</span></li>
+      <li><a href="https://www.defensenews.com/unmanned/2026/04/24/ukraine-to-field-25000-ground-robots-in-push-to-replace-soldiers-for-frontline-logistics/" target="_blank" rel="noopener">Defense News — Ukraine to field 25,000 ground robots</a> <span class="source-tier">Secondary</span></li>
+      <li><a href="https://www.atlanticcouncil.org/blogs/ukrainealert/ukraines-robot-army-will-be-crucial-in-2026-but-drones-cant-replace-infantry/" target="_blank" rel="noopener">Atlantic Council — Ukraine's Robot Army Will Be Crucial in 2026 But Drones Can't Replace Infantry</a> <span class="source-tier">Primary (research institute)</span></li>
+      <li><a href="https://www.kyivpost.com/post/81206" target="_blank" rel="noopener">Kyiv Post — Inside Ukraine's Kill Zone, Where Drones Hunt Everything That Moves</a> <span class="source-tier">Secondary</span></li>
+      <li><a href="https://www.twz.com/land/unmanned-ground-vehicles-controlled-via-fiber-optic-cables-being-tested-by-ukraine" target="_blank" rel="noopener">The War Zone — Unmanned Ground Vehicles Controlled Via Fiber Optic Cables Being Tested By Ukraine</a> <span class="source-tier">Secondary</span></li>
+      <li><a href="https://www.forbes.com/sites/vikrammittal/2025/12/28/russia-and-ukraine-adapt-ground-robots-for-new-battlefield-missions/" target="_blank" rel="noopener">Forbes — Russia And Ukraine Adapt Ground Robots For New Battlefield Missions</a> <span class="source-tier">Secondary</span></li>
+      <li><a href="https://www.armyrecognition.com/news/army-news/2026/ukraine-uses-ground-robots-and-drones-to-capture-russian-positions-without-troop-losses" target="_blank" rel="noopener">Army Recognition — Ukraine Uses Ground Robots and Drones to Capture Russian Positions</a> <span class="source-tier">Secondary</span></li>
+      <li><a href="https://defence-blog.com/russia-patents-a-robot-tank-that-flies-its-own-tiny-drone/" target="_blank" rel="noopener">Defence Blog — Russia patents a robot tank that flies its own tiny drone</a> <span class="source-tier">Secondary</span></li>
+      <li><a href="https://www.rand.org/pubs/commentary/2026/04/robots-just-captured-a-russian-position-in-ukraine.html" target="_blank" rel="noopener">RAND — Ground Robots Won't Replace Infantry Soldiers Anytime Soon</a> <span class="source-tier">Primary (research institute)</span></li>
+      <li><a href="https://www.defensemagazine.com/article/war-robots-at-eurosatory-2026-europe-accelerates-ugv-adoption-amid-battlefield-lessons-from-ukraine" target="_blank" rel="noopener">Defense Magazine — War Robots at Eurosatory 2026: Europe Accelerates UGV Adoption</a> <span class="source-tier">Secondary</span></li>
+      <li><a href="https://united24media.com/latest-news/ukraines-new-bizon-l-ground-robot-approved-for-military-use-with-combat-and-engineering-modules-17673" target="_blank" rel="noopener">United24 Media — Ukraine's New Bizon-L Ground Robot Approved for Military Use</a> <span class="source-tier">Secondary</span></li>
+      <li><a href="https://techukraine.org/2025/06/25/meet-termit-the-modular-all-terrain-ugv-greenlit-for-ukraines-armed-forces/" target="_blank" rel="noopener">TechUkraine — Meet Termit, the Modular All-Terrain UGV</a> <span class="source-tier">Secondary</span></li>
+      <li><a href="https://www.forbes.com/sites/vikrammittal/2026/07/17/ukrainian-ground-robots-and-aerial-drones-assault-a-russian-position/" target="_blank" rel="noopener">Forbes — Ukrainian Ground Robots And Aerial Drones Assault A Russian Position</a> <span class="source-tier">Secondary</span></li>
+      <li><a href="https://www.trenchart.us/p/a-ukrainian-gun-bot-just-fought-a" target="_blank" rel="noopener">TrenchArt — A Ukrainian Gun-Bot Just Fought A Russian APC</a> <span class="source-tier">Secondary</span></li>
+      <li><a href="https://www.forbes.com/sites/davidkirichenko/2026/05/13/a-ukrainian-ground-robot-drove-into-a-russian-held-building-and-blew-it-up/" target="_blank" rel="noopener">Forbes — A Ukrainian Ground Robot Drove Into A Russian-Held Building And Blew It Up</a> <span class="source-tier">Secondary</span></li>
+      <li><a href="https://www.forbes.com/sites/davidhambling/2026/01/27/rise-of-the-robots-russian-soldiers-surrender-to-ukrainian-machine/" target="_blank" rel="noopener">Forbes — Rise Of The Robots: Russian Soldiers Surrender To Ukrainian Machine</a> <span class="source-tier">Secondary</span></li>
+      <li><a href="https://www.forbes.com/sites/vikrammittal/2026/03/17/robots-are-dueling-with-robots-in-the-russian-ukrainian-kill-zones/" target="_blank" rel="noopener">Forbes — Robots Are Dueling With Robots In The Russian-Ukrainian Kill Zones</a> <span class="source-tier">Secondary</span></li>
+      <li><a href="https://www.janes.com/defence-intelligence-insights/defence-news/air/ukraines-tencore-says-ugvs-used-in-small-numbers-in-combat-roles" target="_blank" rel="noopener">Janes — Ukraine's Tencore Says UGVs Used in Small Numbers in Combat Roles</a> <span class="source-tier">Primary (trade publication)</span></li>
+      <li><a href="https://www.yahoo.com/news/ground-robots-ukraines-3rd-assault-125504392.html" target="_blank" rel="noopener">Yahoo News — Ground Robots: Ukraine's 3rd Assault Brigade</a> <span class="source-tier">Secondary</span></li>
+      <li><a href="https://united24media.com/latest-news/this-ukrainian-ai-robot-just-captured-three-russian-soldiers-on-the-front-line-video-15373" target="_blank" rel="noopener">United24 Media — This Ukrainian AI Robot Just Captured Three Russian Soldiers</a> <span class="source-tier">Secondary</span></li>
+      <li><a href="https://militarnyi.com/en/news/ukrainian-ugv-droid-tw-7-62-captures-three-russian-soldiers/" target="_blank" rel="noopener">Militarnyi — Ukrainian UGV Droid TW-7.62 Captures Three Russian Soldiers</a> <span class="source-tier">Secondary</span></li>
+      <li><a href="https://euromaidanpress.com/2026/07/21/uav-ugv/" target="_blank" rel="noopener">Euromaidan Press — UAV/UGV Combined Operations Recap</a> <span class="source-tier">Secondary</span></li>
+      <li><a href="https://united24media.com/war-in-ukraine/ukraine-clears-russian-position-near-kupiansk-using-only-robots-video-18417" target="_blank" rel="noopener">United24 Media — Ukraine Clears Russian Position Near Kupiansk Using Only Robots</a> <span class="source-tier">Secondary</span></li>
+      <li><a href="https://www.forbes.com/sites/davidhambling/2026/07/14/ukraine--carries-out-first-ever-robotic-amphibious-assault/" target="_blank" rel="noopener">Forbes — Ukraine Carries Out First-Ever Robotic Amphibious Assault</a> <span class="source-tier">Secondary</span></li>
+      <li><a href="https://united24media.com/latest-news/ukrainian-ground-drone-with-machine-gun-defends-frontline-position-solo-for-45-days-14488" target="_blank" rel="noopener">United24 Media — Ukrainian Ground Drone With Machine Gun Defends Frontline Position Solo For 45 Days</a> <span class="source-tier">Secondary</span></li>
+      <li><a href="https://www.lowyinstitute.org/the-interpreter/ukraine-ground-robots-are-increasingly-going-offensive" target="_blank" rel="noopener">Lowy Institute — Ukraine Ground Robots Are Increasingly Going Offensive</a> <span class="source-tier">Primary (research institute)</span></li>
+      <li><a href="https://euromaidanpress.com/2026/04/13/no-infantry-for-first-time-ukraine-captured-russian-position-using-only-drones-and-robots/" target="_blank" rel="noopener">Euromaidan Press — No Infantry: For First Time, Ukraine Captured Russian Position Using Only Drones and Robots</a> <span class="source-tier">Secondary</span></li>
+      <li><a href="https://www.themoscowtimes.com/2026/04/14/zelensky-says-kyiv-seized-a-russian-position-with-drones-and-robots-is-this-a-game-changer-a92497" target="_blank" rel="noopener">The Moscow Times — Zelensky Says Kyiv Seized a Russian Position With Drones and Robots</a> <span class="source-tier">Secondary</span></li>
+      <li><a href="https://www.wearethemighty.com/tactical/drones-capture-position-first-time-ukraine/" target="_blank" rel="noopener">We Are The Mighty — No Boots, No Problem</a> <span class="source-tier">Secondary</span></li>
+      <li><a href="https://theconversation.com/ukraines-killer-robots-show-how-war-is-changing-280936" target="_blank" rel="noopener">The Conversation — Ukraine's Killer Robots Show How War Is Changing</a> <span class="source-tier">Primary (academic outlet)</span></li>
+      <li><a href="https://kyivindependent.com/how-2-soldiers-survived-165-days-trapped-on-ukraines-front-line/" target="_blank" rel="noopener">Kyiv Independent — How 2 Soldiers Survived 165 Days Trapped on Ukraine's Front Line</a> <span class="source-tier">Secondary</span></li>
+      <li><a href="https://www.pravda.com.ua/eng/articles/2026/04/23/8031354/" target="_blank" rel="noopener">Ukrainska Pravda — "Several Times We Had Enemy Infantry Jumping Into Our Trenches"</a> <span class="source-tier">Secondary</span></li>
+      <li><a href="https://meta-defense.fr/en/2026/08/05/ukraine-ugv-ground-robots-operational-reality/" target="_blank" rel="noopener">Meta-Defense — In Ukraine, UGV Ground Robots Are Becoming an Indispensable Operational Reality</a> <span class="source-tier">Secondary</span></li>
+      <li><a href="https://www.techtimes.com/articles/316975/20260521/ukraines-ground-robots-held-front-line-45-days-infantry-still-not-replaceable.htm" target="_blank" rel="noopener">Tech Times — Ukraine's Ground Robots Held a Front Line for 45 Days: Infantry Still Not Replaceable</a> <span class="source-tier">Secondary</span></li>
+      <li><a href="https://www.defensenews.com/global/europe/2026/02/24/we-dont-have-infantry-ukraines-war-machine-evolves-into-machine-war/" target="_blank" rel="noopener">Defense News — 'We Don't Have Infantry': Ukraine's War Machine Evolves Into Machine War</a> <span class="source-tier">Secondary</span></li>
+      <li><a href="https://oklahomawatch.org/2026/06/09/have-70-of-casualties-in-the-russia-ukraine-war-been-caused-by-drones-as-rep-tom-cole-claimed/" target="_blank" rel="noopener">Oklahoma Watch — Have 70% of Casualties Been Caused by Drones? (Fact-check)</a> <span class="source-tier">Primary (fact-check)</span></li>
+      <li><a href="https://euromaidanpress.com/2026/04/03/drones-caused-96-of-russias-losses-in-march/" target="_blank" rel="noopener">Euromaidan Press — Drones Caused 96% of Russia's Losses in March</a> <span class="source-tier">Secondary</span></li>
+      <li><a href="https://euromaidanpress.com/2026/05/29/from-drones-augmenting-infantry-to-drones-replacing-it-ukraines-third-army-corps-plans-30-robot-for-infantry-substitution-by-end-of-2026/" target="_blank" rel="noopener">Euromaidan Press — Ukraine's Third Army Corps Plans 30% Robot-for-Infantry Substitution</a> <span class="source-tier">Secondary</span></li>
+      <li><a href="https://www.yahoo.com/news/articles/ukraines-drone-forces-commander-says-082716921.html" target="_blank" rel="noopener">Yahoo News — Ukraine's Drone Forces Commander Says Pilots Hitting Russians At Close Range</a> <span class="source-tier">Secondary</span></li>
+      <li><a href="https://www.forbes.com/sites/davidaxe/2024/03/31/the-russians-sent-a-platoon-of-grenade-hurling-robotic-mini-tanks-into-battle-the-ukrainians-blew-up-the-bots-in-the-usual-way-with-drones/" target="_blank" rel="noopener">Forbes — The Russians Sent A Platoon Of Grenade-Hurling Robotic Mini-Tanks Into Battle</a> <span class="source-tier">Secondary</span></li>
+      <li><a href="https://militarnyi.com/en/news/47th-brigade-demonstrates-destruction-of-russian-unmanned-combat-ground-vehicles/" target="_blank" rel="noopener">Militarnyi — 47th Brigade Demonstrates Destruction of Russian UGVs</a> <span class="source-tier">Secondary</span></li>
+      <li><a href="https://www.forbes.com/sites/vikrammittal/2025/02/17/russia-showcases-new-tactics-using-courier-unmanned-ground-vehicles/" target="_blank" rel="noopener">Forbes — Russia Showcases New Tactics Using Courier Unmanned Ground Vehicles</a> <span class="source-tier">Secondary</span></li>
+      <li><a href="https://www.newgeopolitics.org/2025/02/27/robotic-assault-companies-in-russian-army/" target="_blank" rel="noopener">New Geopolitics Research Network — Robotic Assault Companies in Russian Army</a> <span class="source-tier">Primary (research institute)</span></li>
+      <li><a href="https://vpk.name/news/1116601_voennyi_ekspert_raskryl_sposobny_li_roboty_zahvatit_poziciyu_v_zone_svo.html" target="_blank" rel="noopener">VPK.name — Russian-side expert interview (Sivkov)</a> <span class="source-tier">Russian-side expert</span></li>
+      <li><a href="https://ru.themoscowtimes.com/2026/07/11/rossiiskie-voennie-zayavili-chto-vsu-nachali-ispolzovat-nazemnih-robotov-dlya-nastupleniya-a200561" target="_blank" rel="noopener">The Moscow Times (Russian edition) — Report on Russian Defense Ministry claim</a> <span class="source-tier">Secondary</span></li>
+      <li><a href="https://tass.com/defense/2160131" target="_blank" rel="noopener">TASS — Modernized Shturmovik Ground Robot (Russian-side announcement)</a> <span class="source-tier">Russian state media</span></li>
+      <li><a href="https://www.fpri.org/article/2026/06/inside-rubicon-the-structure-of-russias-elite-drone-center/" target="_blank" rel="noopener">FPRI — Inside Rubicon: The Structure of Russia's Elite Drone Center</a> <span class="source-tier">Primary (research institute)</span></li>
+      <li><a href="https://jamestown.org/rubicon-reveals-limits-of-russias-drone-centralization/" target="_blank" rel="noopener">Jamestown Foundation — Rubicon Reveals Limits of Russia's Drone Centralization</a> <span class="source-tier">Primary (research institute)</span></li>
+      <li><a href="https://www.unsw.edu.au/news/2026/03/world-first-report-reveals-the-realities-of-drone-warfare-in-ukr" target="_blank" rel="noopener">UNSW Canberra — World-First Report Reveals the Realities of Drone Warfare</a> <span class="source-tier">Primary (research institute)</span></li>
+      <li><a href="https://researchcentre.army.gov.au/library/land-power-forum/drone-warfare-ukraine-myths-operational-reality-part-1" target="_blank" rel="noopener">Australian Army Research Centre — Drone Warfare Ukraine: Myths & Operational Reality</a> <span class="source-tier">Primary (research institute)</span></li>
+      <li><a href="https://www.csis.org/analysis/ukraines-future-vision-and-current-capabilities-waging-ai-enabled-autonomous-warfare" target="_blank" rel="noopener">CSIS — Ukraine's Future Vision and Current Capabilities for Waging AI-Enabled Autonomous Warfare</a> <span class="source-tier">Primary (research institute)</span></li>
+      <li><a href="https://www.yahoo.com/news/articles/over-80-every-battlefield-hit-073425388.html" target="_blank" rel="noopener">Yahoo News/AP — Over 80% of Battlefield Hits Now Carried Out by Drone, Zelenskyy Says</a> <span class="source-tier">Secondary</span></li>
+    </ul>
+  </div>
+</article>
+</div>
 
 <footer class="sub-footer">
   <div class="container">
