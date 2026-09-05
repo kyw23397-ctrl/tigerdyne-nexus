@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>회원 로그인 — TIGERDYNE NEXUS</title>
+<meta name="description" content="TIGERDYNE NEXUS 승인 회원 로그인. 이메일 주소로 로그인 링크를 보내드립니다.">
+<link rel="canonical" href="https://www.tigerdynenexus.com/account/login.html">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="TIGERDYNE NEXUS">
+<meta property="og:title" content="회원 로그인 — TIGERDYNE NEXUS">
+<meta property="og:description" content="TIGERDYNE NEXUS 승인 회원 로그인. 이메일 주소로 로그인 링크를 보내드립니다.">
+<meta property="og:url" content="https://www.tigerdynenexus.com/account/login.html">
+<meta property="og:locale" content="ko_KR">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../style.css">
+<link rel="stylesheet" href="../subpage.css">
+</head>
+<body>
+
+<header class="sub-header">
+  <div class="nav-inner">
+    <a class="logo" href="../index.html">
+      <div class="logo-photo-wrap" aria-hidden="true"><span class="logo-mark">T</span></div>
+      <div class="logo-texts">
+        <span class="logo-name">TIGERDYNE NEXUS</span>
+        <span class="logo-tagline">국방·안보·방산 컨설팅</span>
+      </div>
+    </a>
+    <div class="nav-right">
+      <ul class="nav-links" id="navLinks">
+        <li><a href="../index.html" data-ko="홈" data-en="Home">홈</a></li>
+        <li><a href="../reports/index.html" data-ko="일일보고서" data-en="Daily Reports">일일보고서</a></li>
+        <li><a href="../insights/index.html" data-ko="주간 전략 종합" data-en="Weekly Synthesis">주간 전략 종합</a></li>
+        <li><a href="../deepdive/index.html" data-ko="깊이보기" data-en="Deep Dive">깊이보기</a></li>
+        <li><a href="../articles/index.html" data-ko="기고문" data-en="Articles">기고문</a></li>
+        <li><a href="../writers/index.html" data-ko="필진" data-en="Writers">필진</a></li>
+        <li><a href="../index.html#contact" data-ko="문의" data-en="Contact">문의</a></li>
+        <li><a href="login.html" data-ko="로그인" data-en="Login">로그인</a></li>
+      </ul>
+      <button class="lang-btn" id="langBtn" type="button" onclick="toggleLang()" aria-pressed="false" aria-label="Switch language to English">EN</button>
+      <button class="hamburger" id="hamburger" type="button" onclick="toggleMenu()" aria-label="메뉴" aria-expanded="false" aria-controls="navLinks">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+</header>
+
+<section class="sub-hero">
+  <div class="container">
+    <span class="label">Member Login</span>
+    <h1 data-ko="회원 로그인" data-en="Member Login">회원 로그인</h1>
+    <p class="lede" data-ko="비밀번호가 없는 로그인입니다. 이메일 주소를 입력하시면 그 주소로 로그인 링크를 보내드리며, 링크를 누르시면 바로 로그인됩니다." data-en="This login is passwordless. Enter your email address and we will send a sign-in link to it; opening the link logs you in directly.">비밀번호가 없는 로그인입니다. 이메일 주소를 입력하시면 그 주소로 로그인 링크를 보내드리며, 링크를 누르시면 바로 로그인됩니다.</p>
+  </div>
+</section>
+
+<section class="sub-section">
+  <div class="container container-center">
+
+    <div class="gate-box">
+
+      <p class="form-status form-status-error" id="expired-notice" hidden="" role="status" data-ko="로그인 링크가 만료되었거나 유효하지 않습니다. 아래에서 새 링크를 다시 요청해 주세요." data-en="That sign-in link has expired or is no longer valid. Please request a new one below.">로그인 링크가 만료되었거나 유효하지 않습니다. 아래에서 새 링크를 다시 요청해 주세요.</p>
+
+      <div id="login-form-wrap">
+        <h3 data-ko="로그인 링크 받기" data-en="Get a Sign-in Link">로그인 링크 받기</h3>
+        <p data-ko="가입 시 사용하신 이메일 주소를 입력해 주세요." data-en="Enter the email address you registered with.">가입 시 사용하신 이메일 주소를 입력해 주세요.</p>
+
+        <form class="contact-form gate-form" id="login-form" novalidate="">
+          <div class="form-group">
+            <label for="li-email" data-ko="이메일" data-en="Email">이메일</label>
+            <input type="email" id="li-email" name="email" required autocomplete="email">
+          </div>
+          <button type="submit" class="btn btn-gold" id="login-submit" data-ko="로그인 링크 보내기" data-en="Send Sign-in Link">로그인 링크 보내기</button>
+          <p class="form-status" id="login-status" role="status" hidden=""></p>
+        </form>
+
+        <p class="form-note" data-ko="보내드린 로그인 링크는 20분 후 만료됩니다." data-en="The sign-in link expires 20 minutes after it is sent.">보내드린 로그인 링크는 20분 후 만료됩니다.</p>
+      </div>
+
+      <div id="login-sent" hidden="">
+        <h3 data-ko="메일함을 확인해 주세요" data-en="Please Check Your Inbox">메일함을 확인해 주세요</h3>
+        <p data-ko="입력하신 주소가 승인된 회원이라면 로그인 링크를 보내드렸습니다. 메일함을 확인해 주세요." data-en="If the address you entered belongs to an approved member, a sign-in link has been sent to it. Please check your inbox.">입력하신 주소가 승인된 회원이라면 로그인 링크를 보내드렸습니다. 메일함을 확인해 주세요.</p>
+        <p data-ko="로그인 링크는 20분 후 만료됩니다." data-en="The sign-in link expires after 20 minutes.">로그인 링크는 20분 후 만료됩니다.</p>
+      </div>
+
+    </div>
+
+    <p class="gate-note i18n-ko">아직 회원이 아니신가요? <a href="signup.html">리서치 열람 신청</a>을 먼저 해 주세요.</p>
+    <p class="gate-note i18n-en" hidden="">Not a member yet? Start with a <a href="signup.html">research access request</a>.</p>
+
+  </div>
+</section>
+
+<footer class="sub-footer">
+  <div class="container">
+    <span>© 2026 TIGERDYNE NEXUS</span>
+    <nav class="sub-footer-nav" aria-label="정책 링크">
+      <a href="../methodology.html" data-ko="방법론 및 편집 책임" data-en="Methodology &amp; Editorial Responsibility">방법론 및 편집 책임</a>
+      <a href="../corrections/index.html" data-ko="정정 보고" data-en="Corrections">정정 보고</a>
+      <a href="../trackrecord/index.html" data-ko="판단 트랙레코드" data-en="Track Record">판단 트랙레코드</a>
+    </nav>
+  </div>
+</footer>
+
+<script src="../app.js"></script>
+<script>
+(function () {
+  var form = document.getElementById('login-form');
+  var wrap = document.getElementById('login-form-wrap');
+  var sent = document.getElementById('login-sent');
+  var btn = document.getElementById('login-submit');
+  var status = document.getElementById('login-status');
+  var expired = document.getElementById('expired-notice');
+
+  if (expired && new URLSearchParams(location.search).get('error') === 'expired') {
+    expired.hidden = false;
+  }
+
+  if (!form) return;
+
+  var btnKo = btn.getAttribute('data-ko');
+  var btnEn = btn.getAttribute('data-en');
+  var isKo = function () { return (typeof lang === 'undefined' ? 'ko' : lang) !== 'en'; };
+
+  function setLoading(on) {
+    if (on) {
+      btn.disabled = true;
+      btn.classList.add('is-loading');
+      btn.setAttribute('data-ko', '전송 중…');
+      btn.setAttribute('data-en', 'Sending…');
+      btn.textContent = isKo() ? '전송 중…' : 'Sending…';
+    } else {
+      btn.disabled = false;
+      btn.classList.remove('is-loading');
+      btn.setAttribute('data-ko', btnKo);
+      btn.setAttribute('data-en', btnEn);
+      btn.textContent = isKo() ? btnKo : btnEn;
+    }
+  }
+
+  form.addEventListener('submit', function (e) {
+    e.preventDefault();
+    if (!form.reportValidity()) return;
+
+    status.hidden = true;
+    status.textContent = '';
+    setLoading(true);
+
+    fetch('/api/login', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ email: document.getElementById('li-email').value.trim() })
+    }).then(function () {
+      // Deliberately identical regardless of whether the address is a member.
+      if (expired) expired.hidden = true;
+      wrap.hidden = true;
+      sent.hidden = false;
+    }).catch(function () {
+      setLoading(false);
+      status.hidden = false;
+      status.className = 'form-status form-status-error';
+      status.setAttribute('data-ko', '요청에 실패했습니다. 잠시 후 다시 시도해 주세요.');
+      status.setAttribute('data-en', 'The request failed. Please try again in a little while.');
+      status.textContent = isKo()
+        ? '요청에 실패했습니다. 잠시 후 다시 시도해 주세요.'
+        : 'The request failed. Please try again in a little while.';
+    });
+  });
+})();
+</script>
+</body>
+</html>

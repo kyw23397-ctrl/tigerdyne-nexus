@@ -29,6 +29,12 @@ export default async (request: Request, context: any) => {
     return context.next();
   }
 
+  // 회원 로그인(무비밀번호 · 오너 승인) 쿠키도 동일하게 통과시킨다.
+  // 공유 비밀번호 방식과 병행 운영.
+  if (await memberCookieValid(cookieHeader)) {
+    return context.next();
+  }
+
   if (request.method === "POST") {
     const form = await request.formData();
     const submitted = form.get("password");
@@ -53,6 +59,69 @@ export default async (request: Request, context: any) => {
   });
 };
 
+// ── 회원 쿠키 검증 (Deno/Edge — Web Crypto API 사용, Node crypto 사용 금지) ──
+// tigerdyne_member = base64url(email) "." expiryEpochMs "." HMAC-SHA256-hex(secret, "base64url(email).expiryEpochMs")
+const MEMBER_COOKIE = "tigerdyne_member";
+
+function readCookie(cookieHeader: string, name: string): string | null {
+  for (const part of cookieHeader.split(";")) {
+    const raw = part.trim();
+    const eq = raw.indexOf("=");
+    if (eq > 0 && raw.slice(0, eq) === name) {
+      return raw.slice(eq + 1);
+    }
+  }
+  return null;
+}
+
+function toHex(buf: ArrayBuffer): string {
+  return Array.from(new Uint8Array(buf))
+    .map((b) => b.toString(16).padStart(2, "0"))
+    .join("");
+}
+
+function timingSafeEqualHex(a: string, b: string): boolean {
+  if (a.length !== b.length) return false;
+  let diff = 0;
+  for (let i = 0; i < a.length; i++) {
+    diff |= a.charCodeAt(i) ^ b.charCodeAt(i);
+  }
+  return diff === 0;
+}
+
+async function memberCookieValid(cookieHeader: string): Promise<boolean> {
+  try {
+    const value = readCookie(cookieHeader, MEMBER_COOKIE);
+    if (!value) return false;
+
+    const secret = Netlify.env.get("MEMBER_TOKEN_SECRET");
+    if (!secret) return false;
+
+    const lastDot = value.lastIndexOf(".");
+    if (lastDot <= 0) return false;
+    const base = value.slice(0, lastDot);
+    const sig = value.slice(lastDot + 1);
+
+    const midDot = base.lastIndexOf(".");
+    if (midDot <= 0) return false;
+    const expiry = Number(base.slice(midDot + 1));
+    if (!Number.isFinite(expiry) || expiry <= Date.now()) return false;
+
+    const enc = new TextEncoder();
+    const key = await crypto.subtle.importKey(
+      "raw",
+      enc.encode(secret),
+      { name: "HMAC", hash: "SHA-256" },
+      false,
+      ["sign"],
+    );
+    const mac = await crypto.subtle.sign("HMAC", key, enc.encode(base));
+    return timingSafeEqualHex(sig, toHex(mac));
+  } catch {
+    return false;
+  }
+}
+
 function gateHTML(showError: boolean) {
   return `<!DOCTYPE html>
 <html lang="ko">
@@ -68,6 +137,9 @@ function gateHTML(showError: boolean) {
   input[type=password] { width:100%; padding:10px; border:1px solid rgba(196,154,60,0.18); margin-bottom:12px; box-sizing:border-box; background:#142234; color:#fff; border-radius:2px; }
   button { width:100%; padding:10px; background:#c49a3c; color:#08131f; border:none; cursor:pointer; font-weight:600; border-radius:2px; }
   .error { color:#dbb55a; font-size:0.85rem; margin-bottom:12px; }
+  .alt { margin:20px 0 0; font-size:0.85rem; color:rgba(255,255,255,0.55); }
+  .alt a { color:#c49a3c; text-decoration:none; }
+  .alt a:hover { text-decoration:underline; }
 </style>
 </head>
 <body>
@@ -79,6 +151,7 @@ function gateHTML(showError: boolean) {
       <input type="password" name="password" placeholder="비밀번호" required autofocus>
       <button type="submit">입장</button>
     </form>
+    <p class="alt">승인된 회원이신가요? <a href="/account/login.html">회원 로그인</a></p>
   </div>
 </body>
 </html>`;

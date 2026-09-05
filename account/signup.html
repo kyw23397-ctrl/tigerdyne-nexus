@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>리서치 열람 신청 — TIGERDYNE NEXUS</title>
+<meta name="description" content="TIGERDYNE NEXUS 리서치 자료 열람을 신청합니다. 대표 승인 후 이메일로 안내드립니다.">
+<link rel="canonical" href="https://www.tigerdynenexus.com/account/signup.html">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="TIGERDYNE NEXUS">
+<meta property="og:title" content="리서치 열람 신청 — TIGERDYNE NEXUS">
+<meta property="og:description" content="TIGERDYNE NEXUS 리서치 자료 열람을 신청합니다. 대표 승인 후 이메일로 안내드립니다.">
+<meta property="og:url" content="https://www.tigerdynenexus.com/account/signup.html">
+<meta property="og:locale" content="ko_KR">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../style.css">
+<link rel="stylesheet" href="../subpage.css">
+</head>
+<body>
+
+<header class="sub-header">
+  <div class="nav-inner">
+    <a class="logo" href="../index.html">
+      <div class="logo-photo-wrap" aria-hidden="true"><span class="logo-mark">T</span></div>
+      <div class="logo-texts">
+        <span class="logo-name">TIGERDYNE NEXUS</span>
+        <span class="logo-tagline">국방·안보·방산 컨설팅</span>
+      </div>
+    </a>
+    <div class="nav-right">
+      <ul class="nav-links" id="navLinks">
+        <li><a href="../index.html" data-ko="홈" data-en="Home">홈</a></li>
+        <li><a href="../reports/index.html" data-ko="일일보고서" data-en="Daily Reports">일일보고서</a></li>
+        <li><a href="../insights/index.html" data-ko="주간 전략 종합" data-en="Weekly Synthesis">주간 전략 종합</a></li>
+        <li><a href="../deepdive/index.html" data-ko="깊이보기" data-en="Deep Dive">깊이보기</a></li>
+        <li><a href="../articles/index.html" data-ko="기고문" data-en="Articles">기고문</a></li>
+        <li><a href="../writers/index.html" data-ko="필진" data-en="Writers">필진</a></li>
+        <li><a href="../index.html#contact" data-ko="문의" data-en="Contact">문의</a></li>
+        <li><a href="login.html" data-ko="로그인" data-en="Login">로그인</a></li>
+      </ul>
+      <button class="lang-btn" id="langBtn" type="button" onclick="toggleLang()" aria-pressed="false" aria-label="Switch language to English">EN</button>
+      <button class="hamburger" id="hamburger" type="button" onclick="toggleMenu()" aria-label="메뉴" aria-expanded="false" aria-controls="navLinks">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+</header>
+
+<section class="sub-hero">
+  <div class="container">
+    <span class="label">Membership</span>
+    <h1 data-ko="리서치 열람 신청" data-en="Request Research Access">리서치 열람 신청</h1>
+    <p class="lede" data-ko="일일보고서·주간 전략 종합·깊이보기 등 리서치 자료는 승인된 분에 한해 열람하실 수 있습니다. 아래로 신청해 주시면 대표가 직접 확인·승인한 뒤 이메일로 안내드립니다." data-en="Our research — Daily Reports, Weekly Synthesis, and Deep Dive — is available to approved readers only. Submit the form below; the principal reviews each request personally and we will notify you by email once it is approved.">일일보고서·주간 전략 종합·깊이보기 등 리서치 자료는 승인된 분에 한해 열람하실 수 있습니다. 아래로 신청해 주시면 대표가 직접 확인·승인한 뒤 이메일로 안내드립니다.</p>
+  </div>
+</section>
+
+<section class="sub-section">
+  <div class="container container-center">
+
+    <div class="gate-box" id="signup-box">
+
+      <div id="signup-form-wrap">
+        <h3 data-ko="열람 신청서" data-en="Access Request Form">열람 신청서</h3>
+        <p data-ko="아래 항목을 모두 입력해 주세요. 검토 후 이메일로 결과를 알려드립니다." data-en="Please complete every field below. We will let you know the outcome by email.">아래 항목을 모두 입력해 주세요. 검토 후 이메일로 결과를 알려드립니다.</p>
+
+        <form class="contact-form gate-form" id="signup-form" novalidate="">
+          <div class="form-group">
+            <label for="su-name" data-ko="이름" data-en="Name">이름</label>
+            <input type="text" id="su-name" name="name" required autocomplete="name">
+          </div>
+          <div class="form-group">
+            <label for="su-email" data-ko="이메일" data-en="Email">이메일</label>
+            <input type="email" id="su-email" name="email" required autocomplete="email">
+          </div>
+          <div class="form-group">
+            <label for="su-org" data-ko="소속 / 기관" data-en="Organization">소속 / 기관</label>
+            <input type="text" id="su-org" name="organization" required autocomplete="organization">
+          </div>
+          <div class="form-group">
+            <label for="su-purpose" data-ko="신청 사유 · 관심 분야" data-en="Reason for Request / Areas of Interest">신청 사유 · 관심 분야</label>
+            <textarea id="su-purpose" name="purpose" rows="4" required></textarea>
+          </div>
+          <button type="submit" class="btn btn-gold" id="signup-submit" data-ko="신청 보내기" data-en="Submit Request">신청 보내기</button>
+          <p class="form-status" id="signup-status" role="status" hidden=""></p>
+        </form>
+
+        <p class="form-note" data-ko="입력하신 정보는 이 열람 신청을 검토하는 목적으로만 사용합니다." data-en="The information you provide is used only to review this access request.">입력하신 정보는 이 열람 신청을 검토하는 목적으로만 사용합니다.</p>
+      </div>
+
+      <div id="signup-success" hidden="">
+        <h3 data-ko="신청이 접수되었습니다" data-en="Your Request Has Been Received">신청이 접수되었습니다</h3>
+        <p data-ko="검토 후 승인되면 입력하신 이메일 주소로 안내드리겠습니다. 신청해 주셔서 감사합니다." data-en="Once your request is reviewed and approved, we will send the details to the email address you provided. Thank you for your interest.">검토 후 승인되면 입력하신 이메일 주소로 안내드리겠습니다. 신청해 주셔서 감사합니다.</p>
+      </div>
+
+    </div>
+
+    <p class="gate-note i18n-ko">이미 승인받으셨나요? <a href="login.html">회원 로그인</a>으로 이동해 주세요.</p>
+    <p class="gate-note i18n-en" hidden="">Already approved? Go to <a href="login.html">Member Login</a>.</p>
+
+  </div>
+</section>
+
+<footer class="sub-footer">
+  <div class="container">
+    <span>© 2026 TIGERDYNE NEXUS</span>
+    <nav class="sub-footer-nav" aria-label="정책 링크">
+      <a href="../methodology.html" data-ko="방법론 및 편집 책임" data-en="Methodology &amp; Editorial Responsibility">방법론 및 편집 책임</a>
+      <a href="../corrections/index.html" data-ko="정정 보고" data-en="Corrections">정정 보고</a>
+      <a href="../trackrecord/index.html" data-ko="판단 트랙레코드" data-en="Track Record">판단 트랙레코드</a>
+    </nav>
+  </div>
+</footer>
+
+<script src="../app.js"></script>
+<script>
+(function () {
+  var form = document.getElementById('signup-form');
+  var wrap = document.getElementById('signup-form-wrap');
+  var success = document.getElementById('signup-success');
+  var btn = document.getElementById('signup-submit');
+  var status = document.getElementById('signup-status');
+  if (!form) return;
+
+  var btnKo = btn.getAttribute('data-ko');
+  var btnEn = btn.getAttribute('data-en');
+  var isKo = function () { return (typeof lang === 'undefined' ? 'ko' : lang) !== 'en'; };
+
+  function setLoading(on) {
+    if (on) {
+      btn.disabled = true;
+      btn.classList.add('is-loading');
+      btn.setAttribute('data-ko', '전송 중…');
+      btn.setAttribute('data-en', 'Sending…');
+      btn.textContent = isKo() ? '전송 중…' : 'Sending…';
+    } else {
+      btn.disabled = false;
+      btn.classList.remove('is-loading');
+      btn.setAttribute('data-ko', btnKo);
+      btn.setAttribute('data-en', btnEn);
+      btn.textContent = isKo() ? btnKo : btnEn;
+    }
+  }
+
+  form.addEventListener('submit', function (e) {
+    e.preventDefault();
+    if (!form.reportValidity()) return;
+
+    status.hidden = true;
+    status.textContent = '';
+    setLoading(true);
+
+    fetch('/api/signup', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        email: document.getElementById('su-email').value.trim(),
+        name: document.getElementById('su-name').value.trim(),
+        organization: document.getElementById('su-org').value.trim(),
+        purpose: document.getElementById('su-purpose').value.trim()
+      })
+    }).then(function () {
+      // The API always answers ok — we show the same confirmation either way.
+      wrap.hidden = true;
+      success.hidden = false;
+    }).catch(function () {
+      setLoading(false);
+      status.hidden = false;
+      status.className = 'form-status form-status-error';
+      status.setAttribute('data-ko', '전송에 실패했습니다. 잠시 후 다시 시도해 주세요.');
+      status.setAttribute('data-en', 'Submission failed. Please try again in a little while.');
+      status.textContent = isKo()
+        ? '전송에 실패했습니다. 잠시 후 다시 시도해 주세요.'
+        : 'Submission failed. Please try again in a little while.';
+    });
+  });
+})();
+</script>
+</body>
+</html>

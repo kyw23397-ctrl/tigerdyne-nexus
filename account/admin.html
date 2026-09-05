@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex, nofollow">
+<title>회원 승인 관리 — TIGERDYNE NEXUS</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../style.css">
+<link rel="stylesheet" href="../subpage.css">
+<style>
+/* Page-local styling only — subpage.css is shared and must not be edited.
+   Everything below reuses the existing design tokens from style.css. */
+.admin-scroll { width: 100%; overflow-x: auto; }
+.admin-table { min-width: 780px; }
+.admin-name { color: var(--text); font-weight: 600; }
+.admin-email { display: block; margin-top: 2px; font-size: 0.8rem; color: var(--text-mid); word-break: break-all; }
+.admin-purpose { color: var(--text-mid); max-width: 36ch; }
+.admin-count { margin: 0 0 14px; font-size: 0.86rem; color: var(--text-mid); }
+.admin-actions { display: flex; flex-wrap: wrap; align-items: center; gap: 8px; }
+.btn-sm { padding: 7px 14px; font-size: 0.68rem; letter-spacing: 0.08em; }
+.revoke-ask-text { font-size: 0.8rem; color: var(--text); }
+.admin-muted { color: var(--text-lt); }
+.admin-panel { width: 100%; max-width: 1040px; }
+</style>
+</head>
+<body>
+
+<header class="sub-header">
+  <div class="nav-inner">
+    <a class="logo" href="../index.html">
+      <div class="logo-photo-wrap" aria-hidden="true"><span class="logo-mark">T</span></div>
+      <div class="logo-texts">
+        <span class="logo-name">TIGERDYNE NEXUS</span>
+        <span class="logo-tagline">국방·안보·방산 컨설팅</span>
+      </div>
+    </a>
+    <div class="nav-right">
+      <ul class="nav-links" id="navLinks">
+        <li><a href="../index.html" data-ko="홈" data-en="Home">홈</a></li>
+        <li><a href="../reports/index.html" data-ko="일일보고서" data-en="Daily Reports">일일보고서</a></li>
+        <li><a href="../insights/index.html" data-ko="주간 전략 종합" data-en="Weekly Synthesis">주간 전략 종합</a></li>
+        <li><a href="../deepdive/index.html" data-ko="깊이보기" data-en="Deep Dive">깊이보기</a></li>
+        <li><a href="../articles/index.html" data-ko="기고문" data-en="Articles">기고문</a></li>
+        <li><a href="../writers/index.html" data-ko="필진" data-en="Writers">필진</a></li>
+        <li><a href="../index.html#contact" data-ko="문의" data-en="Contact">문의</a></li>
+        <li><a href="login.html" data-ko="로그인" data-en="Login">로그인</a></li>
+      </ul>
+      <button class="lang-btn" id="langBtn" type="button" onclick="toggleLang()" aria-pressed="false" aria-label="Switch language to English">EN</button>
+      <button class="hamburger" id="hamburger" type="button" onclick="toggleMenu()" aria-label="메뉴" aria-expanded="false" aria-controls="navLinks">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+</header>
+
+<section class="sub-hero">
+  <div class="container">
+    <span class="label">Administration</span>
+    <h1 data-ko="회원 승인 관리" data-en="Member Administration">회원 승인 관리</h1>
+    <p class="lede" data-ko="열람 신청 내역을 확인하고 승인하거나 해제합니다." data-en="Review access requests, then approve or revoke them.">열람 신청 내역을 확인하고 승인하거나 해제합니다.</p>
+  </div>
+</section>
+
+<section class="sub-section">
+  <div class="container container-center">
+
+    <div class="gate-box" id="auth-box">
+      <h3 data-ko="관리자 확인" data-en="Administrator Sign-in">관리자 확인</h3>
+      <p data-ko="관리자 비밀번호를 입력해 주세요." data-en="Please enter the administrator password.">관리자 비밀번호를 입력해 주세요.</p>
+      <form class="contact-form gate-form" id="auth-form" novalidate="">
+        <div class="form-group">
+          <label for="ad-pw" data-ko="관리자 비밀번호" data-en="Administrator Password">관리자 비밀번호</label>
+          <input type="password" id="ad-pw" name="password" required autocomplete="current-password">
+        </div>
+        <button type="submit" class="btn btn-gold" id="auth-submit" data-ko="확인" data-en="Continue">확인</button>
+        <p class="form-status" id="auth-status" role="status" hidden=""></p>
+      </form>
+    </div>
+
+    <div class="admin-panel" id="admin-panel" hidden="">
+      <p class="admin-count" id="admin-count"></p>
+      <div class="admin-scroll">
+        <table class="trackrecord-table admin-table" id="admin-table" hidden="">
+          <thead>
+            <tr>
+              <th data-ko="회원" data-en="Member">회원</th>
+              <th data-ko="소속 / 기관" data-en="Organization">소속 / 기관</th>
+              <th data-ko="신청 사유" data-en="Reason">신청 사유</th>
+              <th data-ko="신청일" data-en="Requested">신청일</th>
+              <th data-ko="상태" data-en="Status">상태</th>
+              <th data-ko="작업" data-en="Action">작업</th>
+            </tr>
+          </thead>
+          <tbody id="admin-tbody"></tbody>
+        </table>
+      </div>
+      <div class="empty-state" id="admin-empty" hidden="" data-ko="아직 접수된 열람 신청이 없습니다." data-en="No access requests have been received yet.">아직 접수된 열람 신청이 없습니다.</div>
+      <p class="form-status" id="admin-status" role="status" hidden=""></p>
+    </div>
+
+  </div>
+</section>
+
+<footer class="sub-footer">
+  <div class="container">
+    <span>© 2026 TIGERDYNE NEXUS</span>
+    <nav class="sub-footer-nav" aria-label="정책 링크">
+      <a href="../methodology.html" data-ko="방법론 및 편집 책임" data-en="Methodology &amp; Editorial Responsibility">방법론 및 편집 책임</a>
+      <a href="../corrections/index.html" data-ko="정정 보고" data-en="Corrections">정정 보고</a>
+      <a href="../trackrecord/index.html" data-ko="판단 트랙레코드" data-en="Track Record">판단 트랙레코드</a>
+    </nav>
+  </div>
+</footer>
+
+<script src="../app.js"></script>
+<script>
+(function () {
+  /* The administrator password is held ONLY in this in-memory variable for the
+     life of the page. It is deliberately never written to any browser storage,
+     to a cookie, or to the URL — closing or reloading the tab must force it to
+     be entered again. */
+  var adminPassword = null;
+
+  var authBox = document.getElementById('auth-box');
+  var authForm = document.getElementById('auth-form');
+  var authBtn = document.getElementById('auth-submit');
+  var authStatus = document.getElementById('auth-status');
+  var panel = document.getElementById('admin-panel');
+  var table = document.getElementById('admin-table');
+  var tbody = document.getElementById('admin-tbody');
+  var emptyState = document.getElementById('admin-empty');
+  var countLine = document.getElementById('admin-count');
+  var listStatus = document.getElementById('admin-status');
+
+  var isKo = function () { return (typeof lang === 'undefined' ? 'ko' : lang) !== 'en'; };
+  var relang = function () { if (typeof applyLang === 'function') applyLang(); };
+
+  function esc(v) {
+    return String(v == null ? '' : v)
+      .replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;')
+      .replace(/"/g, '&quot;').replace(/'/g, '&#39;');
+  }
+
+  function setStatus(el, ko, en, kind) {
+    el.hidden = false;
+    el.className = 'form-status' + (kind ? ' form-status-' + kind : '');
+    el.setAttribute('data-ko', ko);
+    el.setAttribute('data-en', en);
+    el.textContent = isKo() ? ko : en;
+  }
+
+  function fmtDate(v) {
+    if (!v) return '—';
+    var d = new Date(v);
+    if (isNaN(d.getTime())) return String(v);
+    var p = function (n) { return (n < 10 ? '0' : '') + n; };
+    return d.getFullYear() + '-' + p(d.getMonth() + 1) + '-' + p(d.getDate());
+  }
+
+  function api(body) {
+    return fetch('/api/admin', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(body)
+    });
+  }
+
+  var STATUS_META = {
+    pending:  { cls: 'outcome-pending',   ko: '승인 대기', en: 'Pending',  rank: 0 },
+    approved: { cls: 'outcome-confirmed', ko: '승인됨',   en: 'Approved', rank: 1 },
+    revoked:  { cls: 'outcome-missed',    ko: '해제됨',   en: 'Revoked',  rank: 2 }
+  };
+
+  function actionsHtml(m) {
+    var email = esc(m.email);
+    if (m.status === 'pending') {
+      return '<div class="admin-actions" data-row="' + email + '">' +
+        '<button type="button" class="btn btn-gold btn-sm" data-act="approve" data-email="' + email + '" data-ko="승인" data-en="Approve">승인</button>' +
+        '</div>';
+    }
+    if (m.status === 'approved') {
+      return '<div class="admin-actions" data-row="' + email + '">' +
+        '<button type="button" class="btn btn-outline btn-sm" data-act="ask-revoke" data-email="' + email + '" data-ko="해제" data-en="Revoke">해제</button>' +
+        '</div>';
+    }
+    return '<span class="admin-muted">—</span>';
+  }
+
+  function render(members) {
+    var list = (members || []).slice().sort(function (a, b) {
+      var ra = (STATUS_META[a.status] || { rank: 9 }).rank;
+      var rb = (STATUS_META[b.status] || { rank: 9 }).rank;
+      if (ra !== rb) return ra - rb;
+      return String(b.requestedAt || '').localeCompare(String(a.requestedAt || ''));
+    });
+
+    if (!list.length) {
+      table.hidden = true;
+      emptyState.hidden = false;
+      countLine.textContent = '';
+      countLine.removeAttribute('data-ko');
+      countLine.removeAttribute('data-en');
+      return;
+    }
+
+    var pending = list.filter(function (m) { return m.status === 'pending'; }).length;
+    var ko = '전체 ' + list.length + '명 · 승인 대기 ' + pending + '명';
+    var en = list.length + ' total · ' + pending + ' pending';
+    countLine.setAttribute('data-ko', ko);
+    countLine.setAttribute('data-en', en);
+    countLine.textContent = isKo() ? ko : en;
+
+    tbody.innerHTML = list.map(function (m) {
+      var meta = STATUS_META[m.status] || { cls: 'outcome-pending', ko: m.status, en: m.status };
+      return '<tr>' +
+        '<td><span class="admin-name">' + esc(m.name) + '</span>' +
+            '<span class="admin-email">' + esc(m.email) + '</span></td>' +
+        '<td>' + esc(m.organization) + '</td>' +
+        '<td class="admin-purpose">' + esc(m.purpose) + '</td>' +
+        '<td>' + esc(fmtDate(m.requestedAt)) + '</td>' +
+        '<td><span class="outcome-tag ' + meta.cls + '" data-ko="' + esc(meta.ko) + '" data-en="' + esc(meta.en) + '">' + esc(meta.ko) + '</span></td>' +
+        '<td>' + actionsHtml(m) + '</td>' +
+      '</tr>';
+    }).join('');
+
+    emptyState.hidden = true;
+    table.hidden = false;
+    relang();
+  }
+
+  function loadList(password) {
+    return api({ password: password, action: 'list' }).then(function (res) {
+      if (res.status === 401) { var e = new Error('unauthorized'); e.code = 401; throw e; }
+      if (!res.ok) throw new Error('failed');
+      return res.json();
+    });
+  }
+
+  /* ---- password gate ---- */
+  authForm.addEventListener('submit', function (e) {
+    e.preventDefault();
+    if (!authForm.reportValidity()) return;
+    var pw = document.getElementById('ad-pw').value;
+
+    authStatus.hidden = true;
+    authBtn.disabled = true;
+    authBtn.classList.add('is-loading');
+
+    loadList(pw).then(function (data) {
+      adminPassword = pw;           // kept in memory only
+      authBox.hidden = true;
+      panel.hidden = false;
+      render(data.members);
+    }).catch(function (err) {
+      authBtn.disabled = false;
+      authBtn.classList.remove('is-loading');
+      if (err && err.code === 401) {
+        setStatus(authStatus, '비밀번호가 올바르지 않습니다.', 'That password is not correct.', 'error');
+      } else {
+        setStatus(authStatus, '목록을 불러오지 못했습니다. 잠시 후 다시 시도해 주세요.', 'Could not load the list. Please try again in a little while.', 'error');
+      }
+      document.getElementById('ad-pw').select();
+    });
+  });
+
+  /* ---- refresh helper ---- */
+  function refresh() {
+    return loadList(adminPassword).then(function (data) {
+      listStatus.hidden = true;
+      render(data.members);
+    }).catch(function () {
+      setStatus(listStatus, '목록을 새로 고치지 못했습니다. 잠시 후 다시 시도해 주세요.', 'Could not refresh the list. Please try again in a little while.', 'error');
+    });
+  }
+
+  function runAction(action, email, btn) {
+    btn.disabled = true;
+    btn.classList.add('is-loading');
+    listStatus.hidden = true;
+    api({ password: adminPassword, action: action, email: email }).then(function (res) {
+      if (!res.ok) throw new Error('failed');
+      return refresh();
+    }).catch(function () {
+      btn.disabled = false;
+      btn.classList.remove('is-loading');
+      setStatus(listStatus, '요청을 처리하지 못했습니다. 잠시 후 다시 시도해 주세요.', 'The request could not be completed. Please try again in a little while.', 'error');
+    });
+  }
+
+  /* ---- inline two-step revoke (no native dialogs: they freeze automation) ---- */
+  function askRevoke(cell, email) {
+    cell.innerHTML =
+      '<span class="revoke-ask-text" data-ko="정말 해제할까요?" data-en="Really revoke access?">정말 해제할까요?</span>' +
+      '<button type="button" class="btn btn-gold btn-sm" data-act="revoke-yes" data-email="' + esc(email) + '" data-ko="예" data-en="Yes">예</button>' +
+      '<button type="button" class="btn btn-outline btn-sm" data-act="revoke-no" data-email="' + esc(email) + '" data-ko="취소" data-en="Cancel">취소</button>';
+    relang();
+  }
+
+  function resetRevoke(cell, email) {
+    cell.innerHTML =
+      '<button type="button" class="btn btn-outline btn-sm" data-act="ask-revoke" data-email="' + esc(email) + '" data-ko="해제" data-en="Revoke">해제</button>';
+    relang();
+  }
+
+  tbody.addEventListener('click', function (e) {
+    var btn = e.target.closest('button[data-act]');
+    if (!btn) return;
+    var act = btn.getAttribute('data-act');
+    var email = btn.getAttribute('data-email');
+    var cell = btn.closest('.admin-actions');
+
+    if (act === 'approve') { runAction('approve', email, btn); return; }
+    if (act === 'ask-revoke') { askRevoke(cell, email); return; }
+    if (act === 'revoke-no') { resetRevoke(cell, email); return; }
+    if (act === 'revoke-yes') { runAction('revoke', email, btn); return; }
+  });
+})();
+</script>
+</body>
+</html>
