@@ -32,6 +32,45 @@ export default async (request) => {
     });
   }
 
+  // ?action=adddomain — Resend에 도메인을 등록하고 필요한 DNS 레코드를 돌려받는다.
+  if (url.searchParams.get("action") === "adddomain") {
+    const name = url.searchParams.get("domain") || "tigerdynenexus.com";
+    try {
+      const res = await fetch("https://api.resend.com/domains", {
+        method: "POST",
+        headers: { Authorization: `Bearer ${key}`, "content-type": "application/json" },
+        body: JSON.stringify({ name }),
+      });
+      return new Response(
+        JSON.stringify({ ok: true, status: res.status, body: await res.text() }, null, 2),
+        { status: 200, headers: { "content-type": "application/json" } }
+      );
+    } catch (err) {
+      return new Response(JSON.stringify({ ok: false, error: String(err && err.message) }), {
+        status: 200,
+        headers: { "content-type": "application/json" },
+      });
+    }
+  }
+
+  // ?action=listdomains — 등록된 도메인과 인증 상태 확인
+  if (url.searchParams.get("action") === "listdomains") {
+    try {
+      const res = await fetch("https://api.resend.com/domains", {
+        headers: { Authorization: `Bearer ${key}` },
+      });
+      return new Response(
+        JSON.stringify({ ok: true, status: res.status, body: await res.text() }, null, 2),
+        { status: 200, headers: { "content-type": "application/json" } }
+      );
+    } catch (err) {
+      return new Response(JSON.stringify({ ok: false, error: String(err && err.message) }), {
+        status: 200,
+        headers: { "content-type": "application/json" },
+      });
+    }
+  }
+
   let status = null;
   let body = null;
   try {
