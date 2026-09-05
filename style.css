@@ -577,6 +577,137 @@ h3 { font-size: 1.25rem; font-weight: 600; }
     width: 5px; height: 1px; background: var(--gold);
 }
 
+/* ===== PEOPLE / ORG CHART ===== */
+.org-intro {
+    max-width: 620px; margin: 14px auto 0;
+    font-size: 0.95rem; color: var(--text-mid); line-height: 1.85;
+    word-break: keep-all;
+}
+.org-chart { margin-top: 56px; }
+.org-top { display: flex; justify-content: center; }
+
+.org-node {
+    background: var(--white);
+    border: 1px solid var(--border);
+    border-top: 2px solid var(--gold);
+    padding: 24px 26px;
+    transition: box-shadow var(--dur) var(--ease), transform var(--dur) var(--ease);
+}
+.org-node:hover { box-shadow: var(--shadow-sm); transform: translateY(-2px); }
+.org-node h3 { color: var(--text); font-size: 1.08rem; margin-bottom: 14px; }
+
+.org-node-lead {
+    background: var(--navy-2);
+    border-color: var(--border);
+    text-align: center;
+    min-width: 320px; max-width: 460px;
+    padding: 28px 34px;
+}
+.org-node-lead .org-role {
+    font-size: 0.66rem; font-weight: 700; letter-spacing: 0.18em;
+    text-transform: uppercase; color: var(--gold); margin-bottom: 10px;
+}
+.org-node-lead .org-name {
+    font-family: 'Cormorant Garamond', Georgia, serif;
+    font-size: 1.9rem; font-weight: 600; color: var(--white); line-height: 1.1;
+}
+.org-node-lead .org-note {
+    font-size: 0.8rem; color: rgba(255,255,255,0.5); margin-top: 8px; word-break: keep-all;
+}
+
+/* Vertical connector between tiers */
+.org-stem {
+    width: 1px; height: 30px; margin: 0 auto;
+    background: linear-gradient(to bottom, var(--gold), rgba(196,154,60,0.25));
+}
+
+/* Branch row: horizontal rule + per-node stubs form the chart's connector lines */
+.org-branch {
+    display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px;
+    position: relative; padding-top: 30px;
+}
+.org-branch::before {
+    content: ''; position: absolute; top: 0; height: 1px;
+    left: calc((100% - 48px) / 6); right: calc((100% - 48px) / 6);
+    background: rgba(196,154,60,0.45);
+}
+.org-branch > .org-node { position: relative; }
+.org-branch > .org-node::before {
+    content: ''; position: absolute; top: -30px; left: 50%;
+    width: 1px; height: 30px;
+    background: linear-gradient(to bottom, rgba(196,154,60,0.45), var(--gold));
+}
+
+.org-unit-label {
+    font-size: 0.62rem; font-weight: 700; letter-spacing: 0.18em;
+    text-transform: uppercase; color: var(--gold); margin-bottom: 8px;
+}
+.org-list { list-style: none; display: flex; flex-direction: column; gap: 9px; }
+.org-list li {
+    font-size: 0.84rem; color: var(--text-mid); line-height: 1.6;
+    padding-left: 14px; position: relative; word-break: keep-all;
+}
+.org-list li::before {
+    content: ''; position: absolute; left: 0; top: 10px;
+    width: 5px; height: 1px; background: var(--gold);
+}
+
+.org-node-wide { display: block; }
+.org-chips { display: flex; flex-wrap: wrap; gap: 8px; }
+.org-chips span {
+    font-size: 0.72rem; font-weight: 600; letter-spacing: 0.08em;
+    padding: 6px 14px;
+    border: 1px solid rgba(196,154,60,0.35); color: var(--gold);
+}
+.org-node-open {
+    background: var(--offwhite);
+    border: 1px dashed rgba(196,154,60,0.55);
+    border-top: 2px dashed var(--gold);
+}
+.org-open-note {
+    font-size: 0.88rem; color: var(--text-mid); line-height: 1.85;
+    max-width: 760px; word-break: keep-all;
+}
+.org-open-note a { color: var(--gold); text-decoration: none; font-weight: 600; }
+.org-open-note a:hover { text-decoration: underline; }
+
+/* ===== LOCATION ===== */
+.loc-layout {
+    display: grid; grid-template-columns: 1fr 1fr; gap: 24px;
+    margin-top: 48px; align-items: stretch;
+}
+.loc-card {
+    background: var(--white);
+    border: 1px solid var(--border);
+    border-top: 2px solid var(--gold);
+    padding: 32px 30px;
+    display: flex; flex-direction: column; gap: 20px;
+}
+.loc-field { display: flex; flex-direction: column; gap: 8px; }
+.loc-field-label {
+    font-size: 0.64rem; font-weight: 700; letter-spacing: 0.18em;
+    text-transform: uppercase; color: var(--gold);
+}
+.loc-address {
+    font-size: 1.02rem; color: var(--text); line-height: 1.7; word-break: keep-all;
+}
+.loc-card .cd-link { font-size: 0.92rem; }
+.loc-maps { display: flex; flex-wrap: wrap; gap: 10px; }
+.loc-map-link {
+    font-size: 0.78rem; font-weight: 600; letter-spacing: 0.04em;
+    text-decoration: none; color: var(--text);
+    border: 1px solid #c8d0db; padding: 10px 18px;
+    transition: border-color var(--dur), color var(--dur), background var(--dur);
+}
+.loc-map-link:hover { border-color: var(--gold); color: var(--gold); background: var(--gold-dim); }
+.loc-map-link:focus-visible { outline: 3px solid var(--gold-lt); outline-offset: 4px; }
+.loc-visit-note {
+    font-size: 0.84rem; color: var(--text-mid); line-height: 1.8;
+    margin-top: auto; word-break: keep-all;
+}
+.loc-visit-note a { color: var(--gold); text-decoration: none; font-weight: 600; }
+.loc-visit-note a:hover { text-decoration: underline; }
+
 /* ===== CONTACT ===== */
 .contact-layout {
     display: grid; grid-template-columns: 1fr 1.1fr; gap: 80px; align-items: start;
@@ -692,6 +823,7 @@ h3 { font-size: 1.25rem; font-weight: 600; }
     .vision-grid { grid-template-columns: 1fr; gap: 20px; }
     .contact-layout { grid-template-columns: 1fr; gap: 52px; }
     .footer-top { grid-template-columns: 1fr; gap: 48px; }
+    .loc-layout { grid-template-columns: 1fr; }
 }
 @media (max-width: 700px) {
     .nav-links { display: none; position: fixed; top: 76px; left: 0; right: 0; bottom: 0; background: var(--navy-2); flex-direction: column; padding: 24px 24px; gap: 0; overflow-y: auto; }
@@ -719,6 +851,15 @@ h3 { font-size: 1.25rem; font-weight: 600; }
     .footer-links { grid-template-columns: 1fr 1fr; }
     .credentials { grid-template-columns: 1fr; }
     .leader-photo-col { flex-direction: column; align-items: center; }
+    /* Org chart stacks into a single vertical chain; the horizontal branch rule
+       is dropped and each node keeps its stub to bridge the gap above it. */
+    .org-branch { grid-template-columns: 1fr; gap: 30px; }
+    .org-branch::before { display: none; }
+    .org-node-lead { min-width: 0; max-width: none; width: 100%; padding: 24px 22px; }
+    .org-node { padding: 22px 20px; }
+    .loc-card { padding: 26px 22px; }
+    .loc-maps { flex-direction: column; }
+    .loc-map-link { text-align: center; }
 }
 
 @media (prefers-reduced-motion: reduce) {
