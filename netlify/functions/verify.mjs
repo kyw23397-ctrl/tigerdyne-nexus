@@ -69,10 +69,28 @@ export default async (request) => {
   const cookieSig = crypto.createHmac("sha256", secret).update(base).digest("hex");
   const cookieValue = `${base}.${cookieSig}`;
 
-  return new Response(null, {
-    status: 302,
+  // 302 대신 200 + 클라이언트 리디렉트를 쓴다.
+  // Netlify의 리디렉트 처리기가 302 Location에 원래 쿼리스트링(?token=...)을 다시 붙여
+  // 로그인 토큰이 주소창·방문기록에 남는 문제가 있었다. location.replace 를 쓰면
+  // 토큰이 붙지 않고 방문기록에도 남지 않는다.
+  const html = `<!DOCTYPE html>
+<html lang="ko"><head><meta charset="UTF-8">
+<meta name="robots" content="noindex, nofollow">
+<title>로그인 중… — TIGERDYNE NEXUS</title>
+<link rel="stylesheet" href="/style.css"><link rel="stylesheet" href="/subpage.css">
+<script>location.replace("/reports/");</script>
+</head><body>
+<section class="sub-section"><div class="container">
+<p>로그인되었습니다. 자동으로 이동하지 않으면 <a href="/reports/">여기를 눌러 주세요</a>.</p>
+<p>You are signed in. If you are not redirected automatically, <a href="/reports/">click here</a>.</p>
+</div></section>
+</body></html>`;
+
+  return new Response(html, {
+    status: 200,
     headers: {
-      Location: "/reports/",
+      "content-type": "text/html; charset=utf-8",
+      "cache-control": "no-store",
       "Set-Cookie": `${COOKIE_NAME}=${cookieValue}; Path=/; HttpOnly; Secure; SameSite=Lax; Max-Age=${COOKIE_MAX_AGE}`,
     },
   });

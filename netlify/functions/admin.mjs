@@ -104,6 +104,18 @@ export default async (request) => {
     }
   }
 
+  // 기록 자체를 지운다(테스트·오기입 정리용). 승인 취소는 revoke 를 쓸 것.
+  if (action === "delete") {
+    if (!email) return json({ ok: false, error: "email_required" }, 400);
+    try {
+      await store.delete(email);
+      return json({ ok: true });
+    } catch (err) {
+      console.log(`[admin] delete 오류: ${err && err.message}`);
+      return json({ ok: false, error: "delete_failed" }, 500);
+    }
+  }
+
   if (action === "approve" || action === "revoke") {
     if (!email) return json({ ok: false, error: "email_required" }, 400);
     try {
